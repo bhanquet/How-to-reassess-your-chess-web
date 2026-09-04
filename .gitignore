@@ -1,0 +1,46 @@
+# Dependencies (reinstallable via `npm install`)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Source EPUB (large, not versioned)
+How to Reassess Your Chess 4th ed - Silman.epub
+
+# Legacy PDF/TXT sources (never version)
+*.pdf
+silman_text.txt
+*.txt
+
+# Editor backups — never version, use git instead
+*.bak
+*.orig
+*~
+
+# Playwright MCP debug logs (regenerable)
+.playwright-mcp/
+
+# Local test captures
+*_test.png
+test_*.png
+diagram_*test*.png
+modal_*.png
+final_state.png
+search_test.png
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Build / generation (regenerable via `npm run build` / prebuild/predev)
+chess-app/dist/
+chess-app/public/
+chess-app/screenshots/
+
+# Deepwork session state (git-local)
+.slim/deepwork/
