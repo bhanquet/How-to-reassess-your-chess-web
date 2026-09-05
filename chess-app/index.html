@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Reassess Your Chess - Application Interactive</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>♞</text></svg>">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/diagrams.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- cm-chessboard v8 (P2 : remplace chessboard.js + jQuery) -->
+    <link rel="stylesheet" href="cm-chessboard/chessboard.css">
+    <link rel="stylesheet" href="cm-chessboard/extensions/markers/markers.css">
+    <link rel="stylesheet" href="cm-chessboard/extensions/promotion-dialog/promotion-dialog.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div id="app">
+        <header class="app-header">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+            <h1>How to Reassess Your Chess</h1>
+            <div class="search-container">
+                <label for="search-input" class="visually-hidden">Search in book</label>
+                <input type="search" id="search-input" placeholder="Search…" autocomplete="off">
+                <button id="search-btn" aria-label="Search" type="button">🔍</button>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme" aria-haspopup="listbox" aria-expanded="false" aria-controls="theme-options" title="Toggle theme (light / dark / auto)">
+                    <span aria-hidden="true">🌓</span>
+                    <span class="theme-toggle-label">Auto</span>
+                </button>
+                <div id="theme-options" class="theme-options" role="listbox" aria-label="Choose a theme" hidden>
+                    <button type="button" role="option" data-value="light" aria-selected="false">Light</button>
+                    <button type="button" role="option" data-value="dark" aria-selected="false">Dark</button>
+                    <button type="button" role="option" data-value="auto" aria-selected="true">Auto</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-container">
+            <div id="sidebar-scrim" class="sidebar-scrim" aria-hidden="true"></div>
+            <nav id="sidebar" class="sidebar hidden" aria-label="Table of contents">
+                <div class="sidebar-header">
+                    <h2>Navigation</h2>
+                </div>
+                <div id="nav-tree" class="nav-tree"></div>
+            </nav>
+
+            <main id="main-content" class="main-content">
+                <div id="content-area" class="content-area" aria-live="polite">
+                    <div class="loading-message" role="status" aria-live="polite">
+                        <div class="loading-spinner" aria-hidden="true"></div>
+                        <p>Loading book…</p>
+                    </div>
+                    <noscript>
+                        <div class="noscript-message" role="alert">
+                            <p><strong>JavaScript is disabled.</strong></p>
+                            <p>This interactive application requires JavaScript to display the book and chessboards.</p>
+                            <p><a href="data/book_structure.json">Access raw book data (JSON)</a></p>
+                        </div>
+                    </noscript>
+                </div>
+            </main>
+        </div>
+
+        <!-- Chess Board Modal -->
+        <div id="chess-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="diagram-title" aria-describedby="modal-desc" aria-hidden="true">
+            <div class="modal-content" tabindex="-1">
+                <button class="close-modal" aria-label="Close enlarged board">&times;</button>
+                <h3 id="diagram-title">Diagram</h3>
+                <p id="modal-desc" class="visually-hidden">Use the left and right arrow keys to navigate move by move, Home and End for the start and end of the line.</p>
+                <div class="modal-meta" aria-live="polite">
+                    <span class="ply-counter" id="modal-ply"></span>
+                    <span class="turn-dot" id="modal-turn"></span>
+                </div>
+                <div class="modal-layout">
+                    <div id="chess-board" class="chess-board" role="application" aria-roledescription="chessboard" aria-label="Enlarged chessboard"></div>
+                    <div class="modal-side">
+                        <div class="board-controls modal-board-controls" role="toolbar" aria-label="Diagram navigation" aria-controls="chess-board">
+                            <button id="modal-first" type="button" title="Start of line (Home)" aria-label="Start of line" aria-keyshortcuts="Home">⏮</button>
+                            <button id="modal-prev" type="button" title="Previous move (←)" aria-label="Previous move" aria-keyshortcuts="ArrowLeft">◀</button>
+                            <button id="modal-next" type="button" title="Next move (→)" aria-label="Next move" aria-keyshortcuts="ArrowRight">▶</button>
+                            <button id="modal-last" type="button" title="End of line (End)" aria-label="End of line" aria-keyshortcuts="End">⏭</button>
+                            <button id="flip-board" class="text-btn" type="button" title="Flip board" aria-label="Flip board">⇅</button>
+                            <button id="undo-board" class="text-btn" type="button" title="Undo last move (Backspace)" aria-label="Undo last move" aria-keyshortcuts="Backspace">↶</button>
+                            <button id="position-board" class="text-btn" type="button" title="Initial position" aria-label="Initial position">⊙</button>
+                            <button id="reset-board" class="text-btn" type="button" title="Diagram position in book" aria-label="Diagram position">📖</button>
+                        </div>
+                        <div class="modal-vars" id="modal-vars" hidden>
+                            <label>Variation:
+                                <select id="modal-var-select" aria-label="Choose a variation"></select>
+                            </label>
+                        </div>
+                        <div id="move-list" class="move-list" role="list" aria-label="Moves"></div>
+                        <p class="diagram-playable-hint">⏮ start · ◀ ▶ move by move · ⇅ flip · ⊙ initial · 📖 book · Esc close</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- P2: jQuery + chess.js (CDN 0.10.3) + chessboard.js removed.
+         Replaced by ESM imports of chess.js v1 and cm-chessboard v8
+         in js/app.js and js/playable-board.js. -->
+    <script type="module" src="js/app.js"></script>
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+</body>
+</html>

@@ -1,0 +1,462 @@
+/* Playable Inline Diagrams — style moderne type Study */
+.diagram-playable-wrapper {
+    margin: 2rem auto;
+    max-width: 440px;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 14px 12px;
+    box-shadow: var(--shadow-md);
+    outline: 2px solid transparent;
+    font-family: var(--font-sans);
+}
+
+.diagram-playable-wrapper:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px var(--color-accent-soft), var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.diagram-playable-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.diagram-badge {
+    flex: none;
+    background: var(--color-sidebar-header);
+    color: var(--color-text-on-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+}
+
+.diagram-playable-caption {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.88rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.diagram-missing-badge {
+    margin-left: auto;
+    flex: none;
+    font-size: 0.7rem;
+    color: var(--color-warning);
+    background: var(--color-warning-bg);
+    border: 1px solid var(--color-warning-border);
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+/* --- Echiquier --- */
+.diagram-playable-board,
+#chess-board {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    margin-bottom: 8px;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.diagram-playable-board [role="application"],
+#chess-board [role="application"],
+.diagram-playable-board [role="group"],
+#chess-board [role="group"] {
+    width: 100%;
+    height: 100%;
+}
+
+/* cm-chessboard v8 rend les cases en SVG (<rect class="square white|black">) */
+.diagram-playable-board .cm-chessboard .square.white,
+#chess-board .cm-chessboard .square.white { fill: var(--board-light); }
+.diagram-playable-board .cm-chessboard .square.black,
+#chess-board .cm-chessboard .square.black { fill: var(--board-dark); }
+
+/* Focus on chessboard squares (cm-chessboard injects <div>s) */
+.diagram-playable-board [data-square]:focus-visible,
+#chess-board [data-square]:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: -3px;
+    z-index: 1;
+}
+
+.diagram-playable-board img,
+#chess-board img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Skeleton pour les boards en attente de lazy-load */
+.diagram-playable-board:empty {
+    background: linear-gradient(90deg, var(--color-bg-muted) 25%, var(--color-bg-emphasis) 50%, var(--color-bg-muted) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 1.5s infinite;
+}
+
+@keyframes skeleton-pulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .diagram-playable-board:empty {
+        animation: none;
+        background: var(--color-bg-emphasis);
+    }
+}
+
+/* --- Meta (compteur + trait) --- */
+.diagram-playable-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+    min-height: 1.2em;
+}
+
+.ply-counter {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.turn-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.turn-dot .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--color-border-strong);
+}
+.turn-dot .dot.white {
+    background: #fff;
+}
+.turn-dot .dot.black {
+    background: #1e293b;
+}
+
+@media (prefers-color-scheme: dark) {
+    .turn-dot .dot.black {
+        background: #0f172a;
+        border-color: var(--color-border-strong);
+        box-shadow: inset 0 0 0 1px var(--color-text-muted);
+    }
+}
+
+html[data-theme="dark"] .turn-dot .dot.black {
+    background: #0f172a;
+    border-color: var(--color-border-strong);
+    box-shadow: inset 0 0 0 1px var(--color-text-muted);
+}
+
+/* --- Control bar --- */
+.diagram-playable-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 8px;
+    flex-wrap: wrap;
+}
+
+.diag-btn {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    min-width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+    line-height: 1;
+}
+
+.diag-btn:hover:not(:disabled) {
+    background: var(--color-diagram-flip-hover-bg);
+    border-color: var(--color-diagram-flip-hover-border);
+}
+
+.diag-btn:active:not(:disabled) { transform: scale(0.93); }
+
+.diag-btn:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+}
+
+.diag-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.diag-btn.diag-reset { border-color: var(--color-diagram-reset); }
+.diag-btn.diag-reset:hover:not(:disabled) {
+    background: var(--color-diagram-reset-bg);
+    border-color: var(--color-diagram-reset);
+}
+.diag-btn.diag-position { border-color: var(--color-diagram-position); }
+.diag-btn.diag-position:hover:not(:disabled) {
+    background: var(--color-diagram-position-bg);
+    border-color: var(--color-diagram-position);
+}
+
+.controls-sep {
+    width: 1px;
+    align-self: stretch;
+    background: var(--color-border-strong);
+    margin: 2px 2px;
+}
+
+/* --- Liste des coups --- */
+.diagram-playable-moves,
+.move-list {
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 8px 10px;
+    font-size: 0.86rem;
+    line-height: 2;
+    min-height: 40px;
+    max-height: min(40vh, 260px);
+    overflow-y: auto;
+    color: var(--color-text);
+    scrollbar-width: thin;
+}
+
+/* Structure role="list" / role="listitem" */
+.diagram-playable-moves[role="list"],
+.move-list[role="list"] {
+    list-style: none;
+}
+
+.diagram-playable-moves .move-pair,
+.move-list .move-pair {
+    display: inline-flex;
+    align-items: baseline;
+    margin-right: 2px;
+}
+
+.move-num {
+    color: var(--color-text-subtle);
+    font-size: 0.76rem;
+    min-width: 2.2em;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+}
+
+.move {
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    padding: 1px 7px;
+    margin: 1px;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: background var(--t-fast), border-color var(--t-fast);
+    font-family: var(--font-mono);
+}
+
+.move:hover {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+}
+
+.move:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+}
+
+.move[aria-current="step"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent-hover);
+    color: var(--color-accent-text);
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.5);
+}
+
+.move.current-move {
+    background: var(--color-accent);
+    border-color: var(--color-accent-hover);
+    color: var(--color-accent-text);
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.5);
+}
+
+.move.move-start {
+    color: var(--color-text-subtle);
+    border: 1px dashed var(--color-border-strong);
+    margin-right: 6px;
+}
+.move.move-start.current-move,
+.move.move-start[aria-current="step"] {
+    background: var(--color-text-muted);
+    border-color: var(--color-text-muted);
+    color: var(--color-accent-text);
+}
+
+.move.diagram-pos { border-color: var(--color-warning); border-style: dashed; }
+.move.diagram-pos.current-move,
+.move.diagram-pos[aria-current="step"] {
+    border-style: solid;
+}
+
+/* --- Variantes alternatives (fork) --- */
+.var-fork {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--color-border-strong);
+}
+
+.move.var-jump {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    border: 1px dashed var(--color-accent);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+}
+
+.move.var-jump:hover {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+}
+
+.move.var-jump:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+}
+
+.var-more {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    align-self: center;
+}
+
+/* Custom variation badge (small pill, warning badge style). */
+.custom-badge {
+    margin-left: auto;
+    flex: none;
+    font-size: 0.7rem;
+    color: var(--color-warning);
+    background: var(--color-warning-bg);
+    border: 1px solid var(--color-warning-border);
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.diagram-playable-hint {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.diagram-playable-vars {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.diagram-playable-vars label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.diag-var-select {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.8rem;
+    padding: 6px 8px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-elevated);
+    color: var(--color-text);
+}
+
+.diag-var-select:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+}
+
+/* Game Notation */
+.game-notation {
+    background-color: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: 15px;
+    margin: 20px 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* Reduced motion : supprimer transforms et ombres au hover */
+@media (prefers-reduced-motion: reduce) {
+    .diag-btn:active:not(:disabled),
+    .board-controls button:active:not(:disabled) {
+        transform: none;
+    }
+
+    .diag-btn:hover:not(:disabled),
+    .board-controls button:hover:not(:disabled),
+    .move:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .diagram-playable-wrapper,
+    #chess-board {
+        box-shadow: none;
+    }
+}
+
+/* High contrast */
+@media (prefers-contrast: more) {
+    .diagram-playable-wrapper,
+    .diagram-playable-controls,
+    .diagram-playable-moves,
+    .move-list,
+    .diag-var-select {
+        border-width: 2px;
+    }
+
+    .move.current-move,
+    .move[aria-current="step"] {
+        outline: 2px solid currentColor;
+        outline-offset: -2px;
+    }
+}

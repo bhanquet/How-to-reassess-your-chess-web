@@ -1,0 +1,242 @@
+/* ===========================================
+   Welcome / home page
+   =========================================== */
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome-message h2 {
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.welcome-message p {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.welcome-help {
+    text-align: left;
+    max-width: 640px;
+    margin: 24px auto 0;
+    padding: 20px 24px;
+    background-color: var(--color-bg-muted);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.welcome-help h3 {
+    color: var(--color-text);
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.help-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 18px;
+    align-items: baseline;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+}
+
+.help-list dt {
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.help-list dd {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.help-list kbd, .help-list code {
+    font-family: var(--font-mono);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.85em;
+    margin: 0 1px;
+}
+
+/* ===========================================
+   Page navigation (haut + bas)
+   =========================================== */
+.page-header {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--color-bg-emphasis);
+    border-radius: var(--radius-md);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-border-strong);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-accent);
+    transition: width var(--t-normal) ease;
+}
+
+.page-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid var(--color-bg-emphasis);
+    border-bottom: 1px solid var(--color-bg-emphasis);
+    gap: 10px;
+}
+
+.page-navigation.bottom {
+    border-top: 1px solid var(--color-bg-emphasis);
+    border-bottom: none;
+}
+
+.page-navigation button {
+    background-color: var(--color-accent);
+    color: var(--color-accent-text);
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.9rem;
+    min-height: 44px;
+    transition: background-color var(--t-fast), border-color var(--t-fast);
+}
+
+.page-navigation button:hover:not(:disabled) {
+    background-color: var(--color-accent-hover);
+}
+
+.page-navigation button:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+.page-navigation button:disabled {
+    background-color: var(--color-border-strong);
+    cursor: not-allowed;
+}
+
+/* ===========================================
+   Search (results + no-results + spinner)
+   =========================================== */
+.search-result {
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: var(--color-bg-muted);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+    transition: background-color var(--t-fast), border-color var(--t-fast);
+}
+
+.search-result:hover { background-color: var(--color-accent-soft); }
+
+.search-result:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+.search-result strong { display: block; margin-bottom: 4px; color: var(--color-text); }
+.search-result p { margin: 5px 0; color: var(--color-text-muted); }
+
+mark {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning);
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-muted);
+}
+
+.no-results .hint {
+    font-size: 0.85rem;
+    color: var(--color-text-subtle);
+    margin-top: 6px;
+}
+
+/* ===========================================
+   Loading + Error states
+   =========================================== */
+.loading-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+}
+
+.loading-spinner {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 12px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-spinner {
+        animation: none;
+        border: 3px solid var(--color-border);
+        border-top-color: var(--color-accent);
+        border-radius: 50%;
+        /* Indicateur statique de chargement */
+        background: conic-gradient(var(--color-accent) 0% 25%, transparent 25% 100%);
+    }
+}
+
+.error-message {
+    color: var(--color-danger);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-message h2 { margin-bottom: 12px; }
+.error-message p { color: var(--color-text); margin-bottom: 16px; }
+
+.error-action {
+    background: var(--color-accent);
+    color: var(--color-accent-text);
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.error-action:hover { background: var(--color-accent-hover); }
+
+.error-action:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
