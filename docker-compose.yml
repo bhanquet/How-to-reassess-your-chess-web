@@ -1,0 +1,10 @@
+services:
+  chess-app:
+    build:
+      context: ./chess-app
+      dockerfile: Dockerfile
+    image: silman-chess-app:latest
+    container_name: silman-chess
+    restart: unless-stopped
+    ports:
+      - "5174:80"
