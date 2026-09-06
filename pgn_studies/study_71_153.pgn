@@ -1,0 +1,990 @@
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 71"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 71"]
+[FEN "r2q1rk1/p2b1n2/np1p2p1/2pPp1pp/2P1P3/P1NBQP2/1P1N2PP/1R3RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 72"]
+[Date "2017.10.07"]
+[White "Player"]
+[Black "Player"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 72"]
+[FEN "r1r5/pb2kp1p/1pn1p1p1/8/3P4/3BPN2/P3KPPP/1RR5 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 73 & 74"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 73 & 74"]
+[FEN "rn1q1rk1/ppp2pp1/3p1b1p/4p3/2PPP3/4BB1P/PP3PP1/R2Q1RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. d5 Bg5 2. Bxg5 Qxg5 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 75"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 75"]
+[FEN "rn1q1rk1/ppp2pp1/3p1b1p/4p3/2PPP3/4BB1P/PP3PP1/R2Q1RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. Qd2 exd4 2. Bxd4 Bxd4 3. Qxd4 Nc6 4. Qc3 Re8 5. Rfe1 Ne5 6. Be2 Qg5 7. g3 (7. c5 dxc5 8. Qxc5 Nf3+) 7... Nd7 8. Bf3 Qe5 9. Qxe5 Nxe5 10. Be2 Nc6 11. Bg4 Nd4 (11... Re7) 12. Rad1 c5 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 76"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 76"]
+[FEN "rn1q1rk1/ppp2pp1/3p1b1p/4p3/2PPP3/4BB1P/PP3PP1/R2Q1RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. dxe5 dxe5 (1... Bxe5 2. c5 (2. Bg4 Nc6 3. f4 Bxb2 (3... Bf6 4. Qd2 Re8 5. Bf3) 4. Rb1 Bf6 5. Rxb7 Na5 6. Rb4 c5 7. Ra4 Qc7 8. Bf3 Nc6) 2... Nc6 3. cxd6 Qxd6 4. Qxd6 Bxd6 5. Rfd1 Rfd8 6. Be2 Be5 7. Rab1 Bd4 (7... g5) 8. Bf4 Be5 9. Bxe5 Nxe5 10. f4) 2. Qb3 b6 (2... Qc8 3. Bg4) 3. Rad1 Qe7 4. Bg4 Bg5 (4... Nc6 5. Rd7) 5. c5 Bxe3 6. fxe3 Kh8 (6... Qxc5 7. Rxf7 Rxf7 8. Rd8+ Qf8 9. Rxf8+ Kxf8 10. Qd5 Nc6 11. Qxc6) 7. Qc4 g6 8. Qc3 (8. Bc8 Rxc8 9. Rxf7 Qe8 (9... Qxc5 10. Qe6) 10. Rdf1) (8. c6) 8... f6 (8... Qxc5 9. Qxc5 bxc5 10. Rd5) 9. Rd5 h5 10. Be2 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 77"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 77"]
+[FEN "rn1q1rk1/ppp2pp1/3p1b1p/4p3/2PPP3/4BB1P/PP3PP1/R2Q1RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. dxe5 dxe5 2. Qb3 Nc6 3. Qxb7 Nd4 4. Bg4 (4. Bxd4 exd4 5. e5 Rb8) 4... a5 5. Qd5 Qe7 6. c5 Rab8 *
+
+
+[Event "Morelia-Linares"]
+[Site "Morelia/Linares MEX/ESP"]
+[Date "2008.02.22"]
+[Round "6"]
+[White "Vassily Ivanchuk"]
+[Black "Alexey Shirov"]
+[Result "1/2-1/2"]
+[WhiteElo "2751"]
+[BlackElo "2755"]
+[Variant "Standard"]
+[ECO "D43"]
+[Opening "Semi-Slav Defense: Moscow Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 78: Vassily Ivanchuk - Alexey Shirov"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 h6 6. Bxf6 Qxf6 7. e3 Nd7 8. Qd2 g5 9. Bd3 Bg7 10. O-O O-O 11. Qc2 dxc4 12. Bxc4 c5 13. Rfd1 g4 14. Ne1 cxd4 15. exd4 Nb6 16. Be2 h5 17. Ne4 Qg6 18. Nc3 Qxc2 19. Nxc2 Bd7 20. Rd2 Bh6 21. Ne3 f5 22. g3 f4 23. gxf4 Bxf4 24. Re1 Bc6 25. Bb5 Bf3 26. Be2 Bc6 27. Bb5 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "Pamplona International"]
+[Date "2005.12.28"]
+[Round "6.2"]
+[White "Oscar de la Riva Aguado"]
+[Black "Ruslan Ponomariov"]
+[Result "0-1"]
+[WhiteElo "2541"]
+[BlackElo "2704"]
+[Variant "Standard"]
+[ECO "B40"]
+[Opening "Sicilian Defense: French Variation, Westerinen Attack"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 79: Oscar de la Riva Aguado - Ruslan Ponomariov"]
+
+1. e4 c5 2. Nf3 e6 3. b3 Nf6 4. e5 Nd5 5. Bb2 Nc6 6. g3 g6 7. Na3 Bg7 8. Nc4 O-O 9. Bg2 b6 10. O-O Ba6 11. d3 Bxc4 12. dxc4 Nde7 13. Qe2 Qc7 14. Rae1 Rad8 15. Bc1 d6 16. exd6 Qxd6 17. Bf4 Qd7 18. Rd1 Qc8 19. h4 Nf5 20. Qe4 Ncd4 21. Nxd4 Nxd4 22. c3 Nf5 23. Qc2 Bh6 24. Bxh6 Nxh6 25. Bh3 Kg7 26. Qe2 Qc7 27. Rxd8 Rxd8 28. Rd1 Rxd1+ 29. Qxd1 f5 30. Qd2 Ng8 31. Bg2 Nf6 32. Bf3 e5 33. Kf1 e4 34. Be2 Kf7 35. Ke1 Qe5 36. Qe3 Kg7 37. Kd2 Qd6+ 38. Kc2 Nd7 39. Kc1 Nf8 40. Kc2 Ne6 41. Bf1 h6 42. Kc1 g5 43. hxg5 hxg5 44. Kc2 Kf6 45. Kc1 f4 46. gxf4 Qxf4 47. Kd2 Ng7 48. Bg2 (48. Bh3 Nf5 49. Bxf5 Qxe3+ 50. Kxe3 Kxf5) 48... Ke5 49. Bxe4 Qxe4 50. Qxg5+ Nf5 51. Qd8 Qb7 52. Ke2 Kf4 { 0-1 White resigns. } 0-1
+
+
+[Event "Amsterdam"]
+[Site "Amsterdam NED"]
+[Date "1950.11.14"]
+[Round "3"]
+[White "Samuel Reshevsky"]
+[Black "Carel Benjamin van den Berg"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "E46"]
+[Opening "Nimzo-Indian Defense: Reshevsky Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 80 & 81: Samuel Reshevsky - Carel Benjamin van den Berg"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Ne2 d5 6. a3 Bxc3+ 7. Nxc3 b6 8. b4 c5 9. dxc5 bxc5 10. cxd5 cxb4 11. axb4 exd5 12. Be2 Nc6 13. b5 Na5 14. Ba3 Re8 15. O-O Bf5 16. Bc5 Ne4 17. Bb4 Nxc3 18. Bxc3 Nc4 19. Qd4 Qg5 20. Qxd5 (20. Rxa7 Rxa7 21. Qxa7 Be4 22. g3) 20... Nxe3 21. fxe3 Qxe3+ 22. Kh1 Bg6 (22... Qxc3 23. Qxf5 Rxe2 24. Qxf7+ Kh8 25. Qf8+ Rxf8 26. Rxf8#) 23. Bh5 Rad8 (23... Qxc3 24. Bxg6 hxg6 25. Qxf7+ Kh7 (25... Kh8 26. Ra4 g5 27. Rxa7 Qe5 28. b6 Rab8 29. Qh5+ Kg8 30. h3 Re7 (30... Rxb6 31. Rxg7+) 31. Qg6) 26. Ra4 g5 27. Qf5+ (27. Rxa7) 27... Kg8 28. Qd5+ Kh8 29. Qxg5) 24. Bxg6 Rxd5 25. Bxf7+ Kh8 26. Bxe8 Qxe8 27. Rxa7 Qc8 (27... Rg5 28. Rfa1 (28. b6 h5 29. b7 Kh7)) (27... Rc5 28. b6 Rxc3 29. b7) 28. Rc7 { 1-0 Black resigns. } 1-0
+
+
+[Event "Jacksonville ch-US"]
+[Site "Jacksonville ch-US"]
+[Date "1990.??.??"]
+[White "Igor Vasilievich Ivanov"]
+[Black "Joel Benjamin"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "E92"]
+[Opening "King's Indian Defense: Petrosian Variation, Stein Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 82 & 83: Igor Vasilievich Ivanov - Joel Benjamin"]
+
+1. c4 g6 2. e4 Bg7 3. d4 d6 4. Nc3 Nf6 5. Be2 O-O 6. Nf3 e5 7. d5 a5 8. O-O Na6 9. Bg5 h6 10. Bh4 Qe8 11. Ne1 Nc5 12. Bxf6 Bxf6 13. Bg4 Bxg4 14. Qxg4 Bd8 (14... Bg5 15. Qe2 f5 16. Nd3 Nxd3 (16... Nxe4 17. Nxe4 fxe4 18. Qxe4) 17. Qxd3 f4) 15. Qe2 c6 16. Rd1 Bc7 17. h4 Qe7 18. g3 Kg7 19. Nf3 a4 20. h5 Ba5 21. Rc1 Qd7 22. Rfd1 Rae8 23. Kg2 f5 24. exf5 (24. Nh4 Bxc3 25. Rxc3 Nxe4 26. Nxg6 Nxc3 27. Nxf8 Rxf8 28. bxc3 f4 29. Rd3 Kh8) (24. hxg6 Bxc3 25. Rxc3 Nxe4 26. Re3 Nf6) 24... Rxf5 25. Ne4 Nxe4 26. Qxe4 Ref8 27. Rd3 Rxh5 28. Nh4 (28. g4 cxd5 29. cxd5 (29. Rxd5 Rf4 30. Qxf4 exf4 31. gxh5 Qg4+ 32. Kf1 Qxf3) 29... Rf4 30. Qxf4 exf4 31. gxh5 Qg4+ 32. Kf1 Qxh5 33. Rc4 (33. Rcd1 g5) 33... Qf5 34. Rdd4 g5 35. Rxa4 Bb6 36. Rdb4 Qc2) 28... Rxh4 29. gxh4 (29. Qxh4 Qf5 30. Rdd1 Bd8 31. Qh3 Qxf2+ 32. Kh1 Qf3+ 33. Qg2 Qh5+ 34. Qh2 Qg4 35. Rf1 (35. dxc6 Rf4 36. cxb7 Qf3+ 37. Qg2 Rh4+ 38. Kg1 Bb6+ 39. c5 Bxc5+) 35... Rxf1+ 36. Rxf1 Qxc4 37. Qh3 Qxd5+ 38. Kh2 Qd2+ 39. Kh1 Qg5 40. Qe6 Qe7) 29... Rf4 30. Qe2 Qf5 31. c5 cxd5 32. cxd6 Bb6 33. Rf1 e4 34. Rg3 d4 35. Qd2 e3 36. Qe1 Qd5+ 37. Kh3 Qe6+ (37... Rxh4+ 38. Kxh4 Qh5#) 38. Kg2 Qd5+ 39. f3 Qxd6 { 0-1 White resigns. } 0-1
+
+
+[Event "Bled"]
+[Site "Bled YUG"]
+[Date "1961.09.15"]
+[Round "9"]
+[White "Arthur Bisguier"]
+[Black "Robert James Fischer"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "D42"]
+[Opening "Queen's Gambit Declined: Semi-Tarrasch Defense, Main Line"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 84 & 85: Arthur Bisguier - Robert James Fischer"]
+
+1. d4 Nf6 2. Nf3 d5 3. c4 e6 4. e3 c5 5. Nc3 Nc6 6. cxd5 Nxd5 7. Bd3 Be7 8. O-O O-O 9. a3 cxd4 10. exd4 Nf6 11. Be3 b6 12. Rc1 Bb7 13. Qe2 Ng4 14. Bf4 Nxd4 15. Nxd4 Qxd4 16. Qxg4 Qxd3 17. Rfd1 Qg6 18. Qxg6 fxg6 19. Rd7 Bc5 20. Be3 Bc6 21. Rc7 Rfc8 22. Rxc8+ Rxc8 23. Nb5 Bd7 24. b4 Bxe3 25. Rxc8+ Bxc8 26. fxe3 Bd7 (26... a6 27. Nd6 Bd7 28. e4 (28. Kf2 g5 29. Nc4 b5 30. Ne5 Bc8 31. e4 Kf8 32. Ke3 Ke7 33. Kd4) 28... Bc6 (28... e5 29. Nc4 Bc6 30. Nxb6 Bxe4 31. Nd7) 29. e5 Bd5 30. g3 Kf8 31. Nc8 b5 32. Kf2 Ke8 33. Ke3 Kd7 34. Nd6 Kc6 35. Kd4) 27. Nd6 (27. Nxa7 b5 28. Kf2 Kf7 29. Ke2 (29. Kf3 e5 30. Ke4 Ke6) 29... Ke7 30. Kd3 Kd6 31. Kd4 e5+ 32. Ke4 g5 33. h3 Ke6 34. Kd3 Kd5) 27... Kf8 28. e4 e5 29. Kf2 Bc6 30. Nc4 Bxe4 31. Nxe5 Ke7 32. Nc4 Ke6 33. Ne3 Ke5 34. Ke2 Kd4 35. Kd2 Bc6 36. g3 Bd7 37. Nd1 Ke4 38. Ne3 Kf3 39. Kd3 g5 40. Kd4 Be6 41. Ke5 (41. Kd3 Bh3) 41... Kxe3 42. Kxe6 Kf3 43. Kf5 Kg2 44. Kxg5 Kxh2 45. g4 b5 46. Kf5 Kg3 47. g5 g6+ { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 86"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 86"]
+[FEN "5b2/2p2k1p/1pn2pp1/p3p3/P1P1P2P/4B1P1/1P2BP2/6K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 87"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 87"]
+[FEN "5b2/2p2k1p/1pn2pp1/p3p3/P3P2P/4B1P1/1PP1BP2/6K1 w - - 0 1"]
+[SetUp "1"]
+
+1. c3 *
+
+
+[Event "Second Piatigorsky Cup"]
+[Site "Santa Monica, CA USA"]
+[Date "1966.08.01"]
+[Round "10"]
+[White "Robert James Fischer"]
+[Black "Samuel Reshevsky"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "C92"]
+[Opening "Ruy Lopez: Closed, Karpov Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 88, 89 & 90: Robert James Fischer - Samuel Reshevsky"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. h3 Nd7 10. d4 Nb6 11. Nbd2 exd4 12. cxd4 d5 13. Bc2 Be6 14. e5 Qd7 15. Nb3 Bf5 16. Bg5 Rfe8 17. Bxe7 Rxe7 18. Rc1 Nb4 19. Nc5 Bxc2 (19... Qc8 20. Bxf5 Qxf5 21. Qb3 Nc6 22. Nxa6) 20. Qd2 (20. Rxc2 Qf5 21. Rce2) 20... Qe8 21. Qxb4 a5 22. Qc3 Bg6 (22... Bf5 23. Nh4 Bc8 24. f4) 23. Nh4 Na4 24. Qb3 (24. Nxa4 bxa4 25. Qa3 (25. f4 Be4) 25... Rb8 (25... c6 26. Qxa4 Rb7 27. Nxg6 hxg6) 26. Rc5 Rb4 27. Rxd5 Qa8 28. Rb5 Rxb5 29. Qxe7 Rxb2 (29... c6 30. Nxg6 hxg6 31. e6 fxe6 32. Rxe6) (29... Rd5 30. Nxg6 hxg6 31. Qxc7 Rxd4 32. e6) 30. d5) 24... Nxc5 25. Rxc5 c6 26. Rec1 Re6 27. f4 f5 (27... Be4 28. f5 Rh6 29. f6 Rc8 (29... Rxh4 30. Qg3) 30. Qg3 (30. Qe3) 30... g6 (30... Bg6 31. Nf5) 31. Nf3 Rh5 32. Qf4 h6 33. Nd2) 28. a4 (28. Qc2) 28... bxa4 (28... b4 29. Qc2) 29. Qxa4 Rb8 30. Qa3 Qd8 31. Nxg6 hxg6 32. Rxc6 Rxc6 33. Rxc6 Qh4 34. Rxg6 (34. Qd6 Rd8 (34... Rxb2 35. Qe6+ Kh8 36. Rc8+ Kh7 37. Qg8+ Kh6 38. Qh8#) 35. Qc7 Kh7 36. e6) 34... Kh7 (34... Qxf4 35. Qe7 Qc1+ 36. Kh2 Qf4+ 37. Rg3 Qh6 38. e6 Rxb2 39. Qf7+ Kh7 40. e7 f4 41. Rxg7+ Qxg7 42. Qh5+ Qh6 43. e8=Q) 35. Rg5 (35. Qg3 Qxg3 36. Rxg3 Rxb2 37. Ra3 Rb4 38. Rxa5 Rxd4 39. g3) 35... Rb4 (35... Qxf4 36. Qe7 Rg8 (36... Qe3+ 37. Kh2 Qf4+ 38. Rg3) 37. Rh5+ Kg6 38. Rh4 Qe3+ 39. Kh2 Rh8 40. Rxh8 Qf4+ 41. Kg1 Qc1+) 36. Qf3 Kh6 37. g3 Qxh3 38. Qxd5 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 91"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 91"]
+[FEN "8/7p/6p1/5p2/2b2P1P/4k1K1/6B1/8 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 92 & 93"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "0-1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 92 & 93"]
+[FEN "8/2n4p/6p1/5p2/5P1P/4k1K1/B7/8 b - - 0 1"]
+[SetUp "1"]
+
+1... Ne8 2. h5 (2. Bg8 Nf6) 2... gxh5 3. Be6 (3. Bb3 Ng7 4. Bd1 h6 5. Ba4 h4+ 6. Kxh4 Kxf4 7. Bd1 Ke3 8. Kh3 f4 9. Kg2 Nf5 10. Kh3 (10. Bg4 f3+ 11. Bxf3 Nh4+ 12. Kg3 Nxf3 13. Kg4 Ne5+ 14. Kh5 Nf7 15. Kg6 Kf4 16. Kxf7 h5) 10... f3 11. Bb3 f2 12. Bc4 (12. Kg2 Nh4+ 13. Kf1 Nf3) 12... Kd2 13. Kg4 Ng7 14. Kh3 (14. Ba6 Ke1) 14... Ke1 15. Kg2 Nf5 16. Ba6 Nd4 17. Bf1 Ne2) 3... Nd6 4. Bd7 Ne4+ 5. Kh4 Kxf4 6. Be8 (6. Kxh5 Nf6+) 6... Ke3 7. Bxh5 (7. Kxh5 Nf6+) 7... f4 8. Bg4 f3 9. Bh3 (9. Bxf3 Kxf3 10. Kh5 Kg3 11. Kh6 Nf6 12. Kg5 h5) (9. Kh5 Nf6+) 9... f2 10. Kg4 (10. Bf1 Kf3 11. Ba6 (11. Kh5 Ng3+) 11... Ng3 12. Bb7+ (12. Kg5 Ne2 13. Bb7+ Kg3) 12... Ke3 13. Bg2 Ne2 14. Kg4 h5+ 15. Kg5 Nf4 16. Bf1 h4 17. Kxh4 (17. Kg4 h3 18. Kg3 h2 19. Kxh2 Kd2 20. Kg3 (20. Bc4 Ne2 21. Kg2 Ke1) 20... Ke1 21. Bc4 Ne2+) 17... Kd2 18. Kg3 Ke1 19. Bc4 Ne2+) 10... Ke2 11. Kf4 Nf6 12. Kg5 Nd5 13. Kh6 Nf4 14. Bc8 f1=Q 15. Ba6+ Nd3 { 0-1 White resigns. } 0-1
+
+
+[Event "Vinkovci"]
+[Site "Vinkovci CRO"]
+[Date "1968.09.09"]
+[Round "3"]
+[White "Milan Matulovic"]
+[Black "Robert James Fischer"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "B91"]
+[Opening "Sicilian Defense: Najdorf Variation, Zagreb Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 94"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. g3 e5 7. Nde2 Be7 8. Bg5 Nbd7 9. Bh3 b5 10. a4 b4 11. Nd5 Nxd5 12. Qxd5 Rb8 13. Bxe7 Kxe7 14. Qd2 Nf6 15. Bg2 Bb7 16. Qd3 Qb6 17. O-O a5 18. Rfd1 Ba6 19. Qd2 Rhc8 20. h3 h5 21. b3 Bxe2 22. Qxe2 Rc3 23. Rd3 Rbc8 24. Rxc3 Rxc3 25. Kh2 Qc5 26. Ra2 (26. Rc1 Rxb3) 26... g6 27. Bf1 Qd4 (27... h4 28. g4 (28. gxh4 Nh5) 28... Qd4 29. Bg2) 28. f3 (28. Bg2 h4 29. g4) 28... Re3 (28... h4) 29. Qg2 (29. Qf2 Rxe4 (29... h4 30. g4 Nxe4 31. fxe4 Rxh3+)) 29... Qd1 30. Bc4 Qxf3 31. Qxf3 Rxf3 32. Kg2 Re3 33. Bd3 Nxe4 34. Bxe4 Rxe4 35. Kf2 d5 36. Ra1 d4 37. Rd1 Re3 38. h4 Rc3 39. Rd2 Ke6 40. Kg2 f5 { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 95"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 95"]
+[FEN "r2q1rk1/ppb2ppp/2p1bn2/5p2/2NP4/4P1P1/PPQ1NPBP/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 96"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 96"]
+[FEN "1r3rk1/p1bb1ppp/2np4/2p1p3/2P4q/P2QPBN1/1P1P1PPP/R1B1K2R w KQ - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 97"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 97"]
+[FEN "r2br1k1/1p3ppp/p2pb3/2nNp1P1/4P2P/1B1RBP2/PPP5/2K4R w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 98"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 98"]
+[FEN "1r3rk1/1q1nbppp/pp1p1n2/4p3/P3P3/2N2N1P/1PP1QPP1/R2R2K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 99"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 99"]
+[FEN "3rr3/ppk2pp1/1npb1np1/8/8/3B2NP/PPP2PP1/2BRR1K1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 100"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 100"]
+[FEN "r4rk1/2p3b1/3p3p/p1pPp1p1/2P5/5PN1/PP4PP/1R3RK1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 101"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 101"]
+[FEN "3r1bk1/1bq1r1pp/p4p2/1p6/3NN3/1PPP3P/4RPP1/Q3R1K1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 102"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 102"]
+[FEN "r2q1rk1/ppp3bp/3p1np1/3Ppb2/2P1B3/2N1BP2/PP1Q2PP/2KR3R w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 103"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 103"]
+[FEN "r4rk1/pbq2ppp/1p3n2/4p3/8/QP2P3/1P2BPPP/R1B2RK1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 104"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 104"]
+[FEN "2rr2k1/pb3pp1/1p1nq2p/4p2n/1P2P3/P3BPP1/1Q1N3P/2RR1BK1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 105"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 105"]
+[FEN "r6r/pp2kpRp/4bn2/1N1p1p2/3P4/3BP2P/PP1K1P2/R7 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 106"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 106"]
+[FEN "4k3/2qb1p2/4pPp1/p2pP1Pp/1p1Q3P/1P1P4/PKN5/8 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 107"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Queen's Pawn Game"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 107"]
+
+1. d4 d5 2. e3 Nf6 3. Nc3 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 108"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 108"]
+[FEN "r1bq1rk1/1pp1bpp1/p1np1n1p/4p3/2B1P3/P1NP3P/1PP1NPP1/R1BQ1RK1 w - - 0 1"]
+[SetUp "1"]
+
+{ These moves try to get white's Rooks on open files so they can be active }
+1. f4 { This move helps the f1 Rook } (1. b4 { This move helps the a1 Rook }) *
+
+
+[Event "San Francisco"]
+[Site "1977"]
+[Date "2017.10.08"]
+[White "J. Silman"]
+[Black "R. Schain"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B72"]
+[Opening "Sicilian Defense: Dragon Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 109, 110 & 111: J. Silman - R. Schain"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. h3 Nc6 8. Bc4 O-O 9. Bb3 Bd7 10. O-O Qc8 11. f4 Rd8 12. Qf3 Nxd4 13. Bxd4 Bc6 14. Rad1 b5 15. Nd5 { White creates a half-open file for the Rooks } 15... Nxd5 16. exd5 Bd7 17. Rfe1 Re8 18. c3 h5 19. Re3 { White wants to double Rooks on the e-file } 19... Bf5 (19... Bxd4 20. Rxd4 Bf5) 20. Bxg7 Kxg7 21. Rde1 Qd7 22. Bd1! { This move
+threatens g4 which attacks the Bishop and forces it of the diagonal } 22... Qc7 (22... h4 23. Qf2) (22... a5 23. g4 hxg4 24. hxg4 Bb1 25. f5! Bxa2 (25... gxf5 26. Qf4 f6 27. g5 Be4 28. gxf6+ exf6 (28... Kxf6 29. Rxe4) 29. Rg3+) 26. Rxe7! Rxe7 27. f6+ Kg8 28. Rxe7) 23. g4 hxg4 24. hxg4 Bc8 25. f5 f6 26. Kg2 Bb7 27. g5 Qc4 28. Bb3 Qh4 29. Re4 Qh8 30. Rxe7+ Kf8 31. Qe4 Rxe7 32. Qxe7+ Kg8 33. Qxb7 (33. Qe6+) 33... Rf8 34. Rh1 Qg7 35. Qxg7+ Kxg7 36. gxf6+ { 1-0 Black resigns. } 1-0
+
+
+[Event "NH Chess Tournament"]
+[Site "Amsterdam NED"]
+[Date "2007.08.28"]
+[Round "6"]
+[White "Parimarjan Negi"]
+[Black "Alexander Beliavsky"]
+[Result "0-1"]
+[WhiteElo "2529"]
+[BlackElo "2653"]
+[Variant "Standard"]
+[ECO "C92"]
+[Opening "Ruy Lopez: Closed, Flohr System"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 112: Parimarjan Negi - Alexander Beliavsky"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O 9. h3 Bb7 10. d4 Re8 11. Nbd2 Bf8 12. d5 Nb8 13. Nf1 Nbd7 14. Ng3 Nc5 15. Bc2 c6 16. b4 Ncd7 17. dxc6 Bxc6 18. Bb3 Nb6 19. Nh2 a5 20. bxa5 Nc4 21. Bg5 h6 22. Bxf6 Qxf6 23. Ng4 Qd8 24. Ne3 Nxa5 25. Bd5 Rc8 26. Rb1 Bxd5 27. Nxd5 Rc5 28. Qd3 Nc4 29. Nf5 Nb6 30. Nfe3 Nxd5 31. Nxd5 Qa5 32. Re2 Ra8 33. Rb4 Qa6 34. Reb2 g6 35. Qf3 Qc6 36. a4! { This move opens up the b-file so the Rooks can
+attack the King } (36. c4! { This move does the same } 36... Ra5 (36... bxc4 37. Rb7) 37. a4! Rxa4 (37... Rxc4 38. Rxb5 Rxb5 39. axb5 Qb7 40. b6) 38. Rxa4 bxa4 39. Rb8 Qa6 40. Rd8 Rxd5 41. cxd5 Qb7 42. Qg4) 36... Rxa4 (36... Ra5 37. c4! { Same variation as before }) 37. Rxa4 bxa4 38. Rb8 Qa6 39. Qf6?? (39. Ne7+ Kg7 40. Nxg6!! Qa7 (40... Rc8 41. Nxe5 dxe5 42. Qg4+) 41. Rxf8 a3 42. Re8 a2 43. Nf8 a1=Q+ 44. Kh2 Qc1 45. Ne6+ fxe6 46. Qf8+ Kg6 47. Rxe6+ Kh7 48. Qf5+ Kh8 49. Qf6+ Qg7 50. Re8+ Kh7 51. Qf5+ Qg6 52. Re7+ Kh8 53. Qf8+ Qg8 54. Qf6+ Qg7 55. Qxg7#) 39... Rc8 { White's attack is stopped and black's a-pawn
+is strong } 40. Nc7 Rxb8 41. Nxa6 Rb1+ 42. Kh2 a3 { White can't stop the a-pawn
+from promoting } 43. Nb4 Rxb4 44. cxb4 a2 45. b5 a1=Q 46. Qd8 Kg7 47. b6 Qb2 48. Qc7 Be7 49. Qxe7 Qxb6 50. f3 Qd4 51. Qd7 Qd2 52. Qd8 h5 53. Qd7 Qf4+ 54. Kh1 Qf6 55. Qc7 g5 56. Qd7 Qe6 57. Qd8 g4 58. hxg4 hxg4 59. Kh2 Qh6+ 60. Kg3 Qf4+ 61. Kf2 Qf6 62. Qd7 Qh4+ 63. Ke2 Qg3 64. fxg4 Qxg2+ 65. Ke3 Qg3+ 66. Ke2 Qf4 67. Qxd6 Qxg4+ 68. Kf2 Qf4+ 69. Kg1 Qg5+ 70. Kf2 Qf6+ 71. Qxf6+ Kxf6 72. Kf3 Kg5 73. Kg3 f6 { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 113"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 113"]
+[FEN "r2r2k1/p1q2p1p/1p4p1/n1p1p3/4P3/1PP1BP2/P3Q1PP/R2R2K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Bg5! Rd6 (1... Rxd1+ 2. Rxd1 Nc6 3. Rd2! { This move avoids Rd5 and
+tries to double on the d-file } (3. Rd5 Ne7) 3... Re8 4. Qd1 Qc8 (4... Nb8 5. Rd6) 5. Rd7) (1... Re8 2. Rd5 Nb7 3. Rad1) (1... Rf8 2. Qb5! (2. Bf6) 2... Nc6 (2... a6 3. Qd7) 3. Bf6 Rae8 4. Rd5 Re6 5. Bh4) 2. Rxd6 Qxd6 3. Rd1 Qe6 4. Rd5 Nb7 5. Qd2 c4 6. b4 a5 7. Rd7 axb4 (7... Rb8 8. a3) 8. Rxb7 b3 9. Bh6 Qc6 (9... bxa2 10. Qxa2!) 10. Ra7 Rc8 11. Rd7 Qf6 12. axb3 cxb3 13. h3 { 1-0 Black resigns. } 1-0
+
+
+[Event "Linares"]
+[Site "Linares ESP"]
+[Date "2009.02.19"]
+[Round "5"]
+[White "Vassily Ivanchuk"]
+[Black "Viswanathan Anand"]
+[Result "1/2-1/2"]
+[WhiteElo "2779"]
+[BlackElo "2791"]
+[Variant "Standard"]
+[ECO "D19"]
+[Opening "Slav Defense: Czech Variation, Classical System, Main Line"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 114: Vassily Ivanchuk - Viswanathan Anand"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. e3 e6 7. Bxc4 Bb4 8. O-O O-O 9. Qe2 Nbd7 10. e4 Bg6 11. Bd3 Bh5 12. e5 Nd5 13. Nxd5 cxd5 14. Qe3 Re8 15. Ne1 Bg6 16. Bxg6 hxg6 17. Nd3 Qb6 18. Nxb4 Qxb4 19. b3 Rac8 20. Ba3 Qc3 21. Rac1 Qxe3 22. fxe3 f6 23. Bd6 a5 24. Bc7! { Blocking the c-file so white can
+double Rooks on the c-file } 24... fxe5 25. dxe5 b6 26. Rc3 (26. Rc2 Nxe5) 26... Rf8 (26... Nxe5 27. Bxe5) 27. Rfc1! Rf5 28. g4 Rf7 (28... Rg5 29. h3) 29. Bd6 Nc5 30. Bxc5 bxc5 31. Rxc5 Rcf8 32. Rxa5 Rf3 33. Ra7 g5 34. Re1 d4 35. exd4 Rxb3 36. Rf1 Rd3 37. Rxf8+ Kxf8 38. a5 Rxd4 39. h3 Kg8 40. a6 Ra4 41. Kf2 Ra5 42. Kf3 Rxe5 43. Re7 Kh7 44. Re8 Ra5 45. Rxe6 Ra3+ 46. Ke4 Rxh3 47. Kd5 Rc3 48. Rb6 g6 49. Kd6 Kh6 50. Rb8 Ra3 51. Ra8 Kg7 52. Kc5 Ra1 53. Kb6 Rb1+ 54. Ka7 Rb4 55. Rb8 Rxg4 56. Rb5 Ra4 57. Rxg5 Rb4 58. Rc5 Kh6 59. Rc6 Kh5 60. Rb6 Rf4 61. Rb5+ g5 62. Kb6 Rf6+ 63. Ka5 Rf7 64. Kb6 Rf6+ 65. Ka5 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 115 & 116"]
+[Date "????.??.??"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "A67"]
+[Opening "Benoni Defense: Taimanov Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 115 & 116"]
+
+1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Bb5+ Nfd7 9. a4 O-O 10. Nf3 Na6 11. O-O Nc7 12. Bd3 a6 13. f5 Ne5 14. Bf4 Qe7 15. Qd2 Ne8 16. Kh1 b6 17. Rab1 Qc7 18. Nxe5 dxe5 19. Be3 f6 20. g4 g5 21. Rfc1 Nd6 22. b3 Bd7 23. Qe2 a5 24. h4 h6 (24... gxh4 25. g5) 25. Kg2 Kf7 26. Kf3 Rh8 27. Rh1 Rag8 28. Rh2 (28. hxg5? hxg5) 28... Ke7 29. Rbh1 Kd8 30. Bb5 Bxb5 31. Nxb5 Nxb5 32. Qxb5 Ke7 (32... Kc8 33. b4! axb4 34. a5) 33. Rc1 (33. b4!) 33... Kf7 34. d6! Qd8 (34... Qxd6 35. Rd2) 35. Qc4+ (35. Bxc5) 35... Kf8 36. Qe6 h5 37. Bxc5 hxg4+ 38. Kg2 Bh6 39. Bxb6 gxh4 40. Bxd8 h3+ 41. Kf1 Rg7 42. Be7+ { 1-0 Black resigns. } 1-0
+
+
+[Event "Fischer - Spassky"]
+[Site "Sveti Stefan & Belgrade YUG"]
+[Date "1992.09.02"]
+[Round "1"]
+[White "Robert James Fischer"]
+[Black "Boris Spassky"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "C95"]
+[Opening "Ruy Lopez: Closed, Breyer Defense, Zaitsev Hybrid"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 117: Robert James Fischer - Boris Spassky"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. h3 Nb8 10. d4 Nbd7 11. Nbd2 Bb7 12. Bc2 Re8 13. Nf1 Bf8 14. Ng3 g6 15. Bg5 h6 16. Bd2 Bg7 17. a4 c5 18. d5 c4 19. b4 Nh7 20. Be3 h5 21. Qd2 Rf8 22. Ra3! (22. axb5?? axb5 23. Ba7 Nb6) 22... Ndf6 23. Rea1 Qd7 24. R1a2! (24. axb5 axb5 25. Ba7!?) 24... Rfc8 25. Qc1 Bf8 26. Qa1 Qe8 27. Nf1!! Be7 28. N1d2 Kg7 29. Nb1 Nxe4!? (29... Ng8 30. axb5 axb5 31. Rxa8 Rxa8 32. Rxa8 Qxa8 33. Qxa8 Bxa8 34. Na3) 30. Bxe4 f5 31. Bc2 Bxd5 32. axb5 axb5 33. Ra7 Kf6 34. Nbd2 Rxa7 35. Rxa7 Ra8 36. g4 hxg4 37. hxg4 Rxa7 38. Qxa7 f4 39. Bxf4 exf4 40. Nh4 Bf7 41. Qd4+ Ke6 42. Nf5 Bf8 43. Qxf4 Kd7 44. Nd4 Qe1+ 45. Kg2 Bd5+ 46. Be4 Bxe4+ 47. Nxe4 Be7 48. Nxb5 Nf8 49. Nbxd6 Ne6 50. Qe5 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 118"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 118"]
+[FEN "5rk1/p1r2pp1/1p5p/1P6/P1q5/Q3R1P1/5P1P/3R2K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Qxf8+! Kxf8 (1... Kh7) 2. Rd8# 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 119"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B73"]
+[Opening "Sicilian Defense: Dragon Variation, Classical Variation, Battery Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 119"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 d6 5. Be2 g6 6. Be3 Bg7 7. Nc3 Nf6 8. O-O O-O 9. Qd2 d5 10. Rad1 Nxd4 11. Qxd4 Be6 12. e5 Nd7 13. f4 Nb6 14. Bf3 f6 15. Nxd5 fxe5 16. Qc5 Nxd5 17. Bxd5 Bxd5 18. Rxd5 Qe8 19. fxe5 Rxf1+ 20. Kxf1 Rc8 21. Qd4 Qf7+ 22. Kg1 Rxc2 23. Rd8+ Bf8 24. Bh6 { 1-0 Black resigns. } 1-0
+
+
+[Event "Prague olm qual"]
+[Site "Prague CZE"]
+[Date "1939.??.??"]
+[Round "5"]
+[White "Pelikan, Jorge"]
+[Black "Skalicka, Karel"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "A53"]
+[Opening "Old Indian Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 120: Pelikan, Jorge - Skalicka, Karel"]
+
+1. d4 Nf6 2. c4 d6 3. g3 Bf5 4. Bg2 Qc8 5. Nc3 e5 6. e4 Bg4 7. f3 Bd7 8. d5 Be7 9. Be3 c5 10. dxc6 bxc6 11. Rc1 O-O 12. Nge2 Bh3 13. O-O Rd8 14. g4 Bxg2 15. Kxg2 Qb7 16. Ng3 g6 17. Rf2 d5 18. cxd5 cxd5 19. exd5 Nxd5 20. Nxd5 Rxd5 21. Rc8+! Bf8 (21... Qxc8 22. Qxd5 Nd7 23. Rd2 Nb6 24. Qxe5) (21... Kg7 22. Qc1 f6 (22... Nd7 23. Bh6+ Kf6 24. Ne4+ Ke6 25. Rc6+ Bd6 26. Qc4) 23. Rc7 Qb4 24. Rd2 Rxd2+ 25. Bxd2 Qd6 26. Ne4 Qe6 27. Rxe7+! Qxe7 28. Bh6+ Kf7 29. Qc4+ Ke8 30. Qg8+ Kd7 31. Bf8) 22. Qxd5! Qxd5 23. Rd2 Qb7 (23... Qa5 24. Bh6 Nd7 25. Rxa8 Qc7 26. Rxd7 Qxd7 27. Rxf8#) 24. Rdd8 Nd7 25. Rxa8 Kg7 26. b3 Qc7 27. Ne4 Qc2+ 28. Bf2 Qc7 29. g5! Nb6 30. Bxb6 axb6 31. Rxf8 Qc2+ 32. Kg3 f5 33. Rg8+ (33. Nd6) 33... Kf7 34. Raf8+ Ke7 35. Re8+ { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 121: Player - Player"]
+[Date "2017.10.08"]
+[White "Player"]
+[Black "Player"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 121: Player - Player"]
+[FEN "r4n1k/pppb2R1/3p4/8/2P1Pp2/1P3P2/PB1K4/8 w - - 0 1"]
+[SetUp "1"]
+
+1. Rxd7+ Kg8 2. Rg7+ Kh8 3. Rxc7+ Kg8 4. Rg7+ Kh8 5. Rxb7+ Kg8 6. Rg7+ Kh8 7. Rxa7+ Kg8 8. Rxa8 { 1-0 Black resigns. } 1-0
+
+
+[Event "San Francisco"]
+[Site "1983"]
+[Date "????.??.??"]
+[White "J. Silman"]
+[Black "P. Biyiasas"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "D45"]
+[Opening "Semi-Slav Defense: Stoltz Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 122 & 123: J. Silman - P. Biyiasas"]
+
+1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Qc2 Be7 7. b3 O-O 8. Be2 b6 9. O-O Bb7 10. Bb2 Rc8 11. Rfd1 Qc7 12. e4 dxe4 13. Nxe4 Nxe4 14. Qxe4 Bf6 15. Rd2 c5 16. Qg4 Rfd8 17. Rad1 cxd4 18. Nxd4 Ne5 19. Qg3 Nc6 20. Qxc7 Rxc7 21. Nb5 Rxd2 (21... Rcc8 22. Bxf6 gxf6 23. Rxd8+ Nxd8 (23... Rxd8 24. Rxd8+ Nxd8 25. Nxa7) 24. Rd7 (24. Nxa7) 24... Bc6 25. Rxa7 Bxb5 26. cxb5) 22. Rxd2 Rc8 (22... Re7 23. Nxa7 (23. Ba3 Re8 24. Rd7)) 23. Bxf6 gxf6 24. Rd7 Rb8 25. f4! a6 26. Nd6 Nd4 27. Bh5 Bc6 28. Rc7 Rd8 29. Nc8 Be4 30. Nxb6 Bb1 (30... Bg6 31. Bxg6 hxg6 32. Rd7 Rxd7 (32... Rb8 33. Rxd4 Rxb6 34. c5 Rc6 35. b4) 33. Nxd7) 31. Bxf7+ Kf8 32. Bh5 Bxa2 33. Rf7+ Kg8 34. Nd7 Bb1 35. Nxf6+ Kh8 36. Kf2 Nxb3 37. g4! Rd2+ 38. Kg3 (38. Ke1) 38... Nc5 39. f5 Ne4+ 40. Nxe4 Bxe4 41. fxe6 Rg2+ 42. Kf4 Bc6 43. Rc7 Ba4 44. e7 Rf2+ 45. Kg3 Rf8 46. exf8=R# 1-0
+
+
+[Event "Monte Carlo"]
+[Site "Monte Carlo MNC"]
+[Date "1903.02.26"]
+[Round "12"]
+[White "Georg Marco"]
+[Black "Jacques Mieses"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B45"]
+[Opening "Sicilian Defense: Four Knights Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 124: Georg Marco - Jacques Mieses"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Ndb5 Bb4 7. a3 Bxc3+ 8. Nxc3 O-O 9. Bd3 d5 10. exd5 exd5 11. O-O Bg4 12. f3 Bh5 13. Bg5 Qb6+ 14. Kh1 Ne7 15. Re1 Qc5 16. Qd2 Rfe8 17. Bxf6 gxf6 18. Re2 Red8 19. b4 Qc7 20. Nb5 Qd7 21. Nd4 Bg6 22. g4 Kh8 23. Rae1 Nc6 24. Bxg6 fxg6 25. Nxc6 Qxc6 26. Re7 d4 27. Kg2 g5 28. Qd3 f5 29. Qxf5 Qg6 30. Qxg6 hxg6 31. Rxb7 Rdc8 32. Re2 Rc3 33. a4 Rc4 34. a5 a6 35. Kg3 Rd8 36. b5 axb5 37. Rxb5 d3 38. cxd3 Rxd3 39. Rb7 Rc8 40. Ree7 (40. a6 Rf8 41. Ra2 Rfxf3+ 42. Kg2 Rf8 43. a7 Rdd8 44. Rab2 Ra8 45. Rb8) 40... Ra3 41. Rh7+ Kg8 42. Rbg7+ Kf8 43. Rf7+ Kg8 (43... Ke8 44. Rb7) 44. Rfg7+ Kf8 45. Rxg6 Rcc3 (45... Rxa5 46. Rh8+ Kf7 47. Rxg5) 46. Rf6+ Kg8 47. Ra7 Rc2 48. Rd6 Rc8 49. Rdd7 Re8 50. Rg7+ Kh8 (50... Kf8 51. Raf7#) 51. Rh7+ Kg8 52. Rag7+ Kf8 53. Rxg5 { 1-0 Black resigns. } 1-0
+
+
+[Event "Koltanowski Team Match"]
+[Site "San Francisco USA"]
+[Date "1999.02.06"]
+[Round "5"]
+[White "Walter Shawn Browne"]
+[Black "Jeremy Silman"]
+[Result "1/2-1/2"]
+[WhiteElo "2516"]
+[BlackElo "2375"]
+[Variant "Standard"]
+[ECO "D19"]
+[Opening "Slav Defense: Czech Variation, Classical System, Main Line"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 125: Walter Shawn Browne - Jeremy Silman"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. e3 e6 7. Bxc4 Bb4 8. O-O O-O 9. Qe2 Bg6 10. Ne5 Nbd7 11. Nxg6 hxg6 12. Rd1 Qa5 13. e4 e5 14. d5 Nb6 15. dxc6 bxc6 16. Na2 Nxc4 17. Qxc4 Rab8 18. Nxb4 Qxb4 19. Qxb4 Rxb4 20. f3 c5 21. Be3 Rxb2 22. Bxc5 Rc8 23. Bxa7 Rcc2 24. Kh1 Rxg2 25. Bg1 Nh5! 26. a5 Ng3+! (26... Rg5 27. a6 (27. Be3 Rgg2 28. Bg1 (28. a6 Rxh2+ 29. Kg1 Rbg2+ 30. Kf1 Ng3+ 31. Ke1 Re2#) 28... Rg5) 27... Ng3+ 28. hxg3 Rh5+ 29. Bh2 Rhxh2+ 30. Kg1 Rbg2+ 31. Kf1) 27. hxg3 Rxg3 28. Bc5 Rh3+ 29. Kg1 Rg3+ 30. Kf1 Rxf3+ 31. Ke1 Rh3 32. Bg1 Rg3 33. Bf2 Rh3! (33... Rf3 34. Rd2 Rxd2 35. Kxd2 Rxf2+ 36. Kc3) 34. Bg1 (34. Kf1 Rf3) 34... Rg3 35. Bf2 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 126"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 126"]
+[FEN "8/1R6/1p1r4/p1p1pp2/P1P1k1p1/4P1P1/5PKP/8 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 127"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 127"]
+[FEN "5rk1/1pp3pp/p4p2/4p3/2P5/1P2P1P1/P4PKP/3R4 w - - 0 1"]
+[SetUp "1"]
+
+1. Kf3 (1. Rd7 Rf7 2. Rd8+ Rf8) *
+
+
+[Event "Ostend"]
+[Site "Ostend BEL"]
+[Date "1905.07.04"]
+[Round "16"]
+[White "Geza Maroczy"]
+[Black "Amos Burn"]
+[Result "1/2-1/2"]
+[Variant "Standard"]
+[ECO "C79"]
+[Opening "Ruy Lopez: Morphy Defense, Steinitz Deferred"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 128: Geza Maroczy - Amos Burn"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O d6 6. c3 Bd7 7. Re1 g6 8. d4 Bg7 9. Nbd2 O-O 10. Bxc6 Bxc6 11. dxe5 dxe5 12. Nxe5 Bxe4 13. Nxe4 Qxd1 14. Rxd1 Nxe4 15. Nd7 Rfe8 16. Bf4 c6 17. Kf1 Nf6 18. Bg5 Nxd7 19. Rxd7 Re5 20. Be7 Rb5 21. Ba3 Bf8 22. c4 Rb6 23. c5 (23. Bxf8 Kxf8 24. b3 a5 25. Rad1 (25. Re1 Re8) 25... a4 26. R1d3 axb3 27. Rxb3 Raa6 28. Rxb7 Rxb7 29. Rxb7 Ra4 30. c5 Ra5 31. a4 Ke8 32. Rc7 Rxc5 33. Ra7 Rc2) 23... Rb5 24. Rad1 (24. Re1 b6 (24... a5) (24... Rb8) (24... Bxc5) 25. cxb6 Bxa3 26. bxa3 Rxb6 27. Ree7 (27. g3) 27... Rb1+ 28. Ke2 Rb2+ 29. Ke3 Rxa2 (29... Rf8) 30. Rxf7 Re8+ 31. Kf3 (31. Kd3 Rd8) 31... Rf8) 24... Re8 25. Rd8 Rxd8 26. Rxd8 Kg7 27. b4 Be7 28. Bb2+ Bf6 29. Bxf6+ Kxf6 30. a3 a5 31. Rd4 axb4 32. axb4 Ke5 33. Rh4 h5 34. Ke2 b6 35. cxb6 Rxb6 36. Kd3 Rb5 37. Re4+ Kd6 38. Rd4+ Ke6 39. Kc4 f6 40. Re4+ Kd6 41. Rf4 Ke6 42. g3 g5 43. Re4+ Kd6 44. Rd4+ Ke7 45. f4 gxf4 46. gxf4 Ke6 47. Re4+ Kd6 48. Rd4+ Ke6 49. Re4+ Kd6 50. Rd4+ Ke6 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "TOP 16 GpA"]
+[Site "Mulhouse FRA"]
+[Date "2009.05.03"]
+[Round "7"]
+[White "Aleksander Delchev"]
+[Black "Hikaru Nakamura"]
+[Result "0-1"]
+[WhiteElo "2648"]
+[BlackElo "2701"]
+[Variant "Standard"]
+[ECO "B00"]
+[Opening "Pirc Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 129, 130 & 131: Aleksander Delchev - Hikaru Nakamura"]
+
+1. e4 d6 2. d4 g6 3. Be3 Bg7 4. Nc3 a6 5. f4 b5 6. Bd3 Bb7 7. Nf3 Nd7 8. e5 c5 9. Be4 Qc8 10. Bxb7 Qxb7 11. dxc5 dxe5 12. Qd5 Qxd5 13. Nxd5 Rc8 14. Nb6 Nxb6 15. cxb6 Nf6 16. O-O-O Ng4 17. b7 Rb8 18. Bb6 f6 19. Rd8+ Kf7 20. Rd7 Bh6 21. g3 exf4 22. Kb1 Ne5 23. Nxe5+ fxe5 24. Ba7 Ke6 25. Rhd1 f3 26. Rc7 e4 27. Rdd7 Rhe8 28. a3 Bg5 29. h4 e3 (29... Bh6 30. Ka2 e3 31. Rxe7+ (31. Bxb8 Rxb8 32. Rxe7+ Kf5 33. Rc8 Rxb7 34. Rxb7 Kg4 35. Rxh7 e2 36. Re7 f2 37. Rxe2 f1=Q 38. Re6 Qf7 39. Rc6 Kxg3 40. Kb1 Kxh4 41. Rxg6) 31... Rxe7 32. Bxb8 f2 33. Rxe7+ Kxe7 34. Bd6+ Ke6 35. b8=Q f1=Q) 30. Bxb8 f2 31. Ba7 f1=Q+ 32. Ka2 e2 { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 132"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 132"]
+[FEN "2r3k1/1p4pp/pq2p3/3p1p2/1PrNnP2/P2QP1P1/2P3KP/R4R2 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 133"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 133"]
+[FEN "3r2k1/p6p/1p4p1/2p1qp2/4p3/2P1P3/PPQ2PPP/4R1K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 134"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 134"]
+[FEN "1r4k1/3bpqbr/1p1n1ppp/p1pPpP2/P1P1P1PP/1PNBB3/6RK/2Q2R2 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 135"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 135"]
+[FEN "2r3k1/p1q2p2/1p2ppp1/2p5/2P5/1P2P1P1/P2RQP1P/6K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 136"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 136"]
+[FEN "1r1qr1k1/1p3pb1/3p1npp/p2Q4/PpP1P3/1P2R1PP/R4PB1/4B1K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 137"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 137"]
+[FEN "5bk1/5p2/p5p1/n3P3/1p6/4NP2/r4P1P/2RR2K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagram 138"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 138"]
+[FEN "3R1bk1/p5p1/2r3p1/6Np/P4p1P/5P2/8/7K b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 139 & 140"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 139 & 140"]
+[FEN "2n2rk1/2qbr1b1/pp1p1p1p/2pP1Pp1/P1P3P1/1PNQ1BBP/8/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. Rfe1 Rfe8 2. Re6 (2. Rxe7) 2... Bxe6 3. dxe6 *
+
+
+[Event "XX Carlos Torre Wimbledon"]
+[Site "Merida MEX"]
+[Date "2007.12.22"]
+[Round "4.1"]
+[White "Ivanchuk, Vassily"]
+[Black "Harikrishna, P."]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Classical Attack, Staunton Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 141: Ivanchuk, Vassily - Harikrishna, P."]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O O-O 8. c4 c6 9. Re1 Bf5 10. Qb3 Na6 11. cxd5 cxd5 12. Nc3 Be6 13. Qd1 f5 14. Nb5 Bb8 15. a3 Bf7 16. Be2 Nc7 17. Bf4 Nxb5 18. Bxb8 Nxd4 19. Qxd4 Qxb8 20. Ne5 Be6 21. f3 Nf6 22. Bd3 Qd6 23. Rac1 Rfe8 24. Rc2 Bd7 25. Rce2 a6 (25... Qb6?? 26. Qxb6 axb6 27. Nxd7 Rxe2 28. Nxf6+) 26. Nc4! Qc6 27. Ne3 Rac8 (27... g6 28. Nxd5! Nxd5 29. Bc4) 28. Nxf5 Bxf5 29. Bxf5 Rxe2 30. Rxe2 Re8 31. Rc2 Qd6 32. g3 g6 33. Bc8 Re7 34. Qc5 Ne8 35. Qd4 Nf6 36. Kf2 Kf7 37. Rc3 a5 38. Bh3 Rc7 39. Ke2 Rxc3 40. Qxc3 Qa6+ 41. Kd2 Qb6 42. Kd3 Ne8 43. Qe5 Qc6 44. Kd2 Nf6 45. Qd4 b6 46. b4 axb4 47. axb4 Qc7 48. Bf1 Qd6 49. Bb5 Qc7 50. Ba4 Qd6 51. Bb3 Ke7 52. Ke3 Qe6+ 53. Kf2 Qd6 54. Kg2 Qe6 55. Kf1 Qd6 56. Kf2 Kf7 57. Ba4 Qc7 58. Bb3 Qd6 59. Ke3 Qe6+ 60. Kd2 Qd6 61. Kd3 Ke7 62. Kc3 Qc7+ 63. Kb2 Qd6 64. Ka3 Qc6 65. g4 Qc1+ 66. Ka2 Qe1 67. Qxb6 Qd2+ 68. Ka3 Qc1+ 69. Ka4 Qa1+ 70. Kb5 Qf1+ 71. Kc6 Nd7 72. Qe3+ Kd8 73. b5 Qa1 74. b6 Qa5 75. Qg5+ Ke8 76. Qe3+ Kd8 77. Qd4 Qa8+ 78. Kb5 Qa3 79. Bxd5 Qd6 80. g5 Qxh2 81. f4 Ke7 82. Qb4+ Kd8 83. Qd4 Ke7 84. b7 Qe2+ 85. Bc4 Qe1 86. Kc6 Qh1+ 87. Kc7 Qh3 { 1-0 Black resigns. } 1-0
+
+
+[Event "Pearl Spring Chess Tournament"]
+[Site "Nanjing CHN"]
+[Date "2008.12.12"]
+[Round "2"]
+[White "Peter Svidler"]
+[Black "Sergei Movsesian"]
+[Result "0-1"]
+[WhiteElo "2727"]
+[BlackElo "2732"]
+[Variant "Standard"]
+[ECO "B83"]
+[Opening "Sicilian Defense: Scheveningen Variation, Modern Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 142 & 143: Peter Svidler - Sergei Movsesian"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6 6. Be2 Be7 7. O-O O-O 8. f4 Nc6 9. Be3 e5 10. Nxc6 bxc6 11. Kh1 exf4 12. Bxf4 Be6 13. Bf3 Qb8 14. b3 Qb4 15. Qd2 Rfd8 16. Rad1 Rac8 17. Qe3 d5 18. Be5 Qa5 19. exd5 Nxd5 20. Nxd5 cxd5 21. Bh5 d4 22. Qe4 g6 23. Bf3 Bf5 24. Qf4 Bg5 25. Qxg5 Qxe5 26. Bg4 (26. c4) 26... h6 27. Rxf5 Qg7 28. Qe7 (28. Qh4) 28... gxf5 29. Bxf5 Re8 30. Qd6 Rcd8 31. Qa6 Qg5 32. Bd3 Re7 33. Rf1 Kg7 34. g3 Qd5+ 35. Kg1 Rd6 36. Qc8 Qe6 37. Qb8 Rb6 38. Qd8 Rd6 39. Qb8 Rd5 40. Rf4 Rg5 41. Rf3 Qe5 42. Qd8 h5 43. Rf2 Re6 44. Qd7 Rf6 45. Re2 Qf4 46. Re4 (46. Re8) 46... Qf2+ 47. Kh1 h4 { 0-1 White resigns. } 0-1
+
+
+[Event "Fischer - Spassky World Championship Match"]
+[Site "Reykjavik ISL"]
+[Date "1972.08.10"]
+[Round "13"]
+[White "Boris Spassky"]
+[Black "Robert James Fischer"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "B04"]
+[Opening "Alekhine Defense: Modern Variation, Alburt Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 144: Boris Spassky - Robert James Fischer"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 g6 5. Bc4 Nb6 6. Bb3 Bg7 7. Nbd2 O-O 8. h3 a5 9. a4 dxe5 10. dxe5 Na6 11. O-O Nc5 12. Qe2 Qe8 13. Ne4 Nbxa4 14. Bxa4 Nxa4 15. Re1 Nb6 16. Bd2 a4 17. Bg5 h6 18. Bh4 Bf5 19. g4 Be6 20. Nd4 Bc4 21. Qd2 Qd7 22. Rad1 Rfe8 23. f4 Bd5 24. Nc5 Qc8 25. Qc3 e6 26. Kh2 Nd7 27. Nd3 c5 28. Nb5 Qc6 29. Nd6 Qxd6 30. exd6 Bxc3 31. bxc3 f6 32. g5 hxg5 33. fxg5 f5 34. Bg3 Kf7 35. Ne5+ Nxe5 36. Bxe5 b5 37. Rf1 Rh8 38. Bf6 a3 39. Rf4 a2 40. c4 Bxc4 41. d7 Bd5 42. Kg3 Ra3+ 43. c3 Rha8 44. Rh4 e5 45. Rh7+ Ke6 46. Re7+ Kd6 47. Rxe5 Rxc3+ 48. Kf2 Rc2+ 49. Ke1 Kxd7 50. Rexd5+ Kc6 51. Rd6+ Kb7 52. Rd7+ Ka6 53. R7d2 Rxd2 54. Kxd2 b4 55. h4 Kb5 56. h5 c4 57. Ra1 gxh5 58. g6 h4 59. g7 h3 60. Be7 Rg8 61. Bf8 h2 62. Kc2 Kc6 63. Rd1 b3+ 64. Kc3 h1=Q 65. Rxh1 Kd5 66. Kb2 f4 67. Rd1+ Ke4 68. Rc1 Kd3 69. Rd1+ Ke2 70. Rc1 f3 71. Bc5 Rxg7 72. Rxc4 Rd7 73. Re4+ Kf1 74. Bd4 f2 { 0-1 White resigns. } 0-1
+
+
+[Event "American Open"]
+[Site "1993"]
+[Date "????.??.??"]
+[White "J. Birkel"]
+[Black "J. Silman"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 145 & 146: J. Birkel - J. Silman"]
+[FEN "r2q1rk1/1p1nbppp/2p5/3p1b2/2nP4/PQ3NP1/4PPBP/R1B1NRK1 b - - 0 16"]
+[SetUp "1"]
+
+16... Qb6 17. Qc3 Ra4 (17... Qa5) 18. Nd3 Rfa8 19. Nfe5 (19. Nb2 Nxb2 20. Bxb2) 19... Ndxe5 20. Nxe5 Nxe5 (20... Nxa3) 21. dxe5 Bc5 22. Qb2 (22. e3 d4) 22... Qxb2 23. Bxb2 Bxa3 24. Bxa3 Rxa3 *
+
+
+[Event "Canada Day Open"]
+[Site "Dalhousie University/Halifax"]
+[Date "1999.07.01"]
+[Round "1"]
+[White "Harold Uuetoa"]
+[Black "Alvah Mayo"]
+[Result "0-1"]
+[Variant "Standard"]
+[ECO "A10"]
+[Opening "English Opening: Great Snake Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 147 & 148: Harold Uuetoa - Alvah Mayo"]
+
+1. c4 g6 2. d4 Bg7 3. e4 c5 4. Be3 Qb6 5. Nc3 cxd4 6. Nd5 dxe3 (6... Qxb2 7. Rb1 (7. Nc7+ Kd8 8. Bf4 d3 9. Rc1 Bd4 10. Qd2 g5 11. Bg3 Bxf2+) 7... Qxa2 8. Ra1 Qb2 9. Rb1 Qa3 10. Nc7+ Kd8 11. Nb5 Qc5 12. Nxd4 Bxd4 (12... Qa5+) 13. Bxd4 Qa5+ 14. Ke2 Nf6) 7. Nxb6 exf2+ 8. Kxf2 axb6 9. Qd2 Nc6 10. Nf3 Nf6 11. Bd3 Ng4+ 12. Ke2 O-O 13. h3 Nge5 14. Nxe5 Nd4+ 15. Kf2 Bxe5 16. Rhf1 d6 17. Kg1 Be6 18. Qb4 Nc6 19. Qb5 Ra5 20. Qb3 Rfa8 21. a3 b5 22. Qc2 bxc4 23. Be2 Bd4+ 24. Kh1 Ne5 25. Rad1 Bc5 26. Rfe1 b5 27. Qc3 Ra4 28. Rf1 b4 29. axb4 Rxb4 30. Ra1 Rab8 31. Ra2 Rb3 32. Qd2 Re3 33. Qc2 c3 34. bxc3 Bxa2 35. Qxa2 Rxc3 36. Bg4 Re3 37. Be6 Rf8 38. Bd5 Kg7 39. Qa6 e6 40. Bxe6 fxe6 41. Rxf8 Kxf8 42. Qc8+ Ke7 43. Qb7+ Nd7 44. Qa8 Re1+ 45. Kh2 Bg1+ 46. Kh1 Bd4+ 47. Kh2 Be5+ 48. g3 Re3 { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 149 & 150"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D19"]
+[Opening "Slav Defense: Czech Variation, Classical System, Main Line"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 149 & 150"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. e3 e6 7. Bxc4 Bb4 8. O-O O-O 9. Qe2 Bg6 10. Ne5 Nbd7 11. Rd1 Nxe5 12. dxe5 Nd7 13. f4 Qc7 14. Na2 Be7 15. e4 Nc5 16. Nc3 Rfd8 17. Rf1 Qd7 18. g4 h6 19. f5 Bh7 20. Be3 Qc7 21. f6 Bf8 22. fxg7 Kxg7 23. g5 Bg6 (23... hxg5 24. Qh5) 24. gxh6+ (24. b4 Qxe5) 24... Kh7 25. Bf4 Be7 (25... Rd4 26. Be3 Rad8 27. Bxd4 Rxd4 28. Rad1 Rxd1 29. Rxd1 Qxe5) (25... Nd7 26. h4) 26. Rf2 Rd4 (26... Nd7) 27. Rg2 Rg8 28. Be3 Qxe5 (28... Rd7 29. Bf4 Bf6) 29. Bxd4 Qxd4+ 30. Kh1 Kxh6 (30... Nxe4 31. Bd3 Nxc3 32. Bxg6+ Rxg6 33. bxc3 Qxc3 34. Rf1 Bf6 35. Rxg6 Kxg6) *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 71 - 153: Diagrams 151 & 152"]
+[Date "????.??.??"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B74"]
+[Opening "Sicilian Defense: Dragon Variation, Classical Variation, Stockholm Attack"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagrams 151 & 152"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. Be2 O-O 8. O-O Nc6 9. Nb3 Be6 10. f4 Na5 11. f5 Bc4 12. Nxa5 Bxe2 13. Qxe2 Qxa5 14. g4 Rac8 15. g5 Rxc3 16. gxf6 Rxe3 17. Qxe3 Bxf6 18. c3 Rc8 19. a3 Rc4 20. Rae1 b5 21. Rf3 Qc7 22. fxg6 hxg6 23. Rh3 a5 24. Rf1 Qb7 (24... Qc5) 25. Re1 (25. Qh6 Rxe4 26. Qh7+ (26. Rxf6 Rg4+ 27. Rg3 (27. Kf1 Qh1+) 27... Rxg3+ 28. hxg3 exf6) 26... Kf8) (25. Rxf6 Rxe4 26. Rxg6+ (26. Qh6 Rg4+) 26... fxg6 27. Qg5 (27. Qh6 Rg4+) 27... Re6 28. Qh6 Qb6+) 25... b4 26. axb4 axb4 27. Qh6 *
+
+
+[Event "Moscow"]
+[Site "1981"]
+[Date "????.??.??"]
+[White "L. Polugaevsky"]
+[Black "U. Andersson"]
+[Result "1/2-1/2"]
+[Variant "Standard"]
+[ECO "E04"]
+[Opening "Catalan Opening: Open Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
+[ChapterName "Diagram 153: L. Polugaevsky - U. Andersson"]
+
+1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. Nf3 c5 6. O-O Nc6 7. Qa4 cxd4 8. Nxd4 Qxd4 9. Bxc6+ Bd7 10. Rd1 Qxd1+ 11. Qxd1 Bxc6 12. Qc2 Be7 13. Qxc4 O-O 14. Nc3 Rfd8 15. Be3 Nd5 16. Nxd5 Bxd5 17. Qg4 Rdc8 18. Bd4 Bf8 19. e4 Bc6 20. h4 Rd8 21. Bc3 Rd3 22. h5 h6 23. Re1 Rad8 24. Kh2 a6 25. Re2 Rd1 26. Re1 R1d3 27. Re2 Bb5 28. Rc2 Bb4 29. b3 Bc6 30. Qf4 Bd6 31. Be5 Bf8 32. Bc3 Bd6 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+

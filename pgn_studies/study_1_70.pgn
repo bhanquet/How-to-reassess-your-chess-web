@@ -1,0 +1,991 @@
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 1"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 1"]
+[FEN "r1q2rk1/p1p2n1p/P1Pp2p1/3P1p2/3B1P2/3Q2P1/7P/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 2"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 2"]
+[FEN "r1q3k1/p1p1br1p/P1PpN1pP/3P1pP1/5P2/3Q4/8/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 3"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 3"]
+[FEN "3rr1k1/3q1pbp/pP4p1/8/3p1B1P/5QP1/5PK1/1RR5 w - - 0 1"]
+[SetUp "1"]
+
+1. b7 { [%eval 6.89] } 1... Rb8?? { [%eval 10.04] } { Blunder. Best move was a5. } (1... a5 2. b8=Q Rxb8 3. Rxb8 Rxb8 4. Bxb8 h6 5. Bf4 d3 6. Rc7) 2. Bxb8 { [%eval 10.47] } 2... Rxb8 { [%eval 10.32] } 3. Qc6 { [%eval 10.4] } 3... Qd8 { [%eval 12.07] } (3... Qxc6+ 4. Rxc6 Be5 5. Rc8+ Kg7 6. Rxb8 Bxb8 7. Ra1 d3 8. Kf3) 4. Qc8 { [%eval 12.02] } 4... Be5 { [%eval 18.81] } 5. Qxd8+ { [%eval 12.16] } 5... Rxd8 { [%eval 48.42] } 6. Rc8 { [%eval 31.65] } *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 4"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 4"]
+[FEN "2q1r1k1/1p2r2p/p1nbp1p1/2p5/2P1RP2/1P3NP1/P3R1BP/4Q1K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Bh3 { [%eval 3.4] } 1... Nd8 { [%eval 3.13] } 2. Ng5 { [%eval 3.76] } 2... Bb8? { [%eval 5.95] } { Mistake. Best move was Qd7. } (2... Qd7 3. Nxe6 Nc6 4. Qf1 Be5 5. fxe5 Rxe6 6. Rf2 h5 7. Bxe6+) 3. f5 { [%eval 5.97] } 3... gxf5 { [%eval 5.86] } 4. Bxf5 { [%eval 6.6] } *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 5"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 5"]
+[FEN "r2qbrk1/pppnbnp1/3p1p1p/P2PpP2/1PP1P1PP/1N1BBN2/1K1Q2R1/2R5 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 6"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 6"]
+[FEN "3r1rk1/pppq2bp/3p2p1/5b2/8/2P3P1/PP2QPBP/2BRR1K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Bxb7 Kh8 (1... c6 2. Qc4+) (1... Bg4 2. Qc4+ (2. f3) 2... Kh8 3. Bc6 (3. Rd4) 3... Qf5 4. Rd2) 2. Bg2 (2. Qc4) *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 7: Player - Player"]
+[Date "2017.10.06"]
+[White "Player"]
+[Black "Player"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 7: Player - Player"]
+[FEN "2qr1rk1/p1p2ppp/1p1p1b2/1P6/P1PP3P/3Q2P1/4RPBK/4R3 w - - 0 1"]
+[SetUp "1"]
+
+1. Bc6 Qg4 2. Re4 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 8: Player - Player"]
+[Date "2017.10.06"]
+[White "Player"]
+[Black "Player"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 8: Player - Player"]
+[FEN "2qr1r1k/p3b1pp/1p1p1p2/1Pp2P2/P1P1P1PP/5Q2/8/2N1R1RK w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 9"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B21"]
+[Opening "Sicilian Defense: Smith-Morra Gambit Accepted"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 9"]
+
+1. e4 { [%eval 0.0] } 1... c5 { [%eval 0.18] } 2. d4 { [%eval 0.0] } 2... cxd4 { [%eval 0.16] } 3. c3 { [%eval -0.2] } 3... dxc3 { [%eval -0.36] } 4. Nxc3 { [%eval -0.4] } 4... Nc6 { [%eval -0.2] } 5. Nf3 { [%eval -0.3] } 5... d6 { [%eval -0.25] } 6. Bc4 { [%eval -0.24] } 6... Nf6 { [%eval 0.25] } (6... e6) (6... a6) 7. e5 { [%eval 0.17] } 7... dxe5 { [%eval 0.38] } (7... Nxe5 8. Nxe5 dxe5 9. Bxf7+) (7... Ng4) 8. Qxd8+ { [%eval 0.58] } 8... Nxd8?! { [%eval 1.08] } { Inaccuracy. Best move was Kxd8. } (8... Kxd8) 9. Nb5 { [%eval 1.12] } 9... Kd7?? { [%eval #2] } { Checkmate is now unavoidable. Best move was Rb8. } (9... Rb8 10. Nc7+ Kd7 11. Nb5 Ke8 12. Nxe5 e6 13. O-O Be7 14. Be3 Nc6 15. Bf4 a6 16. Nxc6) 10. Nxe5+ { [%eval #1] } 10... Ke8 { [%eval #1] } 11. Nc7# 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 10"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 10"]
+[FEN "3r1rk1/1ppnq1p1/2n1bp1p/p1b1p3/2N1P2N/2P1B1P1/PP2QPBP/3R1RK1 b - - 0 1"]
+[SetUp "1"]
+
+1... Qf7 { [%eval 3.65] } (1... Kh7 2. Bxc5 Qxc5 (2... Nxc5 3. Ne3) 3. Ne3 Nb6 (3... Bxa2 4. Bh3) 4. Nd5 Nxd5 (4... Bxd5 5. exd5 Ne7 6. Qe4+ Kh8 7. c4) 5. exd5 Bxd5 6. Bxd5 Rxd5 7. Qe4+) 2. Rxd7 { [%eval 3.17] } (2. Bxc5 Bxc4) (2. Rd5 Bxd5 (2... b6) 3. exd5 Ne7 4. Nxa5 Bxe3 5. fxe3 Nxd5 6. Nf5) (2. b3 Bxc4 3. bxc4 Bxe3 4. fxe3) 2... Rxd7 { [%eval 3.77] } 3. Bxc5 { [%eval 3.69] } 3... Bxc4 { [%eval 3.71] } 4. Qg4 { [%eval 3.6] } 4... Bxf1 { [%eval 3.69] } 5. Bxf1 { [%eval 3.57] } (5. Bxf8 Bxg2) 5... Rfd8 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 11: Player - Player"]
+[Date "2017.10.06"]
+[White "Player"]
+[Black "Player"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 11: Player - Player"]
+[FEN "r1bqk2r/pp1nbppp/2p1pn2/4N3/2B5/2N5/PPP1QPPP/R1B2RK1 w kq - 0 1"]
+[SetUp "1"]
+
+1. Nxf7 Kxf7 (1... Qc7 2. Nxh8) 2. Qxe6+ Kg6 3. Bd3+ Kh5 4. Qh3# 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 12: Chapter 13"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 12: Chapter 13"]
+[FEN "r1bq1rk1/pp2bppp/2n1p3/3n4/3P4/2NB1N2/PP3PPP/R1BQ1RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "Mtel Masters"]
+[Site "Sofia BUL"]
+[Date "2007.05.20"]
+[Round "10"]
+[White "Veselin Topalov"]
+[Black "Krishnan Sasikiran"]
+[Result "1-0"]
+[WhiteElo "2772"]
+[BlackElo "2690"]
+[Variant "Standard"]
+[ECO "E52"]
+[Opening "Nimzo-Indian Defense: Normal Variation, Schlechter Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 13 & 14: Veselin Topalov - Krishnan Sasikiran"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 b6 5. Bd3 Bb7 6. Nf3 O-O 7. O-O d5 8. a3 Bd6 9. cxd5 exd5 10. b4 Nbd7 11. b5 Ne4 12. Bb2 Re8 13. a4 Re6 14. Ne2 a5 15. Ba3 Rc8 16. Bxd6 cxd6 (16... Rxd6) 17. Rc1 Ndf6 18. h3 Re7 19. Qb3 h6 20. Rxc8 Qxc8 21. Rc1 Rc7 22. Rxc7 Qxc7 23. Qc2 Qe7 24. Qc1 g6 25. Nh2 Kg7 26. h4 Ne8 27. f3 N4f6 28. Nf1 h5 29. Nf4 Nd7 (29... Nc7) 30. Qe1 Nf8 31. Qg3 Kh6 32. Nxh5 (32. Kf2) 32... gxh5 (32... Kxh5 33. Qf4) 33. Qg8 f5 34. Ng3 Ng7 35. Bxf5 Ng6 36. Bxg6 Kxg6 37. Nxh5 Qxe3+ 38. Kh2 Qe7 (38... Qxd4) 39. Nf4+ Kf6 40. g4 Qf7 41. Qd8+ Qe7 42. Qg8 Qf7 43. Qd8+ Qe7 44. Qxe7+ (44. Qxb6) 44... Kxe7 45. Kg3 Ne6 46. Nxe6 Kxe6 47. f4 Bc8 48. f5+ Kf7 49. h5 Bd7 50. h6 Kg8 51. Kf4 Be8 52. Kg5 Kf7 53. h7 Kg7 54. h8=Q+ Kxh8 55. Kf6 Bxb5 56. Ke7 Bd3 57. f6 Bg6 58. f7 Bxf7 59. Kxf7 { 1-0 Black resigns. } 1-0
+
+
+[Event "Tilburg"]
+[Site "Tilburg NED"]
+[Date "1991.10.21"]
+[Round "4"]
+[White "Nigel Short"]
+[Black "Jan Timman"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "B04"]
+[Opening "Alekhine Defense: Modern Variation, Alburt Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 15: Nigel Short - Jan Timman"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 g6 5. Bc4 Nb6 6. Bb3 Bg7 7. Qe2 Nc6 8. O-O O-O 9. h3 a5 10. a4 dxe5 11. dxe5 Nd4 12. Nxd4 Qxd4 13. Re1 e6 14. Nd2 Nd5 15. Nf3 Qc5 16. Qe4 Qb4 17. Bc4 Nb6 18. b3 Nxc4 19. bxc4 Re8 20. Rd1 Qc5 21. Qh4 b6 22. Be3 Qc6 23. Bh6 Bh8 24. Rd8 Bb7 25. Rad1 Bg7 26. R8d7 Rf8 27. Bxg7 Kxg7 28. R1d4 Rae8 29. Qf6+ Kg8 30. h4 h5 31. Kh2 Rc8 32. Kg3 Rce8 33. Kf4 (33. Ng5 Qxg2+) (33. Rf4 Qxd7) 33... Bc8 34. Kg5 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagrams 16 & 17"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Panov Transfer"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 16 & 17"]
+
+1. e4 d5 2. exd5 Nf6 3. c4 c6 4. dxc6 Nxc6 5. Nc3 e5 6. d3 Bf5 7. Nf3 e4 8. dxe4 Nxe4 9. Be2 Bb4 10. Bd2 Nxd2 11. Nxd2 Nd4 12. Rc1 O-O 13. Nf1 Qg5 14. Ne3 Rad8 15. h4 Qf6 16. O-O Nxe2+ 17. Qxe2 Bd3 *
+
+
+[Event "Topalov-Kamsky Match"]
+[Site "1:01:33-1:30:33"]
+[Date "2009.02.24"]
+[Round "6"]
+[White "Gata Kamsky"]
+[Black "Veselin Topalov"]
+[Result "1/2-1/2"]
+[Variant "Standard"]
+[ECO "B12"]
+[Opening "Caro-Kann Defense: Advance Variation, Short Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 18: Gata Kamsky - Veselin Topalov"]
+
+1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 c5 6. Be3 cxd4 7. Nxd4 Ne7 8. Nd2 Nbc6 9. N2f3 Bg4 10. O-O Bxf3 11. Nxf3 g6 12. c4 (12. Bg5 Bg7 13. Bf6 Bxf6 14. exf6 Ng8) (12. Qd2 Bg7 13. Bh6 Bxh6 14. Qxh6 Nf5 15. Qd2 Nh4) 12... Bg7 13. cxd5 Nxd5 14. Bc5 Bf8 (14... Nxe5 15. Nxe5 Bxe5 16. Bb5+) 15. Qc1 Rc8 (15... Bxc5 16. Qxc5 Rc8 17. Rac1) 16. Bxf8 Nd4 17. Qd1 Nxe2+ 18. Qxe2 Kxf8 19. Rac1 Kg7 20. h4 Qb6 21. g3 h6 22. a3 Rc5 23. Rc2 Rhc8 24. Rfc1 a5 25. Qd2 Rxc2 26. Rxc2 Rc5 27. Qc1 Rxc2 28. Qxc2 Ne7 29. Qc3 Nc6 30. b3 Qd8 31. a4 Qd1+ 32. Kg2 Qe2 33. Qe3 Qd1 34. Nd2 Nb4 35. Nc4 Nc2 36. Qd2 Qb1 37. Qf4 Ne1+ 38. Kh2 Qxb3 39. Qf6+ Kg8 40. Qd8+ Kh7 41. Qf6 Kg8 42. Qd8+ Kh7 43. Qf6 Kg8 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "6th European Individual Championship"]
+[Site "Warsaw POL"]
+[Date "2005.06.25"]
+[Round "7"]
+[White "Liviu Dieter Nisipeanu"]
+[Black "Vadim Milov"]
+[Result "1-0"]
+[WhiteElo "2670"]
+[BlackElo "2653"]
+[Variant "Standard"]
+[ECO "C10"]
+[Opening "French Defense: Rubinstein Variation, Blackburne Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 19: Liviu Dieter Nisipeanu - Vadim Milov"]
+
+1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Nf3 Ngf6 6. Nxf6+ Nxf6 7. Bg5 h6 8. Be3 Bd6 9. Bd3 Bd7 10. Qe2 Bc6 11. O-O-O Qe7 12. c4 Bxf3 13. Qxf3 c5 14. d5 e5 15. Rde1 a6 16. g4 b5 17. g5 hxg5 18. Bxg5 bxc4 19. Bxc4 Rb8 20. b3 Kf8 21. Re4 Rb6 22. Rg1 Bc7 23. Qg3 Qd6 24. Rh4 Rxh4 25. Qxh4 e4 26. Be3 g6 27. Kc2 Rb8 28. Bg5 Nh5 29. Bh6+ Ng7 30. Rg4 (30. Bf4 Qxf4 31. Qh8+ Ke7 32. Qxg7 Qxf2+) (30. Bg5 Kg8 (30... Qxh2 31. Qxh2 Bxh2 32. Rh1) (30... Nh5 31. Qxe4) 31. Be7) 30... Qxh2 (30... Qb6 31. d6 Qxd6 (31... Bxd6 32. Qf6) 32. Bf4) (30... Kg8 31. Bf4 Qd7 32. Bxc7 Qxc7 33. Rxg6) 31. Qf6 { 1-0 Black resigns. } (31. Rxe4 Kg8 32. d6 Qxd6 33. Bf4) 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 20: Player - Player"]
+[Date "2017.10.06"]
+[White "Player"]
+[Black "Player"]
+[Result "0-1"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 20: Player - Player"]
+[FEN "8/8/8/P7/1K2nkP1/1P1Bp3/8/8 b - - 0 63"]
+[SetUp "1"]
+
+63... Nf2 64. Be2 Nxg4 65. a6 Ne5 66. a7 Nc6+ 67. Kc5 Nxa7 68. Kb6 Nc8+ 69. Kc7 Ne7 70. b4 Nd5+ 71. Kd6 Nxb4 72. Kc5 Nc2 73. Kc4 Kg3 74. Kc3 Kf2 75. Bc4 Ne1 76. Kd4 Nf3+ 77. Ke4 Nd2+ 78. Kd4 Nxc4 { 0-1 White resigns. } 0-1
+
+
+[Event "World Blitz Cup"]
+[Site "Moscow RUS"]
+[Date "2007.11.22"]
+[Round "38"]
+[White "Viswanathan Anand"]
+[Black "Vassily Ivanchuk"]
+[Result "0-1"]
+[WhiteElo "2801"]
+[BlackElo "2787"]
+[Variant "Standard"]
+[ECO "B42"]
+[Opening "Sicilian Defense: Kan Variation, Polugaevsky Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 21 & 22: Viswanathan Anand - Vassily Ivanchuk"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Bd3 Bc5 6. Nb3 Ba7 7. Qe2 Nc6 8. Be3 d6 9. N1d2 Nf6 10. f4 O-O 11. Bxa7 Rxa7 12. g4 b5 13. O-O-O Rc7 14. Rhg1 Qe7 15. Kb1 Nd7 16. g5 Bb7 17. Rg3 Nb4 18. Rh3 g6 19. Qg4 Rfc8 20. Qh4 Nf8 21. a3 Nxd3 22. cxd3 h5 23. gxh6 Qxh4 24. Rxh4 Nh7 25. Nd4 Nf6 26. N2f3 Re8 27. Ng5 e5 28. fxe5 dxe5 29. Ndf3 (29. h7+ Kg7 (29... Kh8 30. Rf1) 30. Nde6+ fxe6 31. Nxe6+ Kh8 (31... Rxe6 32. h8=Q+) 32. Nxc7) 29... Nh5 30. Rg1 (30. d4 exd4 (30... f6 31. dxe5 fxg5 32. Nxg5 Kh8 33. Rd6) 31. e5 Bxf3 32. Nxf3 Kh7 33. Rhxd4 Kxh6 34. Rd6) 30... Kh8 31. Nh3 Bc8 32. Nf2 Nf4 33. Nxe5 Ne2 34. Re1 Nd4 35. Neg4 (35. Nfg4 Bxg4 36. Nxg6+ fxg6 37. Rxg4 Kh7) 35... Nf3 36. Nf6 Rd8 37. Nd5 Rb7 { 0-1 White resigns. } 0-1
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 23"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 23"]
+[FEN "8/5k2/2b1p1p1/2PpPpPp/3P1N1P/2K5/8/8 w - - 0 1"]
+[SetUp "1"]
+
+1. Kb4 Be8 2. Ka5 Ke7 3. Kb6 Kd7 4. Kb7 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 24"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 24"]
+[FEN "7k/8/p7/P7/8/5B2/7N/7K w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 25"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 25"]
+[FEN "2b3k1/p5p1/5p1p/2pPpP2/2PpP1P1/1P6/5N1P/4K3 b - - 0 1"]
+[SetUp "1"]
+
+1... a5 2. Nd3 a4 3. bxa4 Bd7 4. Nxc5 (4. a5) *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 26"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 26"]
+[FEN "r1bn1rk1/pp3ppp/2pbp3/3p4/2PP3q/P1NBP3/1P2QPPP/2RR1NK1 w - - 0 1"]
+[SetUp "1"]
+
+1. e4 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 27"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 27"]
+[FEN "2qr2k1/p4pp1/1p1rb2p/3p4/3N1Q2/P1P4P/1P1R1PP1/3R2K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 28"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 28"]
+[FEN "r3qrk1/p1n3p1/1pp1p2p/4Np2/3P4/2P5/PP2QPPP/3RR1K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 29"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 29"]
+[FEN "r2r2k1/2qb1p1p/p1pNp1p1/1pP1P3/PP3P2/8/2Q3PP/R2R2K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "Corus Group C"]
+[Site "Wijk aan Zee NED"]
+[Date "2007.01.26"]
+[Round "11"]
+[White "Ian Nepomniachtchi"]
+[Black "Stellan Brynell"]
+[Result "1-0"]
+[WhiteElo "2587"]
+[BlackElo "2501"]
+[Variant "Standard"]
+[ECO "C00"]
+[Opening "French Defense: Two Knights Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 30: Ian Nepomniachtchi - Stellan Brynell"]
+
+1. e4 e6 2. Nf3 d5 3. Nc3 d4 4. Ne2 c5 5. Ng3 Nf6 6. Bc4 Nc6 7. a3 Qc7 8. d3 Bd6 9. O-O h6 10. c3 dxc3 11. bxc3 O-O 12. Qe2 Ne5 13. Ba2 Nxf3+ 14. Qxf3 Be5 15. Ne2 b6 16. Qh3 Qd7 17. f4 Bc7 18. Bb2 Ba6 19. c4 Qe7 20. Rf3 Rad8 21. Rg3 Kh7 22. Rf1 Bc8 23. Bb1 Ne8 24. e5 g6 25. Bc1 (25. Nc3 Bb7 26. Ne4 Bxe4 27. dxe4 Rg8 28. f5) 25... Rh8 26. Rg4 Ng7 27. Ng3 Nf5 28. Ne4 Kg7 29. Bb2 Bb7 30. Nd6 Bc6 31. d4 Bxd6 32. d5 Bc7 33. d6 Qe8 34. dxc7 Rc8 35. Bxf5 exf5 36. Rg3 Be4 37. Qh4 Qe6 38. Rd1 Kh7 39. Rd6 Qxc4 40. Rdxg6 { 1-0 Black resigns. } 1-0
+
+
+[Event "M-Tel Masters"]
+[Site "Sofia BUL"]
+[Date "2008.05.09"]
+[Round "2"]
+[White "Veselin Topalov"]
+[Black "Vassily Ivanchuk"]
+[Result "0-1"]
+[WhiteElo "2767"]
+[BlackElo "2740"]
+[Variant "Standard"]
+[ECO "C11"]
+[Opening "French Defense: Steinitz Variation, Boleslavsky Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 31: Veselin Topalov - Vassily Ivanchuk"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. a3 cxd4 9. Nxd4 Bc5 10. Be2 O-O 11. Qd2 Qc7 12. Bf3 Nxd4 13. Bxd4 Nb6 14. Ne2 Bxd4 15. Qxd4 Bd7 16. b3 Bb5 17. Nc3 Rfc8 18. Nxb5 axb5 19. Be2 Nd7 20. Ra2 (20. Bxb5 Qa5+) (20. Bd3 Nc5 21. Be2 (21. O-O Nxd3 22. cxd3 Qc3) 21... Na6 22. Bd3 Qa5+ 23. Ke2 (23. b4 Nxb4) 23... Nc5 24. Ra2 (24. b4 Qa4 25. Rhc1 Nxd3 26. cxd3 Rc2+) 24... Nxd3 25. cxd3 Rc3 26. b4 Qc7) 20... Nb8 21. O-O Nc6 22. Qd2 (22. Qd3 Nb4) 22... Qb6+ 23. Kh1 Qa5 24. Qxa5 Rxa5 25. Raa1 Rca8 26. Rad1 Rxa3 27. Bxb5 Nb4 28. c4 R8a5 29. f5 exf5 30. g4 Rxb3 31. gxf5 Re3 32. Rb1 Nd3 33. e6 d4 34. Be8 Nc5 35. Bxf7+ Kf8 36. f6 gxf6 37. Rxf6 Ke7 38. Rh6 d3 39. Rxh7 d2 40. Rg1 Re1 41. Bh5+ Kxe6 42. Rg7 Ne4 43. Rg6+ Ke5 { 0-1 White resigns. } 0-1
+
+
+[Event "European Team Chess Championships"]
+[Site "Crete GRE"]
+[Date "2007.10.31"]
+[Round "4"]
+[White "Michael Roiz"]
+[Black "Csaba Balogh"]
+[Result "1-0"]
+[WhiteElo "2644"]
+[BlackElo "2562"]
+[Variant "Standard"]
+[ECO "A07"]
+[Opening "King's Indian Attack, with e6"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 32: Michael Roiz - Csaba Balogh"]
+
+1. Nf3 Nf6 2. g3 d5 3. Bg2 e6 4. O-O Nbd7 5. d3 b6 6. c4 Bb7 7. cxd5 exd5 8. Nc3 Be7 9. e4 dxe4 10. dxe4 Nc5 11. Nd4 O-O (11... Nfxe4 12. Nxe4 Bxe4 (12... Nxe4 13. Re1) 13. Bxe4 Nxe4 14. Re1 Nf6 15. Qe2) 12. e5 Bxg2 (12... Nd5 13. Nc6 Bxc6 (13... Nxc3 14. Nxd8 Nxd1 15. Nxb7) 14. Nxd5 Bxd5 (14... Bb5 15. Re1 Re8 16. Qg4) 15. Bxd5) 13. Kxg2 Nd5 14. Nc6 Nxc3 15. bxc3 Qe8 16. Qd5 Kh8 (16... Na4 17. Bd2 Bc5) 17. Ba3 f5 18. f4 Rg8 19. Rad1 Bf8 20. Nd8 Rxd8 21. Qxd8 Qa4 22. Bxc5 Bxc5 23. Qd2 Qe4+ 24. Rf3 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 33"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 33"]
+[FEN "rn3rk1/2qbnpb1/pp1p3p/2pPp1pP/BPP1P1P1/P1NQBP2/4N1K1/RR6 w - - 0 1"]
+[SetUp "1"]
+
+1. Rb3 Bxa4 (1... cxb4 2. axb4 (2. Rxb4) 2... Rc8 3. c5 bxc5 (3... b5 4. Bxb5) 4. bxc5 dxc5 5. d6 c4 6. dxc7 cxd3 7. cxb8=Q) 2. Nxa4 Nd7 3. Rab1 Rab8 4. R1b2 Rfe8 (4... Rfc8 5. Qb1 cxb4 6. Rxb4 a5 7. Bxb6 Nxb6 8. Rxb6 Rxb6 9. Nxb6) (4... b5 5. bxc5 bxa4 6. Rxb8 Nxb8 7. cxd6 Qxd6 8. c5 Qd7 9. Qb1 Qd8 10. Rb7) 5. Qb1 Bf8 6. bxc5 bxc5 7. Rb7 Rxb7 8. Rxb7 Qa5 9. Qc2 Nb8 (9... Qd8 10. Qb3 (10. Bd2)) 10. Rb6 Nd7 11. Bd2 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 34"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 34"]
+[FEN "3n4/6k1/8/8/P7/8/B7/7K w - - 0 1"]
+[SetUp "1"]
+
+1. Bd5 (1. a5 Nc6 2. a6 Kf6 3. Bd5 Na7) 1... Kf6 (1... Nf7 2. Bxf7) 2. a5 Ke5 (2... Ne6 3. Bxe6 (3. a6 Nc7) 3... Kxe6 4. a6 Kd6 5. a7) 3. a6 Kxd5 4. a7 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 35"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 35"]
+[FEN "3qrr2/pp4k1/2pp1bn1/6pp/3P1p2/2P2NP1/PPQN1P1P/R3R2K b - - 0 1"]
+[SetUp "1"]
+
+1... g4 2. Ng1 (2. Nh4 Bxh4 3. gxh4 Qxh4) 2... f3 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 36"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 36"]
+[FEN "8/8/8/8/2k3p1/2p2pP1/2K2P2/7N w - - 0 1"]
+[SetUp "1"]
+
+1. Kc1 Kd3 2. Kd1 c2+ 3. Kc1 Ke2 4. Kxc2 Kf1 5. Kd3 (5. Kd2 Kg2 6. Ke1 Kxh1 7. Kf1 Kh2 8. Ke1 Kg1 9. Kd2 Kxf2) 5... Kg2 6. Ke4 Kxh1 7. Kf4 Kg2 8. Kxg4 Kxf2 9. Kh4 Ke2 10. g4 f2 11. g5 f1=Q *
+
+
+[Event "Russian Championship Higher League"]
+[Site "Krasnoyarsk RUS"]
+[Date "2007.09.03"]
+[Round "1"]
+[White "Alexander Galkin"]
+[Black "Evgeny Romanov"]
+[Result "1/2-1/2"]
+[WhiteElo "2608"]
+[BlackElo "2521"]
+[Variant "Standard"]
+[ECO "C99"]
+[Opening "Ruy Lopez: Closed, Chigorin Defense, Panov System"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 37: Alexander Galkin - Evgeny Romanov"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O 9. h3 Na5 10. Bc2 c5 11. d4 Qc7 12. Nbd2 cxd4 13. cxd4 Nc6 14. a3 Bd7 15. d5 Na5 16. Nf1 Nh5 17. b3 Rfc8 18. Ne3 g6 19. Bd2 Bd8 20. Kh2 Qb8 21. g3 Bb6 22. Bd3 Rc7 23. Rb1 Qf8 24. Rf1 Rac8 25. Qe2 Nb7 26. b4 Ng7 27. Ng4 f6 28. Nh4 Bd4 29. Rbc1 Nd8 30. Rxc7 Rxc7 31. Rc1 Rxc1 32. Bxc1 Qe7 33. Qc2 Ne8 34. Nh6+ Kg7 35. a4 Nf7 36. Nxf7 Kxf7 37. Nf3 Bb6 38. a5 Ba7 39. Ne1 Qd8 40. Ng2 Qc8 41. Qxc8 Bxc8 42. Be3 Bxe3 43. Nxe3 Ng7 44. Nd1 f5 45. Nc3 Bd7 46. Kg2 fxe4 47. Nxe4 Ke7 48. g4 Ne8 49. Kg3 { 1/2-1/2 The game is a draw. } 1/2-1/2
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 38: Silman - Montchalin"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A43"]
+[Opening "Benoni Defense: Benoni-Indian Defense, Kingside Move Order"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 38: Silman - Montchalin"]
+
+1. d4 Nf6 2. Nf3 c5 3. d5 d6 4. Nc3 g6 5. e4 Bg7 6. Bb5+ Nbd7 7. a4 O-O 8. O-O a6 9. Be2 b6 10. Re1 Ne8 11. Bf4 Qc7 12. Qd2 Ne5 13. Nxe5 dxe5 14. Bh6 Qd6 15. Bxg7 Kxg7 16. Nb1 Qf6 (16... Bd7) (16... Bb7) (16... Nf6 17. Qe3 (17. Na3 Nxe4 18. Qe3 Nf6 19. Nc4 Nxd5 20. Nxd6 Nxe3 21. Nxc8 Nxc2 22. Nxb6 Ra7 23. a5)) 17. Qc3 Nd6 18. Nd2 e6 19. a5 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 39"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 39"]
+[FEN "3rr1kn/ppnqb1pp/2p1p3/6PP/1PBPP1Q1/P3B3/2N5/2R2R1K w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 40"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 40"]
+[FEN "5rk1/1b1n2pp/p3pr2/1p1p4/3R1P2/P1N2R2/1PP1B1PP/7K b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 41"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 41"]
+[FEN "r1bq1r1k/2p3pp/pppbn3/4Np2/3P1P2/NQP1B3/PP4PP/R3R1K1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 42"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 42"]
+[FEN "2r2rk1/pbqnbppp/1p3n2/1Pp1p3/2P1P3/P4NP1/1BQN1PBP/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 43: Player - Player"]
+[Date "2017.10.06"]
+[White "Player"]
+[Black "Player"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 43: Player - Player"]
+[FEN "4r1k1/2qn2bp/p2p1ppn/2pP4/1rN1PP1B/2NQ3P/1P4P1/4RR1K w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 44"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 44"]
+[FEN "r5k1/pp1rb1pp/3N2b1/2p1B3/5P2/1P3K2/P5PP/R2R4 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 45"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 45"]
+[FEN "r1b2rk1/1p1nqpbp/2p2np1/p3p3/P3P3/2NQBN1P/1PP1BPP1/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 46"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 46"]
+[FEN "r1b1rnk1/1p2qp1p/p1pp1np1/4p3/2PPP1P1/1QN1BPN1/PP6/1K1R1B1R w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 47"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 47"]
+[FEN "3rnrk1/2qn1pbp/1p4p1/2p1p3/4P3/4B1PP/1PPNQPB1/R4RK1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 48"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 48"]
+[FEN "r1bq1rk1/pp1nbppp/2pp1n2/4p3/P1BPP3/2N2N2/1PP2PPP/R1BQR1K1 b - - 0 1"]
+[SetUp "1"]
+
+1... c5 2. d5 (2. dxe5 Nxe5 3. Nxe5 dxe5 4. Qe2) *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 49"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 49"]
+[FEN "r4rk1/pp2qn1p/3p2p1/5p2/2P1p3/1P2P2P/P2RBPP1/Q2R2K1 w - - 0 1"]
+[SetUp "1"]
+
+1. c5 dxc5 (1... Rad8 2. cxd6 Rxd6 (2... Nxd6 3. Qd4 a6 4. Bc4+ Nxc4 5. Qxd8 Rxd8 6. Rxd8+ Qf8 7. R1d7) 3. Rxd6 Nxd6 4. Qd4 Nf7 (4... Rd8 5. Bc4+) 5. Qxa7 Ne5 (5... Rd8 6. Rxd8+ Nxd8 7. Qd4 h5 8. Qb6 Kg7 9. b4 Qd7 10. a4 Qd2 11. Bf1) 6. Ba6 (6. Rd5) 6... Rf7 7. Qb8+ Kg7 8. Bxb7 Qc7 9. Qxc7 Rxc7 10. Bd5 Rc2 11. b4 Nd3 12. Bb3) 2. Rd7 Qe8 3. Bc4 Rb8 4. Qf6 b5 5. Be6 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 50"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 50"]
+[FEN "7k/6p1/5pBp/3Pp3/3p4/2p5/1p5K/8 w - - 0 1"]
+[SetUp "1"]
+
+1. d6 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 51"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 51"]
+[FEN "r2q1rk1/pb2bpp1/1pnpp2p/4P3/3P4/P1PB1N2/4QPPP/R1B2RK1 w - - 0 1"]
+[SetUp "1"]
+
+1. Qe4 f5 (1... g6 2. Bxh6 Nxe5 3. Qxb7 Nxd3 4. Qa6 Nb2 5. Bxf8 Bxf8 6. Rfb1) 2. exf6 Rxf6 3. Re1 Na5 (3... Qd7 4. Qh7+ Kf7 5. Bg5 hxg5 (5... Rxf3 6. Bg6+ Kf8 7. Qh8#) 6. Nxg5+ Ke8 7. Qg8+ Rf8 (7... Bf8 8. Nxe6) 8. Nxe6 Rxg8 9. Bg6#) 4. Qh7+ Kf7 5. Bg5 Qg8 (5... hxg5 6. Nxg5+ Ke8 7. Nxe6 Rxe6 8. Qg8+ Kd7 9. Qxe6+ Kc7 10. Qxe7+) 6. Bxf6 Qxh7 7. Bxh7 Bxf6 8. Be4 *
+
+
+[Event "38th Biel Chess Festival"]
+[Site "Biel SUI"]
+[Date "2005.07.25"]
+[Round "8"]
+[White "Andrei Volokitin"]
+[Black "Yannick Pelletier"]
+[Result "1-0"]
+[WhiteElo "2671"]
+[BlackElo "2603"]
+[Variant "Standard"]
+[ECO "B48"]
+[Opening "Sicilian Defense: Taimanov Variation, Bastrikov Variation, English Attack"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 52: Andrei Volokitin - Yannick Pelletier"]
+
+1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7 6. Be3 Nf6 7. Qd2 Bb4 8. f3 Nxd4 9. Qxd4 Bxc3+ 10. bxc3 b6 11. Bc1 e5 (11... Qc5 12. Qxc5 bxc5 13. Ba3 d6 14. O-O-O Ke7 15. e5 dxe5 16. Bxc5+ Ke8 17. Bb5+ Bd7 18. Rxd7 Nxd7 19. Rd1 Rd8 20. c4) (11... Bb7 12. Ba3 Rc8 13. c4 Ba6 (13... e5) 14. e5 Ng8 15. Bd3 Bxc4 16. O-O Bxd3 17. cxd3 Ne7 18. Rac1 Nc6 (18... Qb8 19. Rxc8+ Qxc8 20. Rc1 Qb7 21. Qb4 Nf5 22. Qe4 Qb8 23. Qc4) 19. Qe4 Qd8 20. d4) 12. Qd2 O-O 13. Ba3 Re8 14. Bb5 a6 (14... Re6 15. c4 Bb7 16. O-O-O) 15. Bd6 Qa7 16. Bc4 b5 17. Bb3 Bb7 18. O-O-O a5 19. a3 Rac8 20. g4 Rc6 21. g5 Nh5 22. Bxe5 Qc5 23. Qxd7 Qxe5 24. Bxf7+ Kf8 25. Bxe8 Rc7 26. Qd8 Qf4+ 27. Kb1 Rc8 28. Qb6 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagrams 53 & 54"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 53 & 54"]
+[FEN "5rk1/1p1b1rp1/p1n1p2p/3p3q/1P1P4/P2B1N1P/3QRPP1/4R1K1 w - - 0 1"]
+[SetUp "1"]
+
+1. Ne5 (1. Re3 Rxf3 2. Rxf3 Rxf3 3. Be2 Rxf2 4. Kxf2 Qh4+ 5. Kg1 Qxd4+ 6. Qxd4 Nxd4) 1... Nxe5 (1... Nxd4 2. Bg6 Nxe2+ 3. Rxe2) 2. Rxe5 (2. dxe5) 2... Qh4 3. R1e2 Qf4 4. R5e3 Qg5 5. g3 Qh5 6. Kh2 (6. f4 Qxh3 (6... g5) 7. Rh2 Qg4 8. Rh4) 6... e5 7. dxe5 (7. Rxe5 Qxh3+ 8. Kg1 Bg4) 7... Qxh3+ 8. Kg1 d4 9. Re4 (9. e6 dxe3 10. exf7+ Rxf7 11. Rxe3 Bc6 12. Be4 Bxe4 13. Rxe4 Qf5) 9... Rf3 10. Bc4+ Kh8 11. Qe1 d3 12. Rd2 Bc6 13. Rh4 Qf5 14. Bxd3 Rxd3 15. Rf4 Qh3 16. Rxf8+ Kh7 17. f3 Rxd2 18. Qxd2 Qxg3+ 19. Qg2 Qe1+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 55"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 55"]
+[FEN "8/8/8/7p/pkp3pP/5pP1/1PK2P1B/8 b - - 0 1"]
+[SetUp "1"]
+
+1... c3 2. bxc3+ Kc4 3. Bg1 (3. Kb2 a3+ 4. Kxa3 Kxc3 5. Ka4 Kd3 6. Kb4 Ke2 7. Bg1 Kf1) 3... a3 4. Bh2 a2 5. Kb2 a1=Q+ 6. Kxa1 Kxc3 7. Kb1 Kd2 8. Bg1 Ke2 9. Kc1 Kf1 10. Kd2 Kxg1 11. Ke3 Kg2 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 56"]
+[Date "????.??.??"]
+[White "Enter New Game"]
+[Result "1-0"]
+[Variant "Standard"]
+[ECO "A16"]
+[Opening "English Opening: Anglo-Indian Defense, Queen's Knight Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 56"]
+
+1. c4 Nf6 2. Nc3 g6 3. g3 Bg7 4. Bg2 O-O 5. d3 d6 6. e4 e5 7. Nge2 Bg4 8. h3 Be6 9. O-O Qd7 10. Kh2 c5 11. f4 Qe8 12. f5 Bd7 13. Be3 a6 14. g4 Nc6 15. g5 Nh5 16. Nd5 Qd8 17. f6 Bh8 18. Bf3 Nf4 19. Bxf4 exf4 20. Nexf4 Ne5 21. Ne7+ { 1-0 Black resigns. } 1-0
+
+
+[Event "French League Top 16"]
+[Site "Port Barcares FRA"]
+[Date "2005.05.07"]
+[Round "11"]
+[White "Alexander Grischuk"]
+[Black "Christian Bauer"]
+[Result "1-0"]
+[WhiteElo "2724"]
+[BlackElo "2640"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Main Line, Mieses Variation"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 57 & 58: Alexander Grischuk - Christian Bauer"]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Bd2 c6 6. Bc4 Bf5 7. Nd5 Qd8 8. Nxf6+ gxf6 9. Nf3 e6 10. c3 Nd7 11. Nh4 Nb6 12. Bb3 Bg6 13. Qf3 Be7 14. g3 Qd7 15. O-O f5 16. Ng2 Nd5 17. Nf4 O-O-O 18. Rfe1 Nxf4 19. Bxf4 Bd6 20. Bxd6 Qxd6 21. Re5 Kb8 22. Bc4 Rhe8 23. Rae1 Re7 24. b4 Rc7 (24... Rde8 25. Qf4 f6 26. Rxf5 (26. Rxe6 Qxf4 27. gxf4 Rxe6 28. Rxe6 Rg8 29. Kf1 Bf7) 26... e5 27. dxe5 fxe5 28. Qh6 Rd7 29. Rf3 e4 30. Rfe3 Rf8) 25. h4 h5 26. a4 (26. Bxe6 f4 (26... fxe6 27. Rxe6) 27. Bh3 fxg3 28. Qxg3) 26... Qf8 27. Qf4 Rdc8 28. Bf1 Bh7 29. Be2 Bg6 30. Bf3 Ka8 31. b5 Qa3 32. a5 cxb5 33. Rxb5 a6 34. Rxb7 Rxb7 35. Rb1 Qe7 (35... Rb8 36. Qc7) 36. Rxb7 Qxb7 37. Bxb7+ Kxb7 38. Qd6 Rc6 39. Qb4+ Kc8 40. f4 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagrams 59 & 60"]
+[Date "2018.08.07"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A15"]
+[Opening "English Opening: Anglo-Indian Defense"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagrams 59 & 60"]
+[UTCDate "2018.08.07"]
+[UTCTime "14:30:28"]
+
+1. c4 { [%eval 0.0] } 1... Nf6 { [%eval 0.17] } 2. g3 { [%eval 0.03] } 2... g6 { [%eval 0.42] } 3. Bg2 { [%eval 0.15] } 3... Bg7 { [%eval 0.21] } 4. Nc3 { [%eval 0.38] } 4... O-O { [%eval 0.22] } 5. e4 { [%eval -0.09] } 5... d6 { [%eval 0.0] } 6. Nge2 { [%eval -0.03] } 6... c5 { [%eval 0.1] } 7. O-O { [%eval 0.2] } 7... e5 { [%eval 0.64] } 8. d3 { [%eval 0.35] } 8... Nc6 { [%eval 0.47] } 9. Bg5 { [%eval 0.25] } 9... Be6 { [%eval 0.69] } 10. Nd5 { [%eval 0.71] } 10... Bxd5 { [%eval 0.8] } 11. cxd5 { [%eval 0.72] } 11... Nd4 { [%eval 0.77] } 12. Nxd4 { [%eval 0.67] } 12... cxd4 { [%eval 0.93] } 13. Qd2?! { [%eval 0.37] } { Inaccuracy. Best move was Bh3. } (13. Bh3) 13... Re8? { [%eval 1.47] } { Mistake. Best move was Qd7. } (13... Qd7) 14. Rac1?! { [%eval 0.9] } { Inaccuracy. Best move was Bh3. } (14. Bh3 a5 15. Rac1 Rf8 16. Rc4 Qb6 17. f4 h6 18. Bh4 Qa6 19. Rc7 Qb6 20. Rfc1 a4) 14... Qb6 { [%eval 1.35] } 15. f4? { [%eval 0.28] } { Mistake. Best move was Bh3. } (15. Bh3 Nh5 16. Bh4 Rf8 17. f4 exf4 18. gxf4 h6 19. Rc4 Qa6 20. b3 Bf6 21. Bf2 g5) 15... Nd7? { [%eval 2.15] } { Mistake. Best move was Ng4. } (15... Ng4 16. f5) 16. f5? { [%eval 0.98] } { Mistake. Best move was Bh3. } (16. Bh3 Nc5 17. b4 Na4 18. Bd7 Nc3 19. Bxe8 Rxe8 20. fxe5 dxe5 21. Qf2 Qc7 22. Qf3 Qd7) 16... f6 { [%eval 1.56] } 17. Bh6? { [%eval -0.1] } { Mistake. Best move was fxg6. } (17. fxg6 hxg6 (17... Qd8 18. gxh7+ Kxh7 19. Bh3 fxg5 20. Rf7 Re7 21. Rxe7 Qxe7 22. Rc7 Rd8 23. Rxb7) (17... fxg5 18. gxh7+ Kxh7 (18... Kh8 19. Rf7 Qd8 20. Bh3 Nc5 21. b4 Na6 (21... Re7 22. Rxe7 Nxe4 23. dxe4 Qxe7) 22. Bc8 Rxc8 23. Rxc8 Qxc8 24. Qxg5) 19. Rf7 Qd8 20. Rc7 Qxc7 21. Qxg5) 18. Bh6) 17... Bh8?? { [%eval 2.96] } { Blunder. Best move was g5. } (17... g5 18. Bxg7 Kxg7 19. Bf3 a5 20. h4 gxh4 21. gxh4 Kh8 22. a3 Nc5 23. Kh2 Rg8 24. Rb1) 18. fxg6 { [%eval 2.73] } 18... hxg6 { [%eval 2.75] } 19. Bh3 { [%eval 1.88] } 19... Nc5?? { [%eval 5.4] } { Blunder. Best move was Qd8. } (19... Qd8 20. Qe2 Kh7 21. Bd2 Bg7 22. Qf3 a5 23. Be6 Nc5 24. Rxc5 Rxe6 25. Rxa5 Re7 26. Rxa8) 20. b4 { [%eval 5.24] } 20... Na6? { [%eval 6.8] } { Mistake. Best move was Kh7. } (20... Kh7 21. bxc5 dxc5 22. Rb1 Qa6 23. Be6 b6 24. Bg5 Rf8 25. g4 Qa3 26. Bh6 c4 27. Bxf8) 21. a3 { [%eval 3.31] } 21... Nc7?? { [%eval 7.7] } { Blunder. Best move was Qd8. } (21... Qd8 22. Qd1) 22. Qc2?? { [%eval 2.5] } { Blunder. Best move was Qe2. } (22. Qe2) 22... Re7 { [%eval 2.82] } 23. Qd2 { [%eval 1.17] } 23... Nb5? { [%eval 3.36] } { Mistake. Best move was Bg7. } (23... Bg7 24. g4) 24. Be6+ { [%eval 3.25] } 24... Kh7? { [%eval 5.4] } { Mistake. Best move was Rxe6. } (24... Rxe6 25. dxe6 Nc3 26. Qg2 Qb5 27. Qf3 Qe8 28. Bd2 Qxe6 29. Bxc3 dxc3 30. Rxc3 Rf8 31. Rc7) 25. h4 { [%eval 2.08] } 25... Nxa3?? { [%eval 9.37] } { Blunder. Best move was Rxe6. } (25... Rxe6 26. dxe6 d5 27. exd5 Nc3 28. h5 Nxd5 29. e7 Qe6 30. Bf8 Bg7 31. Bxg7 Kxg7 32. Qa2) 26. Kg2?? { [%eval 5.05] } { Blunder. Best move was h5. } (26. h5) 26... Nb5?? { [%eval 9.1] } { Blunder. Best move was Rxe6. } (26... Rxe6 27. dxe6 d5 28. h5 Nc4 29. dxc4 dxe4 30. hxg6+ Kxg6 31. Qe2 Qxe6 32. Qxe4+ f5 33. Qxb7) 27. Rh1 { [%eval 1.8] } 27... Nc3?? { [%eval 11.76] } { Blunder. Best move was Rxe6. } (27... Rxe6 28. dxe6) 28. Rcf1?? { [%eval 1.19] } { Blunder. Best move was h5. } (28. h5 Rxe6 29. hxg6+ Kg8 30. dxe6 d5 31. g7 Bxg7 32. Bxg7 Qxe6 33. Qh6 dxe4 34. Rcf1 Qa2+) 28... Qxb4?? { [%eval 11.35] } { Blunder. Best move was Rxe6. } (28... Rxe6) 29. h5 { [%eval 10.95] } 29... g5 { [%eval 10.86] } 30. Bxg5?? { [%eval 6.18] } { Blunder. Best move was Qf2. } (30. Qf2) 30... fxg5?? { [%eval #9] } { Checkmate is now unavoidable. Best move was Nxd5. } (30... Nxd5 31. Bf5+) 31. Qxg5 { [%eval #8] } 31... Rg7?? { [%eval #6] } { Checkmate is now unavoidable. Best move was Qb2+. } (31... Qb2+ 32. Kh3 Bg7 33. h6 Qd2 34. Qxe7 Qxh6+ 35. Kg4 Kh8 36. Qg5 Kh7 37. Rf7 Kg8 38. Rxg7+) 32. Qf5+ { [%eval #5] } 32... Kh6 { [%eval #5] } 33. Qf6+ { [%eval #4] } 33... Kh7 { [%eval #4] } 34. Bf5+ { [%eval #3] } 34... Kg8 { [%eval #3] } 35. Qe6+ { [%eval #2] } 35... Rf7 { [%eval #2] } 36. Bh7+ { [%eval #1] } 36... Kxh7 { [%eval #1] } 37. Qxf7+?! { [%eval #5] } { Not the best checkmate sequence. Best move was Qg6#. } (37. Rxf7+) (37. Qg6#) 37... Bg7 { [%eval #5] } 38. h6 { [%eval #4] } 38... Qb2+ { [%eval #4] } 39. Rf2 { [%eval #3] } 39... Qxf2+ { [%eval #3] } 40. Kxf2 { [%eval #2] } 40... Nxe4+ { [%eval #2] } 41. Kg2 { [%eval #1] } *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 61"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 61"]
+[FEN "8/4K1B1/2k3p1/1pP3Pb/pP3B1P/P1B5/5B2/8 w - - 0 1"]
+[SetUp "1"]
+
+1. Ke6 Bd1 2. Kf7 Bh5 (2... Bc2 3. h5 gxh5 4. g6) 3. Bce5 Kd7 4. Bd6 Kc6 5. Kf6 Kd5 6. Ke7 Kc6 7. Bc3 Bd1 (7... Kd5 8. Kd7 Bg4+ 9. Kc7) 8. Ke6 Bg4+ 9. Kf7 Bh5 (9... Bf5 10. h5) 10. Kf6 Kd7 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 62"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 62"]
+[FEN "8/4K2b/2k1p3/1pP1P3/pP1P4/P7/7B/8 b - - 0 1"]
+[SetUp "1"]
+
+1... Bf5 (1... Bg8 2. d5+ exd5 (2... Kxd5 3. Kd7 Bf7 4. c6 Be8+ 5. Kxe8 Kxc6 6. Ke7 Kd5 7. Kd7) 3. e6 d4 (3... Bh7 4. Kf6) 4. Kf6 d3 5. e7 Kd7 6. c6+ Ke8 7. c7) 2. d5+ exd5 (2... Kxd5 3. Kd7) 3. e6 d4 4. Kf7 d3 5. e7 Bd7 6. Bf4 { 1-0 Black resigns. } 1-0
+
+
+[Event "Canadian Open"]
+[Site "Ottawa Canada"]
+[Date "2007.07.07"]
+[Round "1"]
+[White "Alexander Reprintsev"]
+[Black "Josh Guo"]
+[Result "1-0"]
+[WhiteElo "2410"]
+[BlackElo "2125"]
+[Variant "Standard"]
+[ECO "B20"]
+[Opening "Sicilian Defense: Czerniak Attack"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 63: Alexander Reprintsev - Josh Guo"]
+
+1. e4 c5 2. b3 Nc6 3. Bb2 e5 4. f4 exf4 5. Qf3 Qh4+ 6. g3 fxg3 7. hxg3 Qe7 8. Bc4 Nf6 9. Bxf6 Qxf6 10. Qxf6 gxf6 11. Nc3 Bd6 12. Nge2 Be5 13. O-O-O d6 14. Nd5 Kd8 15. Rdf1 Be6 16. Nxf6 Ke7 17. Nd5+ Bxd5 18. Bxd5 Raf8 19. c3 Nd8 20. d4 cxd4 21. cxd4 Bg7 22. Kd2 Ne6 23. Kd3 b6 24. Rh5 Bf6 25. Rfh1 h6 26. Rxh6 Rxh6 27. Rxh6 Rh8 28. Rxh8 Bxh8 29. Bxe6 fxe6 30. Nf4 Bg7 31. a4 e5 32. dxe5 dxe5 (32... Bxe5 33. Ng6+) 33. Nd5+ Kd6 34. Kc4 { 1-0 Black resigns. } 1-0
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 64"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 64"]
+[FEN "5rk1/3R1pp1/7p/p3P3/PbB1KP2/1P4P1/7P/8 b - - 0 1"]
+[SetUp "1"]
+
+1... g6 2. g4 Bc3 3. f5 gxf5+ 4. gxf5 Bb4 5. f6 Bc3 6. Kf5 Bb4 (6... Bb2 7. b4 axb4 8. a5) 7. e6 fxe6+ 8. Bxe6+ Kh8 9. Kg6 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 65"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 65"]
+[FEN "6k1/5pp1/7p/p3P3/PbB1KP2/1P4P1/7P/8 b - - 0 1"]
+[SetUp "1"]
+
+1... Kf8 2. f5 Ke7 *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 66"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 66"]
+[FEN "r2qnrk1/5pbp/2npb1p1/p1pNpP2/1pP1P3/1P1PB1PP/P2QNRB1/1R4K1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 67"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 67"]
+[FEN "4r1k1/pp2rpbp/3q2p1/2p5/8/5B2/PPQ2PPP/3R1RK1 b - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "60th Russian Championship 2007"]
+[Site "Russia"]
+[Date "2017.10.07"]
+[White "K. Sakaev"]
+[Black "V. Malakov"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 68: K. Sakaev - V. Malakov"]
+[FEN "r1q3k1/1b3pbp/p1p2np1/1pPpr3/1P6/2N3P1/P1QBPPBP/1R1R2K1 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
+[Event "Morelia"]
+[Date "2017.10.07"]
+[White "V. Ivanchuk"]
+[Black "P. Leko"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 69: V. Ivanchuk - P. Leko"]
+[FEN "b6k/4b1pp/p1q5/1pp5/4pB2/8/PPP2PPP/RN2R1K1 w - - 0 21"]
+[SetUp "1"]
+
+ *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 1-70: Diagram 70"]
+[Date "????.??.??"]
+[White "New game"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 1-70"]
+[ChapterName "Diagram 70"]
+[FEN "r5rk/pp1b1n1p/8/3qPpp1/3P4/PP1Q1N1P/1B5K/4RR2 w - - 0 1"]
+[SetUp "1"]
+
+ *
+
+
