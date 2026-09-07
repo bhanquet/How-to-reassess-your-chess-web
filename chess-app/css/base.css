@@ -414,6 +414,12 @@ body.modal-open { overflow: hidden; }
 
 .sidebar-scrim:not([aria-hidden="true"]) { display: block; }
 
+/* Desktop safety net: the scrim is a mobile-only overlay, never show it
+   when the sidebar sits side-by-side with the content. */
+@media (min-width: 769px) {
+    .sidebar-scrim { display: none !important; }
+}
+
 .sidebar-header {
     padding: 20px;
     background-color: var(--color-sidebar-header);

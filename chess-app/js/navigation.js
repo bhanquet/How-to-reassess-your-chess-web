@@ -289,7 +289,12 @@ export function setSidebarOpen(isOpen) {
     const toggle = document.getElementById('menu-toggle');
     if (!sidebar) return;
     sidebar.classList.toggle('hidden', !isOpen);
-    if (scrim) scrim.setAttribute('aria-hidden', String(!isOpen));
+    // The scrim is a mobile-only overlay: on desktop the sidebar sits
+    // side-by-side with the content, so the scrim must stay hidden even
+    // when the sidebar is open. Without this, reopening the sidebar on
+    // desktop leaves a dark overlay over everything.
+    const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+    if (scrim) scrim.setAttribute('aria-hidden', String(!(isOpen && isMobile)));
     if (toggle) toggle.setAttribute('aria-expanded', String(isOpen));
 }
 

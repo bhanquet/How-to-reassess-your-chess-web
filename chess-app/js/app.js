@@ -36,11 +36,13 @@ class ChessApp {
     _initSidebarState() {
         const sidebar = document.getElementById('sidebar');
         const scrim = document.getElementById('sidebar-scrim');
+        const toggle = document.getElementById('menu-toggle');
         if (!sidebar) return;
         const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
         if (!isMobile) {
             sidebar.classList.remove('hidden');
             if (scrim) scrim.setAttribute('aria-hidden', 'true');
+            if (toggle) toggle.setAttribute('aria-expanded', 'true');
         }
     }
 
@@ -272,6 +274,13 @@ class ChessApp {
         // Mobile scrim: click outside sidebar closes it
         document.getElementById('sidebar-scrim')?.addEventListener('click', () => {
             setSidebarOpen(false);
+        });
+
+        // Keep the scrim in sync when crossing the mobile/desktop breakpoint
+        // with the sidebar already open (e.g. resize/orientation change).
+        window.matchMedia?.('(max-width: 768px)').addEventListener?.('change', () => {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) setSidebarOpen(!sidebar.classList.contains('hidden'));
         });
 
         document.querySelector('.close-modal').addEventListener('click', () => {
