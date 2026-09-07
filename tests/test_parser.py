@@ -124,10 +124,6 @@ class TestExtractSanMoves(unittest.TestCase):
 
 
 class TestHtmlEscape(unittest.TestCase):
-    def test_roundtrip(self):
-        original = 'Nxf7+ <strong> & "test"'
-        self.assertEqual(p.html_unescape(p.html_escape(original)), original)
-
     def test_html_escape_no_lt_semicolon_artifact(self):
         # Escaped "fa<;ade" must NEVER produce "fa&lt;;ade"
         out = p.html_escape('pawn-fa<;ade.')
@@ -327,17 +323,17 @@ class TestGameMatching(unittest.TestCase):
         self.assertIsNone(p.find_exact_match(self.game, ['d4', 'd5']))
         self.assertIsNone(p.find_exact_match(self.game, []))
 
-    def test_find_move_sequence_end_index_partial(self):
-        # Partial match >= min_match (4) accepted
-        end = p.find_move_sequence_end_index(self.game, ['Nf3', 'Nc6', 'Bb5', 'a6', 'zzz'])
-        self.assertEqual(end, 6)
+    def test_find_exact_match_partial_not_accepted(self):
+        # Trailing garbage breaks the contiguous match (no partial fallback)
+        self.assertIsNone(
+            p.find_exact_match(self.game, ['Nf3', 'Nc6', 'Bb5', 'a6', 'zzz']))
 
-    def test_find_move_sequence_below_min_match(self):
-        # Only 3 common moves < min_match -> no match
-        self.assertIsNone(p.find_move_sequence_end_index(self.game, ['Nf3', 'Nc6', 'Bb5', 'zzz']))
+    def test_find_exact_match_non_contiguous(self):
+        # A gap in the sequence (skipping Nc6) is not a match
+        self.assertIsNone(p.find_exact_match(self.game, ['e5', 'Nf3', 'Bb5']))
 
-    def test_find_move_sequence_empty(self):
-        self.assertEqual(p.find_move_sequence_end_index(self.game, []), 0)
+    def test_find_exact_match_empty(self):
+        self.assertIsNone(p.find_exact_match(self.game, []))
 
 
 class TestPositionHelpers(unittest.TestCase):
@@ -361,10 +357,6 @@ class TestDiagramContextHelpers(unittest.TestCase):
             '<p>Other</p><div class="diagram-inline" data-diagram="8"></div>'
             '<p>Black to move 1... Nf6.</p><div class="diagram-inline" data-diagram="9"></div>',
         ])
-
-    def test_get_diagram_context(self):
-        ctx = p.get_diagram_context(self.book, '7')
-        self.assertIn('White to move', ctx)
 
     def test_get_diagram_side(self):
         import chess as ch

@@ -41,48 +41,7 @@ def find_diagram_move_context(book_data, diagram_num):
         notations = re.findall(r'<div class="game-notation">(.*?)</div>', after)
         if notations:
             return extract_san_moves(notations[0])
-
-        # 3) Fallback: raw text before the diagram (from the previous diagram)
-        last_diagram = before.rfind('<div class="diagram-inline"')
-        if last_diagram != -1:
-            before = before[last_diagram:]
-        moves = extract_san_moves(before)
-        if moves:
-            return moves
-
-        # 4) Fallback: raw text after the diagram
-        moves = extract_san_moves(after)
-        if moves:
-            return moves
     return []
-
-
-def find_move_sequence_end_index(game, target_moves, min_match=4):
-    """Find the end ply of target_moves in the main line of game.
-
-    Returns the index AFTER the matched moves (the end ply: number of moves
-    played), or None. Exact contiguous match first; otherwise the longest
-    partial match of at least `min_match` consecutive moves.
-    """
-    if not target_moves:
-        return 0
-    game_moves = get_mainline_moves(game)
-
-    for start in range(len(game_moves) - len(target_moves) + 1):
-        if game_moves[start:start + len(target_moves)] == target_moves:
-            return start + len(target_moves)
-
-    best_end = None
-    best_len = 0
-    for i in range(len(target_moves)):
-        for j in range(i + min_match, len(target_moves) + 1):
-            seq = target_moves[i:j]
-            for start in range(len(game_moves) - len(seq) + 1):
-                if game_moves[start:start + len(seq)] == seq:
-                    if len(seq) > best_len or (len(seq) == best_len and (best_end is None or j > best_end)):
-                        best_len = len(seq)
-                        best_end = start + len(seq)
-    return best_end
 
 
 def extract_diagram_and_page_numbers(event, chapter):
@@ -162,24 +121,21 @@ def extract_players_from_chapter(chapter):
     return (white, black)
 
 
-def get_diagram_context(book_data, diagram_num, chars=500):
-    """Return the text right after a diagram in the HTML content."""
+def get_diagram_side(book_data, diagram_num):
+    """Return the expected side to move (chess.WHITE / chess.BLACK) or None.
+
+    Looks for "White to move" / "Black to move" in the text right after the
+    diagram (first 300 chars).
+    """
+    context = ''
     for sec in book_data['sections']:
         content = sec['content']
         pattern = f'<div class="diagram-inline" data-diagram="{diagram_num}">'
         idx = content.find(pattern)
         if idx == -1:
             continue
-        return content[idx + len(pattern):idx + len(pattern) + chars]
-    return ''
-
-
-def get_diagram_side(book_data, diagram_num):
-    """Return the expected side to move (chess.WHITE / chess.BLACK) or None.
-
-    Looks for "White to move" / "Black to move" in the text around the diagram.
-    """
-    context = get_diagram_context(book_data, diagram_num, 300)
+        context = content[idx + len(pattern):idx + len(pattern) + 300]
+        break
     if re.search(r'\bWhite\s+to\s+move\b', context):
         return chess.WHITE
     if re.search(r'\bBlack\s+to\s+move\b', context):
@@ -241,18 +197,15 @@ def find_exact_match(game, target_moves):
 
 
 def _moves_from_html(segment, take_last):
-    """Extract SAN moves from an HTML segment.
+    """Extract SAN moves from the chosen <div class="game-notation"> block.
 
-    Prefers <div class="game-notation"> blocks (last/first depending on
-    `take_last`), then falls back to the tag-stripped raw text.
+    Returns the SAN moves of the last/first notation block (depending on
+    `take_last`), or [] when no notation block is present.
     """
     notations = re.findall(r'<div class="game-notation">(.*?)</div>', segment)
-    if notations:
-        moves = extract_san_moves(notations[-1] if take_last else notations[0])
-        if moves:
-            return moves
-    text = re.sub(r'<[^>]+>', ' ', segment)
-    return extract_san_moves(text)
+    if not notations:
+        return []
+    return extract_san_moves(notations[-1] if take_last else notations[0])
 
 
 def get_moves_before_diagram(book_data, diagram_num, window=1500):

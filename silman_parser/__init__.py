@@ -5,7 +5,7 @@ Split into modules by responsibility:
 - epub_ingest : native EPUB ingestion (H2 sections, diagrams, moves)
 - san : SAN notation cleanup
 - segmentation : subdivision of oversized sections
-- html_render : HTML escaping helpers (html_escape / html_unescape)
+- html_render : HTML escaping helper (html_escape)
 - diagram_context : diagram context in the book (moves, side)
 - study : FENs and variations from PGN studies (PGN)
 - overrides : manual overrides for unresolvable diagrams
@@ -30,9 +30,7 @@ from silman_parser.diagram_context import (
     find_diagram_move_context,
     find_diagram_position,
     find_exact_match,
-    find_move_sequence_end_index,
     find_position_with_side,
-    get_diagram_context,
     get_diagram_side,
     get_mainline_moves,
     get_moves_after_diagram,
@@ -41,7 +39,7 @@ from silman_parser.diagram_context import (
     replay_moves,
 )
 from silman_parser.epub_ingest import parse_epub, parse_ncx_toc
-from silman_parser.html_render import html_escape, html_unescape
+from silman_parser.html_render import html_escape
 from silman_parser.study import (
     extract_diagram_variations,
     extract_fens_from_study_games,
@@ -76,15 +74,12 @@ __all__ = [
     'find_diagram_move_context',
     'find_diagram_position',
     'find_exact_match',
-    'find_move_sequence_end_index',
     'find_position_with_side',
-    'get_diagram_context',
     'get_diagram_side',
     'get_mainline_moves',
     'get_moves_after_diagram',
     'get_moves_before_diagram',
     'html_escape',
-    'html_unescape',
     'load_manual_overrides',
     'normalize_move_text',
     'normalize_unicode_artifacts',

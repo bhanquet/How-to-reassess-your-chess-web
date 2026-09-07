@@ -9,7 +9,7 @@ from silman_parser.diagram_context import (
     extract_players_from_chapter,
     find_diagram_move_context,
     find_diagram_position,
-    find_move_sequence_end_index,
+    find_exact_match,
     find_position_with_side,
     get_diagram_side,
     get_mainline_moves,
@@ -91,7 +91,7 @@ def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
             target_moves = find_diagram_move_context(book_data, num)
             if not target_moves:
                 continue
-            match_end = find_move_sequence_end_index(game, target_moves)
+            match_end = find_exact_match(game, target_moves)
             if match_end is None:
                 continue
             board = position_at(game, match_end)

@@ -11,8 +11,3 @@ def html_escape(text):
     """
     text = text.replace('<;', 'c')
     return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-
-
-def html_unescape(text):
-    """Inverse of html_escape (to reprocess already-generated HTML)."""
-    return text.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
