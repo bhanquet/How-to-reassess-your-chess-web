@@ -1,6 +1,6 @@
 // search.js depends on templates.js (which does not touch the DOM).
 import { describe, expect, it } from 'vitest';
-import { searchSections } from '../js/search.js';
+import { highlightMatches, searchSections, stemVariants } from '../js/search.js';
 
 const makeBook = (sections) => ({
     sections: sections.map((content, i) => ({
@@ -57,14 +57,40 @@ describe('searchSections', () => {
         expect(results).toEqual([]);
     });
 
-    it('consecutive multi-word = phrase search', () => {
+    it('multi-word = OR with ranking (best coverage first)', () => {
         const book = makeBook([
             '<p>Only knight here.</p>',
             '<p>Both bishop and knight here.</p>',
         ]);
         const { results } = searchSections(book, 'bishop and knight');
-        expect(results).toHaveLength(1);
+        expect(results).toHaveLength(2);
+        // Section 1 covers both terms (+ exact phrase) → ranked first.
         expect(results[0].section).toBe(1);
+        expect(results[1].section).toBe(0);
+    });
+
+    it('multi-word finds sections without the exact phrase', () => {
+        const book = makeBook([
+            '<p>Knight maneuvers are key.</p>',
+            '<p>Unrelated text about endgames.</p>',
+        ]);
+        const { results } = searchSections(book, 'knight outpost');
+        expect(results).toHaveLength(1);
+        expect(results[0].section).toBe(0);
+    });
+
+    it('stems plurals (knights ↔ knight)', () => {
+        expect(stemVariants('knights')).toContain('knight');
+        const book = makeBook(['<p>Knights dominate the outpost.</p>']);
+        const { results } = searchSections(book, 'knight');
+        expect(results).toHaveLength(1);
+    });
+
+    it('highlightMatches never corrupts HTML tags', () => {
+        const out = highlightMatches('<span class="knight">knight</span> and bishop', ['knight', 'bishop']);
+        expect(out).toContain('<span class="knight">');
+        expect(out).toContain('<mark>knight</mark>');
+        expect(out).toContain('<mark>bishop</mark>');
     });
 
     it('simple search: single keyword', () => {
