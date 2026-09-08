@@ -27,8 +27,8 @@
 
 .diagram-badge {
     flex: none;
-    background: var(--color-sidebar-header);
-    color: var(--color-text-on-dark);
+    background: var(--color-accent);
+    color: var(--color-accent-text);
     font-size: 0.72rem;
     font-weight: 700;
     padding: 3px 9px;
@@ -63,11 +63,24 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-md);
-    overflow: hidden;
+    /* Frame behind the board: cm-chessboard draws rank/file coordinates at
+       the SVG rim, so the container must not clip them (P0.2). */
+    overflow: visible;
+    padding: 6px;
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
     margin-bottom: 8px;
     position: relative;
     touch-action: manipulation;
+    box-sizing: border-box;
+}
+
+.diagram-playable-board svg,
+#chess-board svg {
+    overflow: visible;
+    border-radius: calc(var(--radius-md) - 4px);
+    display: block;
 }
 
 .diagram-playable-board [role="application"],
@@ -233,7 +246,153 @@ html[data-theme="dark"] .turn-dot .dot.black {
     margin: 2px 2px;
 }
 
-/* --- Liste des coups --- */
+/* --- Secondary actions (P1.4: slim primary toolbar) --- */
+.diag-more {
+    margin-bottom: 10px;
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 4px 10px 8px;
+}
+
+.diag-more > summary {
+    cursor: pointer;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    padding: 4px 0;
+    user-select: none;
+}
+
+.diag-more > summary:hover { color: var(--color-text); }
+
+.diag-more > summary:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+    border-radius: 4px;
+}
+
+.diag-more-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 6px;
+}
+
+.diag-more-actions .diag-btn {
+    min-width: 0;
+    height: 36px;
+    font-size: 0.78rem;
+    padding: 0 10px;
+}
+
+/* --- Keyboard-navigation focus indicator (P1.9) --- */
+.diagram-playable-wrapper.kb-active {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    border-color: var(--color-accent);
+}
+
+#chess-board.kb-active {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* --- In-text diagram links (P1.7) --- */
+.diag-link {
+    font-weight: 600;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+    color: var(--color-accent);
+    white-space: nowrap;
+}
+
+.diag-link:hover { color: var(--color-accent-hover); }
+
+.diag-link:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+    border-radius: 4px;
+}
+
+/* --- Scroll-to-diagram flash (P1.7 / deep-link) --- */
+@keyframes diag-flash {
+    0%, 100% { box-shadow: var(--shadow-md); }
+    30%, 60% { box-shadow: 0 0 0 4px var(--color-accent), var(--shadow-md); }
+}
+
+.diagram-playable-wrapper.flash { animation: diag-flash 1.6s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+    .diagram-playable-wrapper.flash {
+        animation: none;
+        outline: 3px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+}
+
+/* --- Shortcuts dialog (P1.9) --- */
+
+.shortcuts-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2500;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.shortcuts-dialog {
+    background: var(--color-bg-elevated);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 22px 24px;
+    width: min(92vw, 440px);
+    font-family: var(--font-sans);
+}
+
+.shortcuts-dialog h2 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.shortcuts-dialog dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 7px 16px;
+    align-items: baseline;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+}
+
+.shortcuts-dialog dt kbd {
+    font-family: var(--font-mono);
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.shortcuts-dialog dd { margin: 0; color: var(--color-text-muted); }
+
+.shortcuts-dialog button {
+    background: var(--color-accent);
+    color: var(--color-accent-text);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 8px 18px;
+    min-height: 40px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.shortcuts-dialog button:hover { background: var(--color-accent-hover); }
 .diagram-playable-moves,
 .move-list {
     background: var(--color-bg-muted);

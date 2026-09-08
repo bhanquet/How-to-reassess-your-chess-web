@@ -167,9 +167,12 @@ button,
     transition-property: background-color, color, border-color, box-shadow;
 }
 
+/* The `hidden` attribute must always win over component display rules
+   (e.g. .shortcuts-backdrop / .review-toggle use display:flex). */
+[hidden] { display: none !important; }
+
 .visually-hidden,
-.skip-link:not(:focus) {
-    position: absolute;
+.skip-link:not(:focus) {    position: absolute;
     width: 1px; height: 1px;
     margin: -1px; padding: 0;
     overflow: hidden;
@@ -408,7 +411,7 @@ body.modal-open { overflow: hidden; }
 }
 
 .sidebar {
-    width: 300px;
+    width: 320px;
     background-color: var(--color-sidebar-bg);
     color: var(--color-sidebar-text);
     overflow-y: auto;
@@ -501,9 +504,11 @@ body.modal-open { overflow: hidden; }
 
 .nav-title {
     flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: 1.35;
 }
 
 .nav-children {

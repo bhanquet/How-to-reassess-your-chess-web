@@ -34,7 +34,16 @@
 }
 
 @media (max-width: 480px) {
+    /* P0.3: hide the long title on phones, keep a compact brand mark */
+    .app-header h1 { display: none; }
+    .app-header::after {
+        content: '♞';
+        font-size: 1.2rem;
+        flex: none;
+        padding: 0 2px;
+    }
     #search-input { width: 110px; }
+    #search-input:focus { width: 150px; }
     .page-info { font-size: 0.78rem; }
     .diagram-playable-controls { gap: 4px; }
     .diag-btn { min-width: 44px; height: 44px; padding: 0 10px; font-size: 0.9rem; }
