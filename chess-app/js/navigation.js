@@ -210,6 +210,7 @@ export function renderNavigation(navTree, toc, onSelect) {
         header.setAttribute('role', 'button');
         header.setAttribute('tabindex', '0');
         header.setAttribute('aria-expanded', 'false');
+        // Single chevron: rotation is handled by CSS when expanded.
         header.innerHTML = `<span class="nav-toggle" aria-hidden="true">▸</span><span class="nav-title">${node.title}</span>`;
         return header;
     };
@@ -254,12 +255,10 @@ export function renderNavigation(navTree, toc, onSelect) {
         }
         el.appendChild(childrenContainer);
 
-        const toggle = header.querySelector('.nav-toggle');
         header.addEventListener('click', (e) => {
             e.stopPropagation();
             const expanded = childrenContainer.classList.toggle('expanded');
             header.setAttribute('aria-expanded', String(expanded));
-            toggle.textContent = expanded ? '▾' : '▸';
             // A header with a resolvable section navigates there too (e.g.
             // a chapter intro without a dedicated leaf); headers without a
             // section (Title Page, Parts, Answers...) stay pure toggles.
@@ -343,8 +342,6 @@ export function markActiveNavItem(currentSection, anchor = null, scrollIntoView 
             const header = parent.previousElementSibling;
             if (header) {
                 header.setAttribute('aria-expanded', 'true');
-                const toggle = header.querySelector('.nav-toggle');
-                if (toggle) toggle.textContent = '▾';
             }
         }
         parent = parent.parentElement;

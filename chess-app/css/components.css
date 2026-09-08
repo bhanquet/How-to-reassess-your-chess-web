@@ -182,6 +182,182 @@ mark {
 }
 
 /* ===========================================
+   Semantic prose components (quotes, callouts, lists)
+   =========================================== */
+
+/* ---- Blockquotes ---- */
+.book-quote {
+    background-color: var(--color-bg-muted);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: 20px 24px 18px;
+    margin: 24px 0;
+    position: relative;
+    color: var(--color-text);
+}
+
+.book-quote::before {
+    content: '“';
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    font-size: 3.2rem;
+    line-height: 1;
+    color: var(--color-text-subtle);
+    opacity: 0.22;
+    font-family: var(--font-serif);
+    pointer-events: none;
+}
+
+.book-quote p {
+    margin-bottom: 12px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.book-quote p:last-child {
+    margin-bottom: 0;
+}
+
+.book-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-align: right;
+    margin-top: 8px;
+}
+
+/* ---- Callouts ---- */
+.callout {
+    background-color: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: 0;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.callout-title {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    margin: 0;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.callout-title::before {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.callout-nutshell .callout-title::before { content: '◆'; }
+.callout-philosophy .callout-title::before { content: '◈'; }
+.callout-rule .callout-title::before { content: '▸'; }
+
+.callout-body {
+    padding: 14px 18px;
+}
+
+.callout-body p {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.callout-body p:last-child {
+    margin-bottom: 0;
+}
+
+.callout-body ul,
+.callout-body ol {
+    margin: 0;
+    padding-left: 1.4em;
+}
+
+/* Variant accents */
+.callout-nutshell {
+    border-left-color: var(--color-warning);
+}
+
+.callout-nutshell .callout-title {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning);
+}
+
+.callout-philosophy {
+    border-left-color: var(--color-accent);
+}
+
+.callout-rule {
+    border-left-color: var(--color-success);
+}
+
+.callout-rule .callout-title {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+/* ---- Lists ---- */
+.book-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    color: var(--color-text);
+}
+
+.book-list > li {
+    position: relative;
+    padding-left: 1.7em;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.book-list > li::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    top: -0.04em;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.15em;
+    line-height: 1;
+}
+
+.book-list-sub {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 8px 0.3em;
+}
+
+.book-list-sub > li {
+    position: relative;
+    padding-left: 1.3em;
+    margin-bottom: 6px;
+    color: var(--color-text-muted);
+    font-size: 0.96em;
+    line-height: 1.65;
+}
+
+.book-list-sub > li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: -0.12em;
+    color: var(--color-text-subtle);
+    font-size: 1.25em;
+    line-height: 1;
+}
+
+/* ===========================================
    Loading + Error states
    =========================================== */
 .loading-message {
