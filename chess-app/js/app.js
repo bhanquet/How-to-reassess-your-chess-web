@@ -593,7 +593,7 @@ class ChessApp {
         document.getElementById('modal-next')?.addEventListener('click', () => this.modal.goToMove(this.modal.state.currentIndex + 1));
         document.getElementById('modal-last')?.addEventListener('click', () => this.modal.goToMove(this.modal.state.allMoves.length));
 
-        // P1.10: modal FEN copy + Study.
+        // P1.10: modal FEN copy + online analysis.
         document.getElementById('fen-board')?.addEventListener('click', () => {
             copyFenToClipboard(this.modal.chess?.fen());
         });

@@ -14,7 +14,7 @@ export function escapeHtml(text) {
         .replace(/"/g, '&quot;');
 }
 
-/** List of clickable moves with the current move highlighted (Study style).
+/** List of clickable moves with the current move highlighted (modern style).
  *
  * Each move is a <button class="move" data-ply="N"> where N = ply reached
  * after this move (1..moves.length). A "start" button (data-ply="0")

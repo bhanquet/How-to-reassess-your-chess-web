@@ -8,13 +8,13 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
 ```
 .                                           # repo root
 ├── *.epub                                  # native EPUB, sole text source (parser input)
-├── pgn_studies/                           # PGN studies → FENs + full games
+├── pgn_studies/                            # Local PGN studies → FENs + full games
 ├── silman_parser/                          # parser package: config, epub_ingest, san,
 │                                           # segmentation, html_render, diagram_context,
-│                                           # study, overrides, build (entry: `python3 -m silman_parser.build`)
+│                                           # pgn_sources, overrides, build (entry: `python3 -m silman_parser.build`)
 ├── tests/                                  # test_parser.py (pure fns) + test_data.py (JSON invariants)
 ├── docker-compose.yml                      # static Nginx on :5174
-└── chess-app/                              # frontend (see chess-app/README.md)
+└── chess-app/                              # frontend (usage: root README)
     ├── index.html / vite.config.js / package.json / Dockerfile / nginx.conf
     ├── css/ (base, diagrams, modal, components, responsive)
     ├── js/ (app=orchestrator ChessApp; playable-board=shared core PlayableBoard;
@@ -71,7 +71,7 @@ copying the private EPUB into the public image). Generate locally before `docker
 
 ```bash
 python3 -m unittest discover -s tests -v   # backend (stdlib only; test_data checks FENs via python-chess, fen/index consistency, xrefs; KNOWN_STALE must stay empty)
-cd chess-app && npm test                    # frontend vitest (39 tests)
+cd chess-app && npm test                    # frontend vitest (42 tests)
 python3 -m json.tool chess-app/data/book_structure.json > /dev/null  # + same for diagrams.json, toc.json
 ```
 

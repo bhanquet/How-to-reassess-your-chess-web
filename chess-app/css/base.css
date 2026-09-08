@@ -51,7 +51,7 @@
     --color-sidebar-accent: var(--color-accent);
     --color-sidebar-border: var(--color-border);
 
-    /* Chessboard (Study-like) */
+    /* Chessboard */
     --board-light: light-dark(#f0d9b5, #d6b486);
     --board-dark: light-dark(#b58863, #8b5a3a);
     --board-hl-last: light-dark(rgba(205, 210, 60, 0.42), rgba(205, 210, 60, 0.35));

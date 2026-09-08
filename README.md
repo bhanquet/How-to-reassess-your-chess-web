@@ -1,86 +1,162 @@
 # How to Reassess Your Chess — Interactive Study App
 
-Interactive web app for personal study of *How to Reassess Your Chess* (4th Edition) by Jeremy Silman.
-The book text is organized into logical sections (one per EPUB H2, subdivided when long) with 432 interactive diagrams.
+Study _How to Reassess Your Chess_ (4th Edition) by Jeremy Silman with the book
+text and **interactive chessboards** side by side: read a section, play
+through its diagrams, explore variations, and search the whole book.
 
-> **Copyright:** the public repo contains **no book text**. Buy the EPUB legally,
-> place it at the repo root, then generate the data locally (see below).
+![App preview — sidebar, interactive diagram board and controls](docs/screenshot-app.png)
 
-## Layout
+> **Copyright — read this first:** the public repo contains **no book text**.
+> The reading data is generated locally from an EPUB **you buy legally**.
+> Without it, the app shows a "book not generated" message — that is normal
+> on a fresh clone.
 
+## Features
+
+- **Inline interactive diagrams** — every position rendered as a playable chessboard right in the text
+- **Enlarged analysis board** — open any diagram in a modal to step through moves and variations
+- **Section-by-section reading** — the book split into logical sections, with a progress bar
+- **Full-text search** — find a concept across all sections, with matches highlighted in-page
+
+## How it works
+
+```text
+EPUB you bought          Parser (Python)              Web app (JS)
+───────────────    ─────────────────────────    ─────────────────────
+Book text       →  cut into logical sections  →   read section by section
+                   (one per chapter heading,
+                    long ones subdivided)
+PGN studies     →  positions + moves +       →    playable boards with
+                   variations matched         variations, flip, FEN copy,
+                   to each diagram            online analysis
 ```
-.
-├── How to Reassess Your Chess 4th ed - Silman.epub  # Native EPUB — sole source of the text
-│                        # NOT in git: buy it legally and place it here (exact filename,
-│                        # see silman_parser/config.py:INPUT_FILE)
-├── pgn_studies/                      # PGN studies (PGNs) — source of FENs and full games
-├── silman_parser/                     # Parser package (one module per concern)
-│   ├── config.py                      # Paths
-│   ├── epub_ingest.py                 # EPUB ingestion (spine order, H2 sections, diagrams)
-│   ├── san.py / segmentation.py
-│   ├── html_render.py / diagram_context.py / pgn_sources.py / overrides.py
-│   └── build.py                       # main() entry point
-├── tests/                             # test_parser.py (pure functions) + test_data.py (JSON invariants)
-├── chess-app/                         # Web app (see chess-app/README.md for details)
-│   ├── index.html / vite.config.js / package.json
-│   ├── css/ / js/                      # ES modules (ChessApp, PlayableBoard, Inline/Modal managers)
-│   ├── data/                          # generated book_structure/diagrams/toc.json (gitignored,
-│   │                                     # regenerate locally) + diagrams_manual_overrides.json (versioned)
-│   └── tests/                         # vitest (chess-utils, search)
-```
+
+- The **EPUB is the only source of the text** (chapters read in spine order).
+- **Positions never come from the EPUB** — they come from local PGN studies
+  (`pgn_studies/`), plus a few strict hand-checked fixes
+  (`diagrams_manual_overrides.json`).
+- The generated files (`book_structure.json`, `diagrams.json`, `toc.json`) are
+  **gitignored**: they stay on your machine and are never committed.
 
 ## Quickstart
 
-### 0. Buy the book, place the EPUB
+### 0. Buy the book
 
-1. Buy *How to Reassess Your Chess* (4th ed., Jeremy Silman) as EPUB from a legal store.
-2. Copy the file to the **repo root** with this exact name:
-   ```
+1. Buy _How to Reassess Your Chess_ (4th ed., Jeremy Silman) as an EPUB from a legal store.
+2. Copy it to the **repo root** with this exact filename:
+
+   ```text
    How to Reassess Your Chess 4th ed - Silman.epub
    ```
-   (see `silman_parser/config.py:INPUT_FILE`). It stays local — never committed.
 
-### 1. Regenerate data (from repo root)
+   It stays local — it is gitignored and never committed.
+
+### 1. Generate the reading data (from the repo root)
 
 ```bash
 python3 -m silman_parser.build
 ```
 
-Reads the EPUB following the `content.opf` spine order, splits into logical
-sections (one per H2), matches diagrams against `pgn_studies/`, applies
-`diagrams_manual_overrides.json` last, and writes
-`chess-app/data/{book_structure,diagrams,toc}.json` (gitignored).
-Without these files the app shows a "book not generated" error — normal on a fresh clone.
+This reads the EPUB, matches diagrams against the local PGN studies, applies the
+manual overrides, and writes `chess-app/data/{book_structure,diagrams,toc}.json`.
 
-### 2. Run the app (after step 1)
+### 2. Run the app
 
 ```bash
 cd chess-app
-npm install   # once (vite, vitest, chess.js, cm-chessboard)
-npm run dev   # http://localhost:5173
+npm install   # once: vite, vitest, chess.js, cm-chessboard
+npm run dev   # open http://localhost:5173
 ```
 
 Production build:
 
 ```bash
-npm run build    # prebuild copies data/ + cm-chessboard assets into public/, then vite build -> dist/
-npm run preview  # http://localhost:4173
+npm run build    # prebuild copies data + board assets into public/, then vite build -> dist/
+npm run preview  # serves the build at http://localhost:4173
 ```
 
-## Data
+### 3. Docker (optional, after step 1)
 
-- `book_structure.json`: logical sections of HTML, one per EPUB H2 (`level` 1 for front-matter / "Part " answers, 2 otherwise; `original_page` is always 0). `<div class="diagram-inline" data-diagram="N">` for diagrams, `<div class="game-notation">` for games. Never edit by hand — generated.
-- `diagrams.json`: 432 diagrams with `fen` / `initial_fen` / `moves` / `diagram_move_index` + recursive `variations` tree from PGN RAVs (flattened in-app by `flattenVariationLines()`). FEN coverage is 100% (429 via parsing + 3 via exclusive overrides; 4 override entries total).
-- `diagrams_manual_overrides.json`: hardcoded fixes for diagrams unresolvable by parsing (no usable PGN chapter, chapter with another game, or historical position). Validated strictly (`fen` parseable, moves replayable, `fen == replay(initial_fen, moves[:index])`, fail-fast).
-- `toc.json`: native EPUB table of contents (levels 1–2, starts with `Preface`).
+The Docker image does **not** embed the EPUB — generate the data locally first,
+then from the repo root:
 
-Frontend stack: vanilla JS + chess.js v1 + cm-chessboard v8 (SVG squares, `staunty.svg` pieces), Vite 5 dev/build, Vitest tests. Inline boards lazy-mount via `IntersectionObserver`; modal board is draggable with chess.js move logic.
+```bash
+docker compose up -d --build   # open http://localhost:5174
+```
+
+## How to use
+
+### Navigation
+
+- **Side menu** (☰): open/close the table of contents; click any part or chapter to jump to it.
+- **Previous / Next** buttons: walk through the sections in order; the progress bar tracks where you are.
+- **Test sections** (titled "— Tests") show a _View answer →_ link under each diagram; answer sections link _← Back to test_.
+
+### Inline diagrams
+
+Each diagram in the text is a live board:
+
+- **◀ ▶** step through the recorded moves, **⏮ ⏭** jump to start/end.
+- **More actions**: flip the board (⇅), return to the start (⊙) or to the book position (📖), copy the FEN (⧉), open the position on Lichess (♞).
+- **Enlarge** (⛶) opens the diagram in a large modal board with the full move list and variation selector.
+- A move marked 📖 is the exact position shown in the book; moves marked ↳ jump into alternative variations.
+- Diagrams whose position is unknown display a "default position" badge instead of failing silently.
+
+### Search
+
+- Type a few letters in the top-right search bar (search is debounced; `Enter` searches immediately).
+- Click a result to jump to that passage — your search terms are highlighted in the text.
+- `Esc` clears the search and returns to the current section.
+
+### Keyboard shortcuts
+
+| Keys           | Action                                                            |
+| -------------- | ----------------------------------------------------------------- |
+| `←` / `→`      | Previous / next section — or move by move when a board is focused |
+| `Home` / `End` | Start / end of the line (focused or enlarged board)               |
+| `V`            | Cycle through alternative variations                              |
+| `?`            | Open / close the shortcuts help                                   |
+| `Esc`          | Close dialog or enlarged board                                    |
+
+## Project layout
+
+```text
+.
+├── How to Reassess Your Chess 4th ed - Silman.epub  # you buy it, exact name required
+├── pgn_studies/          # Local PGN studies — source of positions and games
+├── silman_parser/       # parser: epub_ingest, san, segmentation, html_render,
+│                        # diagram_context, pgn_sources, overrides, build (entry point)
+├── tests/               # backend tests: parser unit tests + generated-data invariants
+├── docker-compose.yml   # static Nginx on :5174 (generate data first, see above)
+└── chess-app/           # web app (frontend)
+    ├── index.html / vite.config.js / package.json / Dockerfile / nginx.conf
+    ├── css/ / js/       # ES modules: ChessApp orchestrator, PlayableBoard core,
+    │                    # inline + modal board managers, navigation, search
+    ├── data/            # generated *.json (gitignored) + versioned manual overrides
+    └── tests/           # frontend vitest suites (chess-utils, search)
+```
+
+See `AGENTS.md` for contributor conventions.
+
+## Generated data files
+
+All three are produced by `python3 -m silman_parser.build`, gitignored, and
+must never be edited by hand:
+
+| File                  | Content                                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `book_structure.json` | HTML sections: headings, paragraphs, `<div class="diagram-inline" data-diagram="N">` placeholders, `<div class="game-notation">` score blocks |
+| `diagrams.json`       | One entry per diagram: `fen`, `initial_fen`, `moves`, `diagram_move_index`, plus a recursive variation tree (flattened in-app) |
+| `toc.json`            | Native EPUB table of contents (starting at _Preface_); falls back to a section-derived TOC if absent |
+
+`diagrams_manual_overrides.json` is the exception: versioned fixes applied last,
+validated strictly (parseable FEN, replayable moves, position consistency — fail-fast).
 
 ## Tests
 
 ```bash
-python3 -m unittest discover -s tests -v   # backend: parser + generated-JSON invariants (stdlib only)
-cd chess-app && npm test                    # frontend: 23 vitest tests (chess-utils + search)
+python3 -m unittest discover -s tests -v   # backend: parser + JSON invariants (stdlib only)
+cd chess-app && npm test                    # frontend vitest (chess-utils + search)
 ```
 
 JSON sanity checks:
@@ -91,10 +167,24 @@ python3 -m json.tool chess-app/data/diagrams.json > /dev/null
 python3 -m json.tool chess-app/data/toc.json > /dev/null
 ```
 
-See `chess-app/README.md` for app usage (navigation, inline diagrams, search, keyboard shortcuts) and `AGENTS.md` for contributor conventions.
+## Tech stack
+
+- **Frontend**: vanilla JS (ES modules), [chess.js](https://github.com/jhlywa/chess.js) v1 (rules) + [cm-chessboard](https://github.com/shaack/cm-chessboard) v8 (SVG boards, `staunty` pieces) — all via npm, no CDN
+- **Dev/build/test**: Vite 5, Vitest
+- **Parser**: Python 3, standard library only (plus `python-chess` for the data-integrity tests)
+- **Deploy (optional)**: multi-stage Docker build → Nginx
+- Boards lazy-mount via `IntersectionObserver`; one shared `PlayableBoard` core drives both inline and modal boards
+
+## Troubleshooting
+
+| Symptom                                | Cause / fix                                                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| "Book data not found" panel            | Normal on fresh clone — buy the EPUB, place it at the root, run `python3 -m silman_parser.build`, restart the app   |
+| Port `5173` busy                       | Vite picks the next free port (e.g. `5174`) — check the terminal output for the actual URL                          |
+| Blank board / "default position" badge | Diagram with no known FEN (covered by the badge by design), or `npm install` not run (missing cm-chessboard assets) |
 
 ## License
 
 The app code is yours to share. The book is © Jeremy Silman — no book text is
 included in this repo (EPUB + generated JSONs are gitignored). Each user buys
-the EPUB and generates the data locally for personal study.
+the EPUB and generates the data locally for personal study only.
