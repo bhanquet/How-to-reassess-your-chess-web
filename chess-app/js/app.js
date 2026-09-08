@@ -8,7 +8,7 @@ import { InlineBoardManager } from './inline-boards.js';
 import { ModalBoardManager } from './modal-board.js';
 import { buildTOCFromNCX, buildTOCFromSections, closeSidebarMobile, markActiveNavItem, renderNavigation, setSidebarOpen } from './navigation.js';
 import { renderSearchResults, searchSections } from './search.js';
-import { errorHTML, loadingHTML, noResultsHTML, sectionHTML } from './templates.js';
+import { errorHTML, loadingHTML, missingDataHTML, noResultsHTML, sectionHTML } from './templates.js';
 import { getAlternativesAt, parsePlyOrNull } from './chess-utils.js';
 
 /* ---------- Last opened section (localStorage, namespace htrc:) ---------- */
@@ -250,9 +250,18 @@ class ChessApp {
         const contentArea = document.getElementById('content-area');
         contentArea.innerHTML = loadingHTML();
 
-        const fetchJSON = (url) => fetch(url).then(r => {
+        // Read as text first: a missing file may resolve to the SPA
+        // fallback (index.html, HTTP 200), whose "<" breaks JSON.parse.
+        // Tagging parse errors with the URL keeps missing-data detection
+        // working in that case too.
+        const fetchJSON = (url) => fetch(url).then(async r => {
+            const text = await r.text();
             if (!r.ok) throw new Error(`${url} → HTTP ${r.status}`);
-            return r.json();
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                throw new Error(`${url} → invalid JSON (${e.message})`);
+            }
         });
 
         // The NCX TOC is optional: a missing/invalid toc.json falls back to
@@ -282,10 +291,24 @@ class ChessApp {
             })
             .catch(error => {
                 console.error('Error loading book data:', error);
-                contentArea.innerHTML = errorHTML(
-                    `Unable to load book: ${error.message}`,
-                    { label: 'Retry', onClick: () => this.loadBookData() },
-                );
+                // Only book_structure.json / diagrams.json can reject here
+                // (toc.json falls back to null above), so any failure means
+                // the generated data is missing or unreadable. The message
+                // always carries the URL (see fetchJSON), including JSON
+                // parse failures from the SPA fallback serving index.html.
+                const message = error && error.message ? error.message : String(error);
+                const missing = /book_structure\.json|diagrams\.json/i.test(message)
+                    || /HTTP \d{3}|invalid JSON|JSON\.parse|Unexpected token|Failed to fetch|NetworkError|Load failed/i.test(message);
+                if (missing) {
+                    contentArea.innerHTML = missingDataHTML(message);
+                    contentArea.querySelector('.missing-retry')?.addEventListener('click', () => this.loadBookData());
+                } else {
+                    contentArea.innerHTML = errorHTML(
+                        `Unable to load book: ${message}`,
+                        { label: 'Retry' },
+                    );
+                    contentArea.querySelector('.error-action')?.addEventListener('click', () => this.loadBookData());
+                }
             });
     }
 

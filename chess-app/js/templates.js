@@ -165,6 +165,38 @@ export function loadingHTML() {
     `;
 }
 
+/** Friendly "book data not generated" panel (replaces the raw JSON error).
+ *
+ * The book text is never committed (copyright): book_structure.json,
+ * diagrams.json and toc.json are generated locally from the legally
+ * purchased EPUB. When they are missing the fetch either 404s or resolves
+ * to the SPA fallback (index.html), whose "<" breaks JSON.parse — so this
+ * panel explains how to import the data instead of showing the raw error.
+ */
+export function missingDataHTML(detail = '') {
+    const detailHtml = detail
+        ? `<details class="missing-detail"><summary>Technical details</summary><code>${escapeHtml(detail)}</code></details>`
+        : '';
+    return `
+        <div class="missing-data" role="alert">
+            <h2>Book data not found</h2>
+            <p>The book text is <strong>not included</strong> in this repository
+            (copyright). Generate it locally from your legally purchased EPUB:</p>
+            <ol>
+                <li>Buy the EPUB legally.</li>
+                <li>Place it at the repository root as<br><code>How to Reassess Your Chess 4th ed - Silman.epub</code></li>
+                <li>From the repository root, run:<br><code>python3 -m silman_parser.build</code></li>
+                <li>Then restart the app:<br><code>cd chess-app &amp;&amp; npm run dev</code></li>
+            </ol>
+            <p class="hint">This creates the generated files
+            <code>chess-app/data/book_structure.json</code>,
+            <code>diagrams.json</code> and <code>toc.json</code> (gitignored).</p>
+            <button type="button" class="error-action missing-retry">Retry</button>
+            ${detailHtml}
+        </div>
+    `;
+}
+
 /** Inline error banner with optional action. */
 export function errorHTML(message, action = null) {
     const actionHtml = action
