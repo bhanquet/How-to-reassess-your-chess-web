@@ -37,6 +37,15 @@ search_test.png
 .vscode/
 .idea/
 
+# Generated book data (copyrighted text — never version).
+# Regenerate locally with `python3 -m silman_parser.build`
+# (requires a legally purchased EPUB, see README.md).
+# Only diagrams_manual_overrides.json is versioned.
+chess-app/data/book_structure.json
+chess-app/data/diagrams.json
+chess-app/data/toc.json
+chess-app/public/data/
+
 # Build / generation (regenerable via `npm run build` / prebuild/predev)
 chess-app/dist/
 chess-app/public/
