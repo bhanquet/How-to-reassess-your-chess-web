@@ -11,6 +11,140 @@ import { renderSearchResults, searchSections } from './search.js';
 import { errorHTML, loadingHTML, noResultsHTML, sectionHTML } from './templates.js';
 import { getAlternativesAt, parsePlyOrNull } from './chess-utils.js';
 
+/* ---------- Last opened section (localStorage, namespace htrc:) ---------- */
+function storageSet(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* ignore */ }
+}
+
+const CURRENT_KEY = 'htrc:current';
+
+/** Finds the section owning each diagram by scanning section HTML. */
+function buildSectionDiagramMap(bookData) {
+    const map = new Map();
+    if (!bookData || !bookData.sections) return map;
+    bookData.sections.forEach((section, index) => {
+        const re = /data-diagram="(\d+)"/g;
+        let m;
+        while ((m = re.exec(section.content)) !== null) {
+            if (!map.has(m[1])) map.set(m[1], index);
+        }
+    });
+    return map;
+}
+
+/** Tiny toast feedback (mirrors playable-board.js behavior). */
+function showAppToast(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.hidden = false;
+    clearTimeout(showAppToast._timer);
+    showAppToast._timer = setTimeout(() => { toast.hidden = true; }, 2000);
+}
+
+async function copyFenToClipboard(fen) {
+    if (!fen) { showAppToast('No position available'); return; }
+    try {
+        await navigator.clipboard.writeText(fen);
+        showAppToast('FEN copied to clipboard');
+    } catch (e) {
+        try {
+            const ta = document.createElement('textarea');
+            ta.value = fen;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+            showAppToast('FEN copied to clipboard');
+        } catch (e2) { showAppToast('Copy failed'); }
+    }
+}
+
+function openLichess(fen) {
+    if (!fen) { showAppToast('No position available'); return; }
+    window.open(`https://lichess.org/analysis/standard/${encodeURIComponent(fen)}`, '_blank', 'noopener');
+}
+
+/** Escapes a string for use in a RegExp. */
+function escapeRegExp(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Tokenizes a raw query for in-page <mark> highlighting. */
+function queryTerms(rawQuery) {
+    return (rawQuery || '').toLowerCase().normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .split(/[^a-z0-9]+/).filter(w => w.length > 1).slice(0, 8);
+}
+
+const DIAGRAM_REF_RE = /Diagram\s+(\d+)/g;
+
+/**
+ * Single TreeWalker pass over rendered section text (P1.5 + P1.7): wraps
+ * "Diagram N" references in jump links and marks search terms. Skips
+ * interactive elements and board widgets so nothing breaks.
+ */
+function processContentText(root, sectionNum, terms) {
+    if (!root) return;
+    const termPattern = terms && terms.length
+        ? new RegExp(`(${terms.map(escapeRegExp).join('|')})`, 'gi')
+        : null;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            const el = node.parentElement;
+            if (!el || el.closest('a,button,select,textarea,script,style,.diagram-playable-wrapper')) {
+                return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        },
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) annotateTextNode(node, sectionNum, termPattern);
+}
+
+function annotateTextNode(node, sectionNum, termPattern) {
+    const text = node.nodeValue;
+    const frag = document.createDocumentFragment();
+    const pushMarked = (chunk) => {
+        if (!chunk) return;
+        if (!termPattern) {
+            frag.appendChild(document.createTextNode(chunk));
+            return;
+        }
+        termPattern.lastIndex = 0;
+        let tl = 0;
+        let tm;
+        while ((tm = termPattern.exec(chunk)) !== null) {
+            if (tm.index > tl) frag.appendChild(document.createTextNode(chunk.slice(tl, tm.index)));
+            const mark = document.createElement('mark');
+            mark.textContent = tm[0];
+            frag.appendChild(mark);
+            tl = tm.index + tm[0].length;
+            if (tm[0].length === 0) termPattern.lastIndex++;
+        }
+        if (tl < chunk.length) frag.appendChild(document.createTextNode(chunk.slice(tl)));
+    };
+    DIAGRAM_REF_RE.lastIndex = 0;
+    let last = 0;
+    let m;
+    while ((m = DIAGRAM_REF_RE.exec(text)) !== null) {
+        pushMarked(text.slice(last, m.index));
+        const a = document.createElement('a');
+        a.href = `#s${sectionNum}-d${m[1]}`;
+        a.className = 'diag-link';
+        a.dataset.diagramLink = m[1];
+        a.textContent = m[0];
+        frag.appendChild(a);
+        last = m.index + m[0].length;
+    }
+    pushMarked(text.slice(last));
+    node.replaceWith(frag);
+}
+
 class ChessApp {
     constructor() {
         this.currentSection = 0;
@@ -20,6 +154,10 @@ class ChessApp {
         this.inline = new InlineBoardManager();
         this.modal = new ModalBoardManager();
         this.activeBoardNum = null;
+        /** False when contentArea shows search results instead of a section. */
+        this.showingSection = false;
+        /** Diagram number (string) -> owning section number. */
+        this.sectionDiagramMap = new Map();
         this.init();
     }
 
@@ -137,8 +275,9 @@ class ChessApp {
                     this.toc,
                     (section, anchor) => this.loadSection(section, anchor),
                 );
+                this.sectionDiagramMap = buildSectionDiagramMap(this.bookData);
                 const restored = this._restoreSectionFromHashOrStorage();
-                this.loadSection(restored.section, restored.anchor);
+                this.loadSection(restored.section, restored.anchor, { diagram: restored.diagram });
             })
             .catch(error => {
                 console.error('Error loading book data:', error);
@@ -164,26 +303,38 @@ class ChessApp {
 
     /** Determine the starting point: hash → localStorage → section 0. */
     _restoreSectionFromHashOrStorage() {
-        const hashMatch = window.location.hash.match(/^#s(\d+)(?:-([\w-]+))?$/);
+        // Supports #sN, #sN-anchor (NCX) and #sN-dM (diagram deep-link).
+        const hashMatch = window.location.hash.match(/^#s(\d+)(?:-(?:d(\d+)|([\w-]+)))?$/);
         if (hashMatch) {
             const n = parseInt(hashMatch[1], 10);
-            if (!Number.isNaN(n)) return { section: n, anchor: hashMatch[2] || null };
+            if (!Number.isNaN(n)) {
+                return {
+                    section: n,
+                    diagram: hashMatch[2] != null ? parseInt(hashMatch[2], 10) : null,
+                    anchor: hashMatch[3] || null,
+                };
+            }
         }
         try {
+            const savedNew = localStorage.getItem(CURRENT_KEY);
+            if (savedNew !== null) {
+                const n = parseInt(savedNew, 10);
+                if (!Number.isNaN(n)) return { section: n, anchor: null, diagram: null };
+            }
             const saved = localStorage.getItem('currentSection');
             if (saved !== null) {
                 const n = parseInt(saved, 10);
-                if (!Number.isNaN(n)) return { section: n, anchor: null };
+                if (!Number.isNaN(n)) return { section: n, anchor: null, diagram: null };
             }
         } catch (e) { /* localStorage may be blocked */ }
-        return { section: 0, anchor: null };
+        return { section: 0, anchor: null, diagram: null };
     }
 
-    loadSection(sectionNum, anchor = null) {
+    loadSection(sectionNum, anchor = null, opts = {}) {
         if (!this.bookData || !this.bookData.sections) return;
-        const totalSections = this.bookData.sections.length;
-        sectionNum = Math.max(0, Math.min(sectionNum, totalSections - 1));
+        const totalSections = this.bookData.sections.length;        sectionNum = Math.max(0, Math.min(sectionNum, totalSections - 1));
         this.currentSection = sectionNum;
+        this.showingSection = true;
         const section = this.bookData.sections[sectionNum];
         const contentArea = document.getElementById('content-area');
         contentArea.innerHTML = sectionHTML(section, sectionNum, totalSections);
@@ -198,6 +349,12 @@ class ChessApp {
 
         document.getElementById('main-content').scrollTop = 0;
         this.inline.renderIn(contentArea, this.diagrams);
+        // P1.5 + P1.7: search-term highlight + clickable "Diagram N" links.
+        processContentText(
+            contentArea.querySelector('.content-text'),
+            sectionNum,
+            opts.terms ? queryTerms(opts.terms) : null,
+        );
         if (anchor) {
             // NCX deep link: scroll to the anchored heading once rendered.
             const target = document.getElementById(anchor);
@@ -208,11 +365,32 @@ class ChessApp {
             }
         }
         markActiveNavItem(this.currentSection, anchor, this._isSectionInView(this.currentSection));
-        const hash = anchor ? `#s${sectionNum}-${anchor}` : `#s${sectionNum}`;
+        // Persist the last opened section so a return visit redirects there.
+        const diagram = opts.diagram != null ? String(opts.diagram) : null;
+        const hash = diagram ? `#s${sectionNum}-d${diagram}`
+            : anchor ? `#s${sectionNum}-${anchor}` : `#s${sectionNum}`;
         try {
             window.history.replaceState(null, '', hash);
-            localStorage.setItem('currentSection', String(sectionNum));
+            storageSet(CURRENT_KEY, sectionNum);
         } catch (e) { /* ignore */ }
+        if (diagram) {
+            requestAnimationFrame(() => this.scrollToDiagram(diagram, 'auto'));
+        }
+    }
+
+    /** Scrolls to a diagram wrapper with a flash highlight (P1.7 / P1.10). */
+    scrollToDiagram(num, behavior = 'smooth') {
+        const contentArea = document.getElementById('content-area');
+        const wrapper = contentArea?.querySelector(`.diagram-playable-wrapper[data-diagram="${num}"]`);
+        if (!wrapper) return false;
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        wrapper.scrollIntoView({ behavior: reduce ? 'auto' : behavior, block: 'center' });
+        wrapper.classList.remove('flash');
+        void wrapper.offsetWidth;
+        wrapper.classList.add('flash');
+        setTimeout(() => wrapper.classList.remove('flash'), 1800);
+        wrapper.focus({ preventScroll: true });
+        return true;
     }
 
     /** True if the TOC entry for `sectionNum` is already visible in the sidebar. */
@@ -276,11 +454,10 @@ class ChessApp {
             setSidebarOpen(false);
         });
 
-        // Keep the scrim in sync when crossing the mobile/desktop breakpoint
-        // with the sidebar already open (e.g. resize/orientation change).
-        window.matchMedia?.('(max-width: 768px)').addEventListener?.('change', () => {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar) setSidebarOpen(!sidebar.classList.contains('hidden'));
+        // Keep the sidebar state explicit when crossing the mobile/desktop
+        // breakpoint (P0.3): desktop → open, mobile → closed.
+        window.matchMedia?.('(max-width: 768px)').addEventListener?.('change', (e) => {
+            setSidebarOpen(!e.matches);
         });
 
         document.querySelector('.close-modal').addEventListener('click', () => {
@@ -337,6 +514,22 @@ class ChessApp {
         document.getElementById('modal-next')?.addEventListener('click', () => this.modal.goToMove(this.modal.state.currentIndex + 1));
         document.getElementById('modal-last')?.addEventListener('click', () => this.modal.goToMove(this.modal.state.allMoves.length));
 
+        // P1.10: modal FEN copy + Study.
+        document.getElementById('fen-board')?.addEventListener('click', () => {
+            copyFenToClipboard(this.modal.chess?.fen());
+        });
+        document.getElementById('lichess-board')?.addEventListener('click', () => {
+            openLichess(this.modal.chess?.fen());
+        });
+
+        // P1.9: shortcuts help dialog.
+        document.getElementById('shortcuts-close')?.addEventListener('click', () => {
+            this.toggleShortcuts(false);
+        });
+        document.getElementById('shortcuts-backdrop')?.addEventListener('click', (e) => {
+            if (e.target.id === 'shortcuts-backdrop') this.toggleShortcuts(false);
+        });
+
         // Click on a modal move: display the position (shared dispatcher
         // routes `.move.var-jump` variation jumps BEFORE `.move[data-ply]`).
         document.getElementById('move-list')?.addEventListener('click', (e) => {
@@ -370,6 +563,13 @@ class ChessApp {
         const contentArea = document.getElementById('content-area');
 
         contentArea.addEventListener('click', (e) => {
+            // In-text "Diagram N" jump links (P1.7).
+            const link = e.target.closest('.diag-link');
+            if (link) {
+                e.preventDefault();
+                this.scrollToDiagram(link.dataset.diagramLink);
+                return;
+            }
             // Move clicks: shared dispatcher routes `.move.var-jump` variation
             // jumps BEFORE plain `.move[data-ply]` moves. Focus the wrapper so
             // keyboard navigation follows the clicked diagram.
@@ -413,6 +613,8 @@ class ChessApp {
                     opener: btn,
                     startIndex: d ? d.currentIndex : 0,
                 }),
+                'diag-fen': () => copyFenToClipboard(this.inline.getFen(numBtn)),
+                'diag-lichess': () => openLichess(this.inline.getFen(numBtn)),
             };
             for (const [cls, action] of Object.entries(actions)) {
                 if (btn.classList.contains(cls)) {
@@ -441,7 +643,20 @@ class ChessApp {
         });
 
         document.addEventListener('keydown', (e) => {
+            // P1.9: shortcuts help.
+            if (e.key === '?' && !this.modal.isOpen) {
+                const tag = (e.target.tagName || '').toLowerCase();
+                if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+                e.preventDefault();
+                this.toggleShortcuts();
+                return;
+            }
             if (e.key === 'Escape') {
+                const backdrop = document.getElementById('shortcuts-backdrop');
+                if (backdrop && !backdrop.hidden) {
+                    this.toggleShortcuts(false);
+                    return;
+                }
                 if (this.modal.isOpen) this.modal.close();
                 return;
             }
@@ -452,6 +667,7 @@ class ChessApp {
             );
             if (this.modal.isOpen && modalNav[e.key]) {
                 e.preventDefault();
+                this._setKbActive(document.getElementById('chess-board'));
                 modalNav[e.key]();
                 return;
             }
@@ -467,6 +683,9 @@ class ChessApp {
                 : null;
             if (inlineNav && inlineNav[e.key]) {
                 e.preventDefault();
+                this._setKbActive(document.querySelector(
+                    `.diagram-playable-wrapper[data-diagram="${focusedBoardNum}"]`,
+                ));
                 inlineNav[e.key]();
                 return;
             }
@@ -495,26 +714,48 @@ class ChessApp {
         });
     }
 
-    /** React to hash changes (#sN / #sN-anchor) entered in the URL bar. */
+    /** React to hash changes (#sN / #sN-anchor / #sN-dM) entered in the URL bar. */
     _setupHashSync() {
         window.addEventListener('hashchange', () => {
             const restored = this._restoreSectionFromHashOrStorage();
-            if (restored.section !== this.currentSection) {
-                this.loadSection(restored.section, restored.anchor);
+            // Reload when the section differs OR when the content area is
+            // showing search results / the review list instead of a section.
+            if (restored.section !== this.currentSection || !this.showingSection) {
+                this.loadSection(restored.section, restored.anchor, { diagram: restored.diagram });
+            } else if (restored.diagram != null) {
+                this.scrollToDiagram(String(restored.diagram));
             }
         });
+    }
+
+    /** Marks the board currently driven by the keyboard (P1.9). */
+    _setKbActive(el) {
+        document.querySelectorAll('.kb-active').forEach((n) => n.classList.remove('kb-active'));
+        el?.classList.add('kb-active');
+    }
+
+    /** Shows/hides the keyboard-shortcuts help (P1.9). */
+    toggleShortcuts(force) {
+        const backdrop = document.getElementById('shortcuts-backdrop');
+        if (!backdrop) return;
+        const show = force !== undefined ? force : backdrop.hidden;
+        backdrop.hidden = !show;
+        if (show) {
+            document.getElementById('shortcuts-close')?.focus();
+        }
     }
 
     performSearch(queryOverride) {
         const rawQuery = (queryOverride ?? document.getElementById('search-input').value).trim();
         if (!rawQuery || !this.bookData) return;
-        const { results } = searchSections(this.bookData, rawQuery);
+        const { results, query } = searchSections(this.bookData, rawQuery);
         const contentArea = document.getElementById('content-area');
+        this.showingSection = false;
         if (results.length > 0) {
-            renderSearchResults(contentArea, results, rawQuery,
-                (section) => this.loadSection(section));
+            renderSearchResults(contentArea, results, query,
+                (section) => this.loadSection(section, null, { terms: query }));
         } else {
-            contentArea.innerHTML = noResultsHTML(rawQuery);
+            contentArea.innerHTML = noResultsHTML(query);
         }
     }
 

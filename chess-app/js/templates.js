@@ -77,9 +77,7 @@ export function sectionHTML(section, sectionNum, totalSections) {
             <h1 class="section-title">${escapeHtml(section.title)}</h1>
             <div class="progress-bar"><div class="progress-fill" style="width: ${progress}%"></div></div>
             <div class="page-info">
-                <span>Section ${sectionNum + 1} / ${totalSections} (${progress}%)</span>
-                <span>${escapeHtml(section.title)}</span>
-                ${origPage ? `<span>Printed page: ${origPage}</span>` : ''}
+                <span>Section ${sectionNum + 1} / ${totalSections} · ${progress}%${origPage ? ` · printed p. ${origPage}` : ''}</span>
             </div>
         </div>
         <div class="page-navigation">
@@ -112,16 +110,22 @@ export function inlineWrapperHTML(num, captionText, hasPosition) {
             <button type="button" class="diag-btn diag-prev" data-diagram="${num}" title="Previous move (←)" aria-label="Previous move" aria-keyshortcuts="ArrowLeft">◀</button>
             <button type="button" class="diag-btn diag-next" data-diagram="${num}" title="Next move (→)" aria-label="Next move" aria-keyshortcuts="ArrowRight">▶</button>
             <button type="button" class="diag-btn diag-last" data-diagram="${num}" title="End of line (End)" aria-label="End of line" aria-keyshortcuts="End">⏭</button>
-            <span class="controls-sep" aria-hidden="true"></span>
-            <button type="button" class="diag-btn diag-flip" data-diagram="${num}" title="Flip board" aria-label="Flip board">⇅</button>
-            <button type="button" class="diag-btn diag-position" data-diagram="${num}" title="Return to initial position (before any move)" aria-label="Initial position">⊙</button>
-            <button type="button" class="diag-btn diag-reset" data-diagram="${num}" title="Return to diagram position in book 📖" aria-label="Diagram position">📖</button>
             <button type="button" class="diag-btn diag-expand" data-diagram="${num}" title="Enlarge diagram" aria-label="Enlarge">⛶</button>
         </div>
+        <details class="diag-more">
+            <summary>More actions</summary>
+            <div class="diag-more-actions">
+                <button type="button" class="diag-btn diag-flip" data-diagram="${num}" title="Flip board" aria-label="Flip board">⇅ Flip</button>
+                <button type="button" class="diag-btn diag-position" data-diagram="${num}" title="Return to initial position (before any move)" aria-label="Initial position">⊙ Start</button>
+                <button type="button" class="diag-btn diag-reset" data-diagram="${num}" title="Return to diagram position in book 📖" aria-label="Diagram position">📖 Book</button>
+                <button type="button" class="diag-btn diag-fen" data-diagram="${num}" title="Copy current FEN to clipboard" aria-label="Copy FEN">⧉ FEN</button>
+                <button type="button" class="diag-btn diag-lichess" data-diagram="${num}" title="Open current position on Lichess" aria-label="Open on Lichess">♞ Lichess</button>
+            </div>
+        </details>
         <div class="diagram-playable-moves" id="inline-moves-${num}" role="list" aria-label="Moves for diagram ${escapeHtml(num)}">
             <em>No moves played</em>
         </div>
-        <p class="diagram-playable-hint">⏮ start · ◀ ▶ move by move · ⇅ flip · ⊙ initial position · 📖 book position · ⛶ enlarge</p>
+        <p class="diagram-playable-hint visually-hidden">⏮ start · ◀ ▶ move by move · ⇅ flip · ⊙ initial position · 📖 book position · ⛶ enlarge</p>
         <div class="diagram-playable-vars" id="inline-vars-${num}" hidden>
             <label>Variation:
                 <select class="diag-var-select" data-diagram="${num}" aria-label="Choose a variation"></select>

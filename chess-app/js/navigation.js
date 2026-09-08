@@ -281,8 +281,7 @@ export function renderNavigation(navTree, toc, onSelect) {
     navTree.appendChild(fragment);
 }
 
-/** Open or close the sidebar and sync the scrim + menu button. */
-export function setSidebarOpen(isOpen) {
+/** Open or close the sidebar and sync the scrim + menu button. */export function setSidebarOpen(isOpen) {
     const sidebar = document.getElementById('sidebar');
     const scrim = document.getElementById('sidebar-scrim');
     const toggle = document.getElementById('menu-toggle');

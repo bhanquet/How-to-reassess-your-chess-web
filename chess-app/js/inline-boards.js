@@ -141,4 +141,14 @@ export class InlineBoardManager {
         this._attachIfNeeded(num);
         this.boards.get(num)?.goToMove(index);
     }
+
+    /** Current FEN of diagram `num` (attaches the board if needed). */
+    getFen(num) {
+        this._attachIfNeeded(num);
+        try {
+            return this.boards.get(num)?.game?.fen() || null;
+        } catch (e) {
+            return null;
+        }
+    }
 }

@@ -85,6 +85,8 @@
                             <button id="undo-board" class="text-btn" type="button" title="Undo last move (Backspace)" aria-label="Undo last move" aria-keyshortcuts="Backspace">↶</button>
                             <button id="position-board" class="text-btn" type="button" title="Initial position" aria-label="Initial position">⊙</button>
                             <button id="reset-board" class="text-btn" type="button" title="Diagram position in book" aria-label="Diagram position">📖</button>
+                            <button id="fen-board" class="text-btn" type="button" title="Copy current FEN" aria-label="Copy FEN">⧉</button>
+                            <button id="lichess-board" class="text-btn" type="button" title="Open on Lichess" aria-label="Open on Lichess">♞</button>
                         </div>
                         <div class="modal-vars" id="modal-vars" hidden>
                             <label>Variation:
@@ -102,6 +104,21 @@
     <!-- P2: jQuery + chess.js (CDN 0.10.3) + chessboard.js removed.
          Replaced by ESM imports of chess.js v1 and cm-chessboard v8
          in js/app.js and js/playable-board.js. -->
+    <!-- Keyboard shortcuts help (P1.9, toggled with "?") -->
+    <div id="shortcuts-backdrop" class="shortcuts-backdrop" hidden>
+        <div class="shortcuts-dialog" role="dialog" aria-modal="true" aria-labelledby="shortcuts-title">
+            <h2 id="shortcuts-title">Keyboard shortcuts</h2>
+            <dl>
+                <dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>Previous / next section — or move by move when a board is focused</dd>
+                <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>Start / end of line (focused board or open board)</dd>
+                <dt><kbd>V</kbd></dt><dd>Cycle through alternative variations</dd>
+                <dt><kbd>?</kbd></dt><dd>Open / close this help</dd>
+                <dt><kbd>Esc</kbd></dt><dd>Close dialog or enlarged board</dd>
+            </dl>
+            <button type="button" id="shortcuts-close">Close</button>
+        </div>
+    </div>
+
     <script type="module" src="js/app.js"></script>
     <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
 </body>
