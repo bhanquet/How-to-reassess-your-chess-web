@@ -291,12 +291,14 @@ class TestToc(unittest.TestCase):
         self.assertEqual(len(imbalances['children']), 13)
         anchored = [c for c in imbalances['children'] if c['anchor']]
         self.assertEqual(len(anchored), 12)
-        # Objective mapping: 9-17 -> section 3, 18-19 -> section 4,
-        # 20 -> section 5.
+        # Objective mapping depends on the section split, which is sensitive
+        # to the HTML length emitted by the parser. After semantic enrichment
+        # (lists compact many <p> blocks into one <ul>), the boundary shifts:
+        # 9-16 -> section 3, 17-19 -> section 4, 20 -> section 5.
         by_anchor = {c['anchor']: c['section'] for c in anchored}
-        for num in range(9, 18):
+        for num in range(9, 17):
             self.assertEqual(by_anchor[f'_idParaDest-{num}'], 3)
-        for num in (18, 19):
+        for num in (17, 18, 19):
             self.assertEqual(by_anchor[f'_idParaDest-{num}'], 4)
         self.assertEqual(by_anchor['_idParaDest-20'], 5)
         summary = imbalances['children'][-1]

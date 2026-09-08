@@ -15,6 +15,7 @@ import chess.pgn
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import silman_parser as p
+from silman_parser.epub_ingest import _enrich_content_blocks
 
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EPUB_PATH = os.path.join(REPO_DIR, 'How to Reassess Your Chess 4th ed - Silman.epub')
@@ -129,6 +130,68 @@ class TestHtmlEscape(unittest.TestCase):
         out = p.html_escape('pawn-fa<;ade.')
         self.assertIn('pawn-facade', out)
         self.assertNotIn('&lt;;', out)
+
+
+class TestEnrichContentBlocks(unittest.TestCase):
+    """Semantic enrichment: lists, callouts, blockquotes."""
+
+    @staticmethod
+    def _block(html, href=None, anchor=None):
+        return {'html': html, 'href': href, 'anchor': anchor}
+
+    def test_list_main_and_sub_items(self):
+        blocks = [
+            self._block('<p>»Parent A</p>'),
+            self._block('<p>•Child 1</p>'),
+            self._block('<p>•Child 2</p>'),
+            self._block('<p>»Parent B</p>'),
+        ]
+        out = _enrich_content_blocks(blocks)
+        self.assertEqual(len(out), 1)
+        self.assertIn('<ul class="book-list">', out[0]['html'])
+        self.assertIn('<ul class="book-list book-list-sub">', out[0]['html'])
+        self.assertIn('<li>Parent A<ul', out[0]['html'])
+        self.assertIn('<li>Child 1</li>', out[0]['html'])
+        self.assertIn('<li>Parent B</li>', out[0]['html'])
+        self.assertNotIn('»', out[0]['html'])
+        self.assertNotIn('•', out[0]['html'])
+
+    def test_callout_marker_consumes_next_paragraph(self):
+        blocks = [
+            self._block('<p>philosophy</p>'),
+            self._block('<p>Think before you move.</p>'),
+            self._block('<p>Normal prose.</p>'),
+        ]
+        out = _enrich_content_blocks(blocks)
+        self.assertEqual(len(out), 2)
+        self.assertIn('<aside class="callout callout-philosophy">', out[0]['html'])
+        self.assertIn('<h4 class="callout-title">Philosophy</h4>', out[0]['html'])
+        self.assertIn('<p>Think before you move.</p>', out[0]['html'])
+        self.assertNotIn('philosophy</p>', out[0]['html'])
+        self.assertEqual(out[1]['html'], '<p>Normal prose.</p>')
+
+    def test_callout_preserves_anchor(self):
+        blocks = [
+            self._block('<p>rule</p>'),
+            self._block('<p id="rule-42">Always castle.</p>'),
+        ]
+        out = _enrich_content_blocks(blocks)
+        self.assertIn('id="rule-42"', out[0]['html'])
+
+    def test_blockquote_with_attribution(self):
+        blocks = [
+            self._block('<p>“A sound plan makes heroes.” —G.M. Kotov</p>'),
+        ]
+        out = _enrich_content_blocks(blocks)
+        self.assertEqual(len(out), 1)
+        self.assertIn('<blockquote class="book-quote">', out[0]['html'])
+        self.assertIn('<p>“A sound plan makes heroes.”</p>', out[0]['html'])
+        self.assertIn('<cite>—G.M. Kotov</cite>', out[0]['html'])
+
+    def test_prose_paragraph_unchanged(self):
+        blocks = [self._block('<p>Just a normal paragraph.</p>')]
+        out = _enrich_content_blocks(blocks)
+        self.assertEqual(out, blocks)
 
 
 class TestSplitLongSections(unittest.TestCase):

@@ -45,6 +45,27 @@ _MAX_DIAGRAM_NUM = 432
 _DIAGRAM_LABEL_RE = re.compile(
     r'^Diagram\s+(\d+)(?:[a-z])?(?:\s*\([^)]*\))?\s*$', re.IGNORECASE)
 
+# Semantic enrichment patterns.
+_LIST_ITEM_RE = re.compile(r'^(»|•)\s*(.*)$', re.DOTALL)
+_CALLOUT_MARKER_RE = re.compile(
+    r'^<p(?:\s+[^>]*)?>\s*(in a nutshell|philosophy|rule)\s*</p>$',
+    re.IGNORECASE)
+_QUOTE_RE = re.compile(
+    r'^(?P<open>["\u201c\u2018])(?P<body>.+?)(?P<close>["\u201d\u2019])\s*'
+    r'(?P<dash>\u2014|\u2013|-)\s*'
+    r'(?P<attribution>[^<\s].*?)\s*$',
+    re.DOTALL)
+_CALLOUT_KINDS = {
+    'in a nutshell': 'nutshell',
+    'philosophy': 'philosophy',
+    'rule': 'rule',
+}
+_CALLOUT_TITLES = {
+    'nutshell': 'In a Nutshell',
+    'philosophy': 'Philosophy',
+    'rule': 'Rule',
+}
+
 # Diagram label embedded in prose (end of a moves paragraph,
 # e.g. "... 11.Qd3 a5 - Diagram 45"). Rejected if preceded by a prose
 # cross-reference word (see/in/of/from/cf.).
@@ -284,6 +305,183 @@ def _paragraph_blocks(el):
     return blocks
 
 
+def _split_p_html(html):
+    """Return (inner_text, anchor_id) for a <p> or <p id=\"...\"> block."""
+    m = re.match(r'<p(?:\s+[^>]*)?>(.*?)</p>\s*$', html, re.DOTALL)
+    if not m:
+        return None, None
+    id_m = re.search(r'\sid="([^"]+)"', html)
+    return m.group(1), (id_m.group(1) if id_m else None)
+
+
+def _callout_marker_kind(html):
+    """Return canonical callout kind if the <p> is a marker, else None."""
+    m = _CALLOUT_MARKER_RE.match(html.strip())
+    if m:
+        return _CALLOUT_KINDS.get(m.group(1).lower())
+    return None
+
+
+def _list_item_tuple(html):
+    """Return (marker, text, anchor) if the <p> is a list item, else None."""
+    text, anchor = _split_p_html(html)
+    if text is None:
+        return None
+    m = _LIST_ITEM_RE.match(text)
+    if not m:
+        return None
+    return m.group(1), m.group(2), anchor
+
+
+def _build_callout_html(kind, title, body_items):
+    """Build <aside class="callout callout-{kind}"> with title + body <p>s.
+
+    body_items is a list of (inner_html, anchor_id) tuples.
+    """
+    body = ''.join(
+        f'<p id="{anchor}">{text}</p>' if anchor else f'<p>{text}</p>'
+        for text, anchor in body_items
+    )
+    aside_anchor = ''
+    for _, anchor in body_items:
+        if anchor:
+            aside_anchor = f' id="{anchor}"'
+            break
+    return (
+        f'<aside class="callout callout-{kind}"{aside_anchor}>'
+        f'<h4 class="callout-title">{html_escape(title)}</h4>'
+        f'<div class="callout-body">{body}</div>'
+        '</aside>'
+    )
+
+
+def _build_list_html(items):
+    """Build <ul class="book-list"> from list item tuples.
+
+    items: list of (marker, inner_html, anchor_id). '»' starts a top-level
+    item; following '•' items are nested under the preceding '»' item.
+    """
+    if not items:
+        return ''
+    parts = ['<ul class="book-list">']
+    i = 0
+    while i < len(items):
+        marker, text, anchor = items[i]
+        if marker == '»':
+            j = i + 1
+            while j < len(items) and items[j][0] == '•':
+                j += 1
+            sub_items = items[i + 1:j]
+            id_attr = f' id="{anchor}"' if anchor else ''
+            if sub_items:
+                parts.append(f'<li{id_attr}>{text}'
+                             '<ul class="book-list book-list-sub">')
+                for _, sub_text, sub_anchor in sub_items:
+                    sub_id = f' id="{sub_anchor}"' if sub_anchor else ''
+                    parts.append(f'<li{sub_id}>{sub_text}</li>')
+                parts.append('</ul></li>')
+            else:
+                parts.append(f'<li{id_attr}>{text}</li>')
+            i = j
+        else:
+            # A sub-item without a preceding main item is rendered top-level.
+            id_attr = f' id="{anchor}"' if anchor else ''
+            parts.append(f'<li{id_attr}>{text}</li>')
+            i += 1
+    parts.append('</ul>')
+    return ''.join(parts)
+
+
+def _build_blockquote_html(text, anchor):
+    """Build <blockquote class="book-quote"> if text matches quote — author."""
+    m = _QUOTE_RE.match(text)
+    if not m:
+        return None
+    body = m.group('body')
+    attribution = m.group('attribution')
+    open_q = m.group('open')
+    close_q = m.group('close')
+    dash = m.group('dash')
+    id_attr = f' id="{anchor}"' if anchor else ''
+    return (
+        f'<blockquote class="book-quote"{id_attr}>'
+        f'<p>{open_q}{body}{close_q}</p>'
+        f'<cite>{dash}{attribution}</cite>'
+        '</blockquote>'
+    )
+
+
+def _enrich_content_blocks(blocks):
+    """Transform prose blocks into semantic HTML: callouts, lists, blockquotes."""
+    # Pass 1: callout markers consume the immediately following paragraph.
+    enriched = []
+    i = 0
+    while i < len(blocks):
+        b = blocks[i]
+        kind = _callout_marker_kind(b.get('html', ''))
+        if kind is not None:
+            body_items = []
+            i += 1
+            if i < len(blocks):
+                text, anchor = _split_p_html(blocks[i].get('html', ''))
+                if text is not None:
+                    body_items.append((text, anchor))
+                    i += 1
+            title = _CALLOUT_TITLES.get(kind, kind.title())
+            html = _build_callout_html(kind, title, body_items)
+            enriched.append({
+                'html': html,
+                'href': b.get('href'),
+                'anchor': b.get('anchor'),
+            })
+            continue
+        enriched.append(b)
+        i += 1
+
+    # Pass 2: lists and blockquotes.
+    result = []
+    i = 0
+    while i < len(enriched):
+        b = enriched[i]
+        html = b.get('html', '')
+        if html.startswith('<p'):
+            item = _list_item_tuple(html)
+            if item is not None:
+                items = [item]
+                j = i + 1
+                while j < len(enriched):
+                    next_html = enriched[j].get('html', '')
+                    if not next_html.startswith('<p'):
+                        break
+                    next_item = _list_item_tuple(next_html)
+                    if next_item is None:
+                        break
+                    items.append(next_item)
+                    j += 1
+                result.append({
+                    'html': _build_list_html(items),
+                    'href': b.get('href'),
+                    'anchor': b.get('anchor'),
+                })
+                i = j
+                continue
+
+            text, anchor = _split_p_html(html)
+            if text is not None:
+                bq = _build_blockquote_html(text, anchor)
+                if bq is not None:
+                    result.append({
+                        'html': bq,
+                        'href': b.get('href'),
+                        'anchor': b.get('anchor'),
+                    })
+                    i += 1
+                    continue
+        result.append(b)
+        i += 1
+    return result
+
+
 def _diagram_label_num(el):
     """Diagram number if the <p> is a standalone label, else None.
 
@@ -426,6 +624,7 @@ def parse_epub(epub_path):
                 })
 
     for sec in sections:
+        sec['blocks'] = _enrich_content_blocks(sec['blocks'])
         sec['content'] = '\n\n'.join(b['html'] for b in sec['blocks'])
 
     # --- Diagrams: entries with side/level/context ---
