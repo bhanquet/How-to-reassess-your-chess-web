@@ -33,8 +33,8 @@ PGN studies     →  positions + moves +       →    playable boards with
 
 - The **EPUB is the only source of the text** (chapters read in spine order).
 - **Positions never come from the EPUB** — they come from local PGN studies
-  (`pgn_studies/`), plus a few strict hand-checked fixes
-  (`diagrams_manual_overrides.json`).
+  (`pgn_studies/`), including 6 diagrams explicitly pinned to a ply of their
+  own chapter via `[DiagramNumber]`/`[DiagramPly]` headers.
 - The generated files (`book_structure.json`, `diagrams.json`, `toc.json`) are
   **gitignored**: they stay on your machine and are never committed.
 
@@ -57,8 +57,8 @@ PGN studies     →  positions + moves +       →    playable boards with
 python3 -m silman_parser.build
 ```
 
-This reads the EPUB, matches diagrams against the local PGN studies, applies the
-manual overrides, and writes `chess-app/data/{book_structure,diagrams,toc}.json`.
+This reads the EPUB, matches diagrams against the local PGN studies
+(including pinned chapters), and writes `chess-app/data/{book_structure,diagrams,toc}.json`.
 
 ### 2. Run the app
 
@@ -125,14 +125,14 @@ Each diagram in the text is a live board:
 ├── How to Reassess Your Chess 4th ed - Silman.epub  # you buy it, exact name required
 ├── pgn_studies/          # Local PGN studies — source of positions and games
 ├── silman_parser/       # parser: epub_ingest, san, segmentation, html_render,
-│                        # diagram_context, pgn_sources, overrides, build (entry point)
+│                        # diagram_context, pgn_sources, build (entry point)
 ├── tests/               # backend tests: parser unit tests + generated-data invariants
 ├── docker-compose.yml   # static Nginx on :5174 (generate data first, see above)
 └── chess-app/           # web app (frontend)
     ├── index.html / vite.config.js / package.json / Dockerfile / nginx.conf
     ├── css/ / js/       # ES modules: ChessApp orchestrator, PlayableBoard core,
     │                    # inline + modal board managers, navigation, search
-    ├── data/            # generated *.json (gitignored) + versioned manual overrides
+    ├── data/            # generated *.json (gitignored)
     └── tests/           # frontend vitest suites (chess-utils, search)
 ```
 
@@ -148,9 +148,6 @@ must never be edited by hand:
 | `book_structure.json` | HTML sections: headings, paragraphs, `<div class="diagram-inline" data-diagram="N">` placeholders, `<div class="game-notation">` score blocks |
 | `diagrams.json`       | One entry per diagram: `fen`, `initial_fen`, `moves`, `diagram_move_index`, plus a recursive variation tree (flattened in-app) |
 | `toc.json`            | Native EPUB table of contents (starting at _Preface_); falls back to a section-derived TOC if absent |
-
-`diagrams_manual_overrides.json` is the exception: versioned fixes applied last,
-validated strictly (parseable FEN, replayable moves, position consistency — fail-fast).
 
 ## Tests
 

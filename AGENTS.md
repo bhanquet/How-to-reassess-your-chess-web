@@ -11,7 +11,7 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
 ├── pgn_studies/                            # Local PGN studies → FENs + full games
 ├── silman_parser/                          # parser package: config, epub_ingest, san,
 │                                           # segmentation, html_render, diagram_context,
-│                                           # pgn_sources, overrides, build (entry: `python3 -m silman_parser.build`)
+│                                           # pgn_sources, build (entry: `python3 -m silman_parser.build`)
 ├── tests/                                  # test_parser.py (pure fns) + test_data.py (JSON invariants)
 ├── docker-compose.yml                      # static Nginx on :5174
 └── chess-app/                              # frontend (usage: root README)
@@ -19,8 +19,8 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
     ├── css/ (base, diagrams, modal, components, responsive)
     ├── js/ (app=orchestrator ChessApp; playable-board=shared core PlayableBoard;
     │        inline-boards / modal-board managers; chess-utils; templates; navigation; search)
-    ├── data/ (diagrams_manual_overrides.json = versioned; book_structure.json,
-    │        diagrams.json, toc.json = generated locally, gitignored, see below)
+    ├── data/ (book_structure.json, diagrams.json, toc.json = generated locally,
+    │        gitignored, see below)
     ├── public/ + dist/                     # generated (gitignored)
     └── tests/                              # vitest (chess-utils, search)
 ```
@@ -31,10 +31,13 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
   Sections = H2, subsections = H3 → `<h3>`. `Diagram N` = `<p class="diagram-number*">`
   → `<div class="diagram-inline" data-diagram="N">`; `<span class="bold">` moves →
   `<div class="game-notation">`. Side/level from `caption1` / `[Level: …]`. `images/*` ignored.
-- FENs come from `pgn_studies/`, never the EPUB (100%: 429 parsed + 3 exclusive overrides, 4 entries).
-  Overrides in `diagrams_manual_overrides.json`, applied last by `apply_manual_overrides()`
-  (strict: FEN parseable, moves replayable, `fen == replay(initial_fen, moves[:index])`, fail-fast).
-  To add one: add key with `fen`/`initial_fen`/`moves`/`source`/`comment`, regenerate.
+- FENs come from `pgn_studies/`, never the EPUB (100%: all 432 parsed).
+  6 diagrams need an explicit pin (141, 201, 209, 213, 320, 407):
+  a chapter with `[DiagramNumber "N"]` + `[DiagramPly "K"]` pins diagram N to ply K of its own
+  mainline (parsed in `extract_study_chapters`, applied by `apply_pgn_pins`; precedence:
+  `chapter_fen` → `pgn_pin` → passes 1-2). Fail-fast if only one
+  header is present or the ply/diagram is invalid. To fix a position: edit the PGN chapter
+  (or its pin headers), regenerate.
 - `book_structure.json`, `diagrams.json`, `toc.json`: generated locally, gitignored
   (copyrighted text, never committed). `book_structure.json`: `{section_num, title, level (1 = front-matter/"Part ", else 2), original_page: 0, content}`,
   long sections split via `split_long_sections()` → ` (continued N/M)` suffix.
