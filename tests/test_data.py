@@ -10,9 +10,14 @@ Run with:  python3 -m unittest discover -s tests -v
 import json
 import os
 import re
+import sys
 import unittest
 
 import chess
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from silman_parser.pgn_sources import extract_study_chapters
 
 DATA_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -227,9 +232,9 @@ class TestDiagrams(unittest.TestCase):
         self.assertGreater(checked, 0, 'no variation to check')
 
 
-class TestManualOverrides(unittest.TestCase):
-    """The manual overrides (diagrams unresolvable by parsing)
-    are applied verbatim in diagrams.json."""
+class TestPgnPins(unittest.TestCase):
+    """Chapters with [DiagramNumber]/[DiagramPly] pin their diagram to that
+    ply of their own mainline (matched_by='pgn_pin')."""
 
     @classmethod
     def setUpClass(cls):
@@ -239,31 +244,38 @@ class TestManualOverrides(unittest.TestCase):
                 f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
                 'python3 -m silman_parser.build')
         cls.diagrams = load('diagrams.json')
-        path = os.path.join(DATA_DIR, 'diagrams_manual_overrides.json')
-        with open(path, encoding='utf-8') as f:
-            cls.overrides = json.load(f)
+        # Re-extract the chapters fresh from the study PGNs (not cached).
+        cls.chapters = extract_study_chapters()
 
-    def test_overrides_applied_verbatim(self):
-        self.assertGreater(len(self.overrides), 0, 'no override defined')
-        for num, ov in self.overrides.items():
-            self.assertIn(num, self.diagrams, f'override {num} unknown')
-            d = self.diagrams[num]
-            self.assertEqual(d['fen'], ov['fen'], f'override {num} not applied')
-            self.assertEqual(d['initial_fen'], ov['initial_fen'])
-            self.assertEqual(d['moves'], ov['moves'])
-            self.assertEqual(d['diagram_move_index'],
-                             ov['diagram_move_index'])
-
-    def test_overrides_self_consistent(self):
-        for num, ov in self.overrides.items():
-            board = chess.Board(ov['fen'])  # valid FEN
-            if ov.get('moves') is None:
-                continue
-            replay = chess.Board(ov['initial_fen'])
-            for san in ov['moves'][:ov['diagram_move_index']]:
-                replay.push_san(san)  # legal moves
-            self.assertEqual(replay.fen(), ov['fen'],
-                             f'override {num}: fen/index inconsistency')
+    def test_pins_applied(self):
+        pins = [ch for ch in self.chapters
+                if ch.get('pin_num') is not None and ch.get('pin_ply') is not None]
+        self.assertGreater(len(pins), 0, 'no PGN pins found')
+        for ch in pins:
+            num = str(ch['pin_num'])
+            d = self.diagrams.get(num)
+            self.assertIsNotNone(d, f'pinned diagram {num} missing')
+            self.assertEqual(d['matched_by'], 'pgn_pin',
+                             f'diagram {num}: not matched by pgn_pin')
+            ply = ch['pin_ply']
+            moves = d['moves']
+            self.assertIsNotNone(moves, f'diagram {num}: no moves')
+            self.assertGreaterEqual(ply, 0, f'diagram {num}: ply < 0')
+            self.assertLessEqual(ply, len(moves),
+                                 f'diagram {num}: ply out of bounds')
+            try:
+                chess.Board(d['fen'])
+            except ValueError:
+                self.fail(f'diagram {num}: invalid fen {d["fen"]!r}')
+            replay = chess.Board(d['initial_fen'])
+            for san in moves[:ply]:
+                try:
+                    replay.push_san(san)
+                except ValueError:
+                    self.fail(f'diagram {num}: illegal move {san!r}')
+                    break
+            self.assertEqual(replay.fen(), d['fen'],
+                             f'diagram {num}: fen/ply inconsistency')
 
 
 class TestToc(unittest.TestCase):

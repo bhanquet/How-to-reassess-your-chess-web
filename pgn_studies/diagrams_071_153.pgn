@@ -877,6 +877,8 @@ double Rooks on the c-file } 24... fxe5 25. dxe5 b6 26. Rc3 (26. Rc2 Nxe5) 26...
 [Opening "Petrov's Defense: Classical Attack, Staunton Variation"]
 [StudyName "How to Reassess Your Chess (4th edition): Diagrams 71 - 153"]
 [ChapterName "Diagram 141: Ivanchuk, Vassily - Harikrishna, P."]
+[DiagramNumber "141"]
+[DiagramPly "43"]
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O O-O 8. c4 c6 9. Re1 Bf5 10. Qb3 Na6 11. cxd5 cxd5 12. Nc3 Be6 13. Qd1 f5 14. Nb5 Bb8 15. a3 Bf7 16. Be2 Nc7 17. Bf4 Nxb5 18. Bxb8 Nxd4 19. Qxd4 Qxb8 20. Ne5 Be6 21. f3 Nf6 22. Bd3 Qd6 23. Rac1 Rfe8 24. Rc2 Bd7 25. Rce2 a6 (25... Qb6?? 26. Qxb6 axb6 27. Nxd7 Rxe2 28. Nxf6+) 26. Nc4! Qc6 27. Ne3 Rac8 (27... g6 28. Nxd5! Nxd5 29. Bc4) 28. Nxf5 Bxf5 29. Bxf5 Rxe2 30. Rxe2 Re8 31. Rc2 Qd6 32. g3 g6 33. Bc8 Re7 34. Qc5 Ne8 35. Qd4 Nf6 36. Kf2 Kf7 37. Rc3 a5 38. Bh3 Rc7 39. Ke2 Rxc3 40. Qxc3 Qa6+ 41. Kd2 Qb6 42. Kd3 Ne8 43. Qe5 Qc6 44. Kd2 Nf6 45. Qd4 b6 46. b4 axb4 47. axb4 Qc7 48. Bf1 Qd6 49. Bb5 Qc7 50. Ba4 Qd6 51. Bb3 Ke7 52. Ke3 Qe6+ 53. Kf2 Qd6 54. Kg2 Qe6 55. Kf1 Qd6 56. Kf2 Kf7 57. Ba4 Qc7 58. Bb3 Qd6 59. Ke3 Qe6+ 60. Kd2 Qd6 61. Kd3 Ke7 62. Kc3 Qc7+ 63. Kb2 Qd6 64. Ka3 Qc6 65. g4 Qc1+ 66. Ka2 Qe1 67. Qxb6 Qd2+ 68. Ka3 Qc1+ 69. Ka4 Qa1+ 70. Kb5 Qf1+ 71. Kc6 Nd7 72. Qe3+ Kd8 73. b5 Qa1 74. b6 Qa5 75. Qg5+ Ke8 76. Qe3+ Kd8 77. Qd4 Qa8+ 78. Kb5 Qa3 79. Bxd5 Qd6 80. g5 Qxh2 81. f4 Ke7 82. Qb4+ Kd8 83. Qd4 Ke7 84. b7 Qe2+ 85. Bc4 Qe1 86. Kc6 Qh1+ 87. Kc7 Qh3 { 1-0 Black resigns. } 1-0
 

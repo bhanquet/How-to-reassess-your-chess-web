@@ -45,21 +45,35 @@ def extract_study_chapters():
             chapter = re.search(r'\[ChapterName "([^"]+)"\]', headers)
             fen = re.search(r'\[FEN "([^"]+)"\]', headers)
             variant = re.search(r'\[Variant "([^"]+)"\]', headers)
+            pin_num = re.search(r'\[DiagramNumber "(\d+)"\]', headers)
+            pin_ply = re.search(r'\[DiagramPly "(\d+)"\]', headers)
+            pin_num = int(pin_num.group(1)) if pin_num else None
+            pin_ply = int(pin_ply.group(1)) if pin_ply else None
+            chapter_name = chapter.group(1) if chapter else ''
+            if (pin_num is None) != (pin_ply is None):
+                raise ValueError(
+                    f'{filename}: chapter {chapter_name!r}: '
+                    'DiagramNumber and DiagramPly must come as a pair')
             nums = extract_diagram_and_page_numbers(
                 event.group(1) if event else '',
                 chapter.group(1) if chapter else ''
             )
+            if pin_num is not None:
+                # An explicit pin replaces any diagram numbers inferred from
+                # the chapter name (the chapter pins exactly this diagram).
+                nums = [pin_num]
             body_start = header_end + 2
             next_game = text.find('[Event "', body_start)
             body_end = next_game if next_game != -1 else len(text)
             game = read_pgn_game_from_slice(text, next_event, body_end)
             moves = get_mainline_moves(game) if game else []
-            chapter_name = chapter.group(1) if chapter else ''
             chapters.append({
                 'filename': filename,
                 'event': event.group(1) if event else '',
                 'chapter': chapter_name,
                 'nums': nums,
+                'pin_num': pin_num,
+                'pin_ply': pin_ply,
                 'fen': fen.group(1) if fen else None,
                 'variant': variant.group(1) if variant else 'Standard',
                 'moves': moves,
@@ -166,6 +180,49 @@ def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
                 'matched_by', 'chapter_heuristic')
 
 MAX_VARIATIONS_PER_DIAGRAM = 12
+
+
+def apply_pgn_pins(diagrams_flat, chapters):
+    """Pin diagrams to a ply of their own PGN chapter mainline.
+
+    A chapter carrying a complete [DiagramNumber "N"] / [DiagramPly "K"]
+    pair pins diagram N to ply K of its own mainline. Strict validation
+    (fail-fast): the diagram
+    must be known to the book, the chapter must have a game and a mainline,
+    and the ply must be in bounds. `variations` is left to
+    extract_diagram_variations (called later, when the lines correspond).
+    """
+    applied = 0
+    for ch in chapters:
+        pin_num = ch.get('pin_num')
+        pin_ply = ch.get('pin_ply')
+        if pin_num is None or pin_ply is None:
+            continue
+        key = str(pin_num)
+        if key not in diagrams_flat:
+            raise ValueError(
+                f'pgn pin: diagram {pin_num} unknown to the book')
+        game = ch.get('game')
+        moves = ch.get('moves')
+        if game is None:
+            raise ValueError(
+                f'pgn pin: diagram {pin_num}: chapter game missing')
+        if not moves:
+            raise ValueError(
+                f'pgn pin: diagram {pin_num}: chapter has no mainline')
+        if not (0 <= pin_ply <= len(moves)):
+            raise ValueError(
+                f'pgn pin: diagram {pin_num}: ply {pin_ply} out of bounds')
+        data = diagrams_flat[key]
+        initial_fen = game.board().fen()
+        board = position_at(game, pin_ply)
+        data['fen'] = board.fen()
+        data['initial_fen'] = initial_fen
+        data['moves'] = ch['moves']
+        data['diagram_move_index'] = pin_ply
+        data['matched_by'] = 'pgn_pin'
+        applied += 1
+    return applied
 
 
 def collect_mainline_and_branches(node, board):
@@ -317,17 +374,17 @@ def validate_variation_tree(base_fen, parent_moves, branches, num, path=''):
     try:
         replay_moves(base_fen, parent_moves, strict=True)
     except ValueError as e:
-        raise ValueError(f'override {num}: parent line not replayable {path!r}: {e}')
+        raise ValueError(f'diagram {num}: parent line not replayable {path!r}: {e}')
     for i, br in enumerate(branches or []):
         where = f'{path}[{i}]'
         bp = br.get('branch_ply')
         if not isinstance(bp, int) or not (0 <= bp <= len(parent_moves)):
-            raise ValueError(f'override {num}: invalid branch_ply at {where}')
+            raise ValueError(f'diagram {num}: invalid branch_ply at {where}')
         try:
             replay_moves(base_fen, parent_moves[:bp] + br.get('moves', []),
                          strict=True)
         except ValueError as e:
-            raise ValueError(f'override {num}: variation not replayable at {where}: {e}')
+            raise ValueError(f'diagram {num}: variation not replayable at {where}: {e}')
         branch_fen = replay_moves(base_fen, parent_moves[:bp], strict=True).fen()
         validate_variation_tree(branch_fen, br.get('moves', []),
                                 br.get('variations', []), num, where)

@@ -867,7 +867,7 @@ throw a move away by not moving the King to f7 at once? } (13... Kf7 14. Rfe1) 1
 1. e4 c5 2. Nf3 a6 3. c4 d6 4. d4 Bg4 5. dxc5 Bxf3 6. gxf3 (6. Qxf3) 6... dxc5 (6... Qa5+ 7. Nc3 Qxc5 (7... dxc5 8. Qb3 Nd7 (8... Qc7 9. Bf4) 9. Qxb7 Rb8 10. Qc6 e6 11. Qa4 Qxa4 12. Nxa4) 8. Be3 Qc6) 7. Qxd8+ Kxd8 8. Nc3 (8. Be3 e5 9. f4 f6 10. Nc3 Nc6 11. O-O-O+ Nd4 12. fxe5 fxe5 13. f4 exf4 14. Bxf4 Ke8 15. Nd5 Rd8 16. Bc7 Rd7 17. Bh3 Rf7 18. Rhf1 Nh6 19. Bc8) 8... e6 9. Be3 Nf6 10. O-O-O+ Nfd7 11. f4 b6 12. f5 Nc6 13. fxe6 fxe6 14. Bh3 Ke7 15. Bg5+ Nf6 16. e5 Nxe5 17. Rhe1 Nf3 18. Bg2 (18. Bxf6+ gxf6 19. Nd5+ Kf7 20. Bxe6+ Kg6 21. Re3 Bh6 (21... Ng5 22. Rg1) 22. Ne7+ Kh5 (22... Kg7 23. Nf5+) 23. Bf7+ Kg5 24. Bd5 Ne5 25. Rh3) (18. Rxe6+) 18... Nxg5 19. Bxa8 Kf7 20. Bg2 Nh5 21. h4 Nf4 22. hxg5 Nxg2 23. Re4 Be7 24. Rg1 { 1-0 Black resigns. } 1-0
 
 
-[Event "How to Reassess Your Chess (4th edition): Diagrams 326 - 416: Diagrams 406 & 407: Player - Player"]
+[Event "How to Reassess Your Chess (4th edition): Diagrams 326 - 416: Diagram 406: Player - Player"]
 [Date "2017.10.16"]
 [White "Player"]
 [Black "Player"]
@@ -877,9 +877,20 @@ throw a move away by not moving the King to f7 at once? } (13... Kf7 14. Rfe1) 1
 [ECO "B06"]
 [Opening "Modern Defense"]
 [StudyName "How to Reassess Your Chess (4th edition): Diagrams 326 - 416"]
-[ChapterName "Diagrams 406 & 407: Player - Player"]
+[ChapterName "Diagram 406: Player - Player"]
 
 1. d4 g6 2. e4 Bg7 3. Nf3 c6 4. Nc3 d5 5. h3 Nf6 6. e5 Ne4 7. Bd3 (7. Nxe4 dxe4 8. Ng5 c5) 7... Nxc3 8. bxc3 c5 9. O-O *
+
+
+[Event "How to Reassess Your Chess (4th edition): Diagrams 326 - 416: Diagram 407 (pin)"]
+[Result "*"]
+[Variant "Standard"]
+[StudyName "How to Reassess Your Chess (4th edition): Diagrams 326 - 416"]
+[ChapterName "Diagram 407 (pin)"]
+[DiagramNumber "407"]
+[DiagramPly "11"]
+
+1. d4 g6 2. e4 Bg7 3. Nf3 c6 4. Nc3 d5 5. h3 Nf6 6. e5 Ne4 7. Bd3 Nxc3 8. bxc3 c5 9. O-O *
 
 
 [Event "How to Reassess Your Chess (4th edition): Diagrams 326 - 416: Diagram 408: Player - Player"]

@@ -1,7 +1,7 @@
 """Orchestration of the full pipeline (entry point).
 
 Source: native EPUB (see epub_ingest). FENs and variations always come from
-study PGNs (pgn_studies/) and manual overrides.
+study PGNs (pgn_studies/).
 """
 
 import json
@@ -13,11 +13,11 @@ import zipfile
 from silman_parser.config import DIAGRAMS_FILE, INPUT_FILE, OUTPUT_FILE, TOC_FILE
 from silman_parser.epub_ingest import parse_epub, parse_ncx_toc
 from silman_parser.pgn_sources import (
+    apply_pgn_pins,
     extract_diagram_variations,
     extract_fens_from_study_games,
     extract_study_chapters,
 )
-from silman_parser.overrides import apply_manual_overrides, load_manual_overrides
 from silman_parser.segmentation import split_long_sections
 
 
@@ -147,6 +147,12 @@ def main():
             data['diagram_move_index'] = 0
             data['matched_by'] = 'chapter_fen'
 
+    # PGN pins: diagrams explicitly pinned to a ply of their own chapter
+    # mainline (via [DiagramNumber]/[DiagramPly]).
+    n_pins = apply_pgn_pins(diagrams_flat, study_chapters)
+    if n_pins:
+        print(f"PGN pins applied: {n_pins}")
+
     # Passes 1-2: reconstruction from the complete games (moves + side).
     extract_fens_from_study_games(book, diagrams_flat, study_chapters)
 
@@ -154,11 +160,6 @@ def main():
     n_var = extract_diagram_variations(diagrams_flat, study_chapters)
     if n_var:
         print(f"Diagrams with variations: {n_var}")
-
-    # Manual overrides win over everything (parsing, no existing cache).
-    applied = apply_manual_overrides(diagrams_flat, load_manual_overrides())
-    if applied:
-        print(f"Manual overrides applied: {applied}")
 
     # Native NCX TOC: resolve the 166 hierarchical navPoints to sections.
     ncx_nodes = parse_ncx_toc(INPUT_FILE)
