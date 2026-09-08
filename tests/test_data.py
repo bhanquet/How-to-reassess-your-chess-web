@@ -19,6 +19,13 @@ DATA_DIR = os.path.join(
     'chess-app', 'data',
 )
 
+GENERATED_FILES = ('book_structure.json', 'diagrams.json', 'toc.json')
+
+
+def _missing_generated():
+    return [n for n in GENERATED_FILES
+            if not os.path.exists(os.path.join(DATA_DIR, n))]
+
 
 def load(name):
     with open(os.path.join(DATA_DIR, name), encoding='utf-8') as f:
@@ -28,6 +35,11 @@ def load(name):
 class TestBookStructure(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        missing = _missing_generated()
+        if missing:
+            raise unittest.SkipTest(
+                f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
+                'python3 -m silman_parser.build')
         cls.book = load('book_structure.json')
 
     def test_metadata(self):
@@ -74,6 +86,11 @@ class TestBookStructure(unittest.TestCase):
 class TestDiagrams(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        missing = _missing_generated()
+        if missing:
+            raise unittest.SkipTest(
+                f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
+                'python3 -m silman_parser.build')
         cls.diagrams = load('diagrams.json')
 
     def test_not_empty(self):
@@ -216,6 +233,11 @@ class TestManualOverrides(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        missing = _missing_generated()
+        if missing:
+            raise unittest.SkipTest(
+                f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
+                'python3 -m silman_parser.build')
         cls.diagrams = load('diagrams.json')
         path = os.path.join(DATA_DIR, 'diagrams_manual_overrides.json')
         with open(path, encoding='utf-8') as f:
@@ -251,6 +273,11 @@ class TestToc(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        missing = _missing_generated()
+        if missing:
+            raise unittest.SkipTest(
+                f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
+                'python3 -m silman_parser.build')
         cls.toc = load('toc.json')
         cls.book = load('book_structure.json')
 
@@ -335,6 +362,11 @@ class TestToc(unittest.TestCase):
 class TestCrossReferences(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        missing = _missing_generated()
+        if missing:
+            raise unittest.SkipTest(
+                f'generated data missing ({", ".join(missing)}): buy the EPUB and run '
+                'python3 -m silman_parser.build')
         cls.book = load('book_structure.json')
         cls.diagrams = load('diagrams.json')
 
