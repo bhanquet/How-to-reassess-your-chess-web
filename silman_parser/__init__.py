@@ -7,7 +7,7 @@ Split into modules by responsibility:
 - segmentation : subdivision of oversized sections
 - html_render : HTML escaping helper (html_escape)
 - diagram_context : diagram context in the book (moves, side)
-- study : FENs and variations from PGN studies (PGN)
+- pgn_sources : FENs and variations from study PGNs
 - overrides : manual overrides for unresolvable diagrams
 - build : orchestration (main)
 
@@ -39,7 +39,7 @@ from silman_parser.diagram_context import (
 )
 from silman_parser.epub_ingest import parse_epub, parse_ncx_toc
 from silman_parser.html_render import html_escape
-from silman_parser.study import (
+from silman_parser.pgn_sources import (
     extract_diagram_variations,
     extract_fens_from_study_games,
     extract_study_chapters,

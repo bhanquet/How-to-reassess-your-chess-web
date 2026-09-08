@@ -11,7 +11,7 @@ Native structure used:
   diagram-number-sb / diagram-number-ns), side in
   <p class="caption1">...White/Black to move...</p>, level in
   <p class="diagram-number">[Level: ...]</p>. The images images/*.jpeg are
-  ignored (the FENs come from PGN studies) ;
+  ignored (the FENs come from study PGNs) ;
 - game moves in <span class="bold"> : they become
   <div class="game-notation"> only if extract_san_moves finds at least one
   move AND the span contains a move number (\\d+\\. or ...).

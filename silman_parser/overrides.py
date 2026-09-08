@@ -5,7 +5,7 @@ import os
 import chess
 from silman_parser.config import MANUAL_OVERRIDES_FILE
 from silman_parser.diagram_context import replay_moves
-from silman_parser.study import validate_variation_tree
+from silman_parser.pgn_sources import validate_variation_tree
 
 
 def load_manual_overrides():

@@ -1,4 +1,4 @@
-"""FEN and variation extraction from PGN studies (PGN)."""
+"""FEN and variation extraction from study PGNs."""
 
 import os
 import re
@@ -20,7 +20,7 @@ from silman_parser.diagram_context import (
 
 
 def extract_study_chapters():
-    """Extract study chapters with FENs, moves and diagram numbers."""
+    """Extract PGN chapters with FENs, moves and diagram numbers."""
     pgns_dir = 'pgn_studies'
     chapters = []
     if not os.path.isdir(pgns_dir):
@@ -88,7 +88,7 @@ def _entries_side(entries):
 
 
 def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
-    """Try to extract missing FENs from the complete Study games."""
+    """Try to extract missing FENs from the complete study games."""
     # --- Pass 1: match by moves (existing) ---
     for ch in chapters:
         if ch['fen'] or not ch['nums'] or not ch['moves']:
@@ -119,7 +119,7 @@ def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
     # --- Pass 2: match by chapter / player names ---
     # For diagrams without a FEN, associate the diagram number with the
     # corresponding study chapter (chapters are named by diagram numbers in
-    # the PGN study). The diagram position is determined by:
+    # the study PGNs). The diagram position is determined by:
     #   1. the book moves before/after the diagram (exact match),
     #   2. otherwise the 'len(moves) - 1' heuristic (position before the final move),
     #   3. validated by the side ("White to move" / "Black to move").

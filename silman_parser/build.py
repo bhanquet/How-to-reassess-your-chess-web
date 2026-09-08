@@ -1,7 +1,7 @@
 """Orchestration of the full pipeline (entry point).
 
 Source: native EPUB (see epub_ingest). FENs and variations always come from
-PGN studies (pgn_studies/) and manual overrides.
+study PGNs (pgn_studies/) and manual overrides.
 """
 
 import json
@@ -12,7 +12,7 @@ import zipfile
 
 from silman_parser.config import DIAGRAMS_FILE, INPUT_FILE, OUTPUT_FILE, TOC_FILE
 from silman_parser.epub_ingest import parse_epub, parse_ncx_toc
-from silman_parser.study import (
+from silman_parser.pgn_sources import (
     extract_diagram_variations,
     extract_fens_from_study_games,
     extract_study_chapters,

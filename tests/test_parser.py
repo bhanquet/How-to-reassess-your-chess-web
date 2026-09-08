@@ -650,33 +650,33 @@ class TestMainlineMatching(unittest.TestCase):
     """SAN normalization + position comparison for _mainline_matches."""
 
     def test_suffix_only_difference_matches(self):
-        from silman_parser.study import _mainline_matches
+        from silman_parser.pgn_sources import _mainline_matches
         # Real line with checkmate: 1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#
         data = ['e4', 'e5', 'Qh5', 'Nc6', 'Bc4', 'Nf6', 'Qxf7#']
         chapter = ['e4', 'e5', 'Qh5', 'Nc6', 'Bc4', 'Nf6', 'Qxf7']
         self.assertTrue(_mainline_matches(data, chapter, 7))
 
     def test_case_sensitive(self):
-        from silman_parser.study import _mainline_matches
+        from silman_parser.pgn_sources import _mainline_matches
         # Normalization does not change case: 'qH5' != 'Qh5'
         data = ['e4', 'e5', 'Qh5']
         chapter = ['e4', 'e5', 'qH5']
         self.assertFalse(_mainline_matches(data, chapter, 3))
 
     def test_same_position_at_idx_matches(self):
-        from silman_parser.study import _mainline_matches
+        from silman_parser.pgn_sources import _mainline_matches
         data = ['e4', 'e5']            # truncated diagram line
         chapter = ['e4', 'e5', 'Nf3', 'Nc6']
         self.assertTrue(_mainline_matches(data, chapter, 2))
 
     def test_different_position_no_match(self):
-        from silman_parser.study import _mainline_matches
+        from silman_parser.pgn_sources import _mainline_matches
         data = ['d4', 'd5']
         chapter = ['e4', 'e5', 'Nf3']
         self.assertFalse(_mainline_matches(data, chapter, 2))
 
     def test_unreplayable_falls_back_to_strict(self):
-        from silman_parser.study import _mainline_matches
+        from silman_parser.pgn_sources import _mainline_matches
         # Nf6 as White's 2nd move is illegal: replay impossible ->
         # falls back to strict comparison (different lists -> False)
         data = ['e4', 'Nf6']
@@ -684,7 +684,7 @@ class TestMainlineMatching(unittest.TestCase):
         self.assertFalse(_mainline_matches(data, chapter, 2))
 
     def test_norm_san_strips_check_and_mate_suffixes(self):
-        from silman_parser.study import _norm_san
+        from silman_parser.pgn_sources import _norm_san
         self.assertEqual(_norm_san('Qxf7#'), 'Qxf7')
         self.assertEqual(_norm_san('Nf3+'), 'Nf3')
         self.assertEqual(_norm_san('O-O'), 'O-O')

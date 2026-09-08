@@ -48,7 +48,7 @@ def extract_diagram_and_page_numbers(event, chapter):
     """Extract the diagram numbers (and "Page NNN") from the PGN headers.
 
     Handles "Diagram 12", "Diagrams 3 & 4", comma lists, ranges ("5-7"),
-    and the "Disgrams" OCR/typo variant found in the PGN study names.
+    and the "Disgrams" OCR/typo variant found in the study PGN names.
     Also collects "Page NNN" page references.
     """
     text = f"{event} {chapter}"
@@ -100,7 +100,7 @@ def get_mainline_moves(game):
 
 
 def extract_players_from_chapter(chapter):
-    """Extract player names from a Study ChapterName.
+    """Extract player names from a PGN ChapterName.
 
     Ex: "Diagram 19: Liviu Dieter Nisipeanu - Vadim Milov"
         -> ("Liviu Dieter Nisipeanu", "Vadim Milov")
