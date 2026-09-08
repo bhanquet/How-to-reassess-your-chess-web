@@ -13,12 +13,14 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
 │                                           # segmentation, html_render, diagram_context,
 │                                           # pgn_sources, build (entry: `python3 -m silman_parser.build`)
 ├── tests/                                  # test_parser.py (pure fns) + test_data.py (JSON invariants)
+├── docs/                                   # screenshot-app.png (README illustration)
+├── package.json / package-lock.json        # root-only: @playwright/mcp runner
 ├── docker-compose.yml                      # static Nginx on :5174
 └── chess-app/                              # frontend (usage: root README)
     ├── index.html / vite.config.js / package.json / Dockerfile / nginx.conf
     ├── css/ (base, diagrams, modal, components, responsive)
     ├── js/ (app=orchestrator ChessApp; playable-board=shared core PlayableBoard;
-    │        inline-boards / modal-board managers; chess-utils; templates; navigation; search)
+    │        inline-boards / modal-board managers; chess-utils; templates; navigation; search; config)
     ├── data/ (book_structure.json, diagrams.json, toc.json = generated locally,
     │        gitignored, see below)
     ├── public/ + dist/                     # generated (gitignored)
@@ -44,7 +46,7 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
 - `diagrams.json[N]`: `{fen, initial_fen, moves, diagram_move_index, variations (recursive RAV tree,
   lvl-1 branch_ply relative to moves, nested relative to parent; max 12 lvl-1), entries[]}`.
   Frontend flattens via `flattenVariationLines()` (chess-utils.js).
-- `toc.json`: native EPUB TOC lvl 1–2, starts at `Preface`.
+- `toc.json`: native EPUB TOC (166 nodes, depth 0–3), starts at `Title Page`.
 - Regenerate: buy the EPUB legally, place it at repo root as
   `How to Reassess Your Chess 4th ed - Silman.epub` (see `silman_parser/config.py:INPUT_FILE`),
   then `python3 -m silman_parser.build` → writes the 3 JSON files. **Never edit `book_structure.json` by hand.**
@@ -63,8 +65,8 @@ copying the private EPUB into the public image). Generate locally before `docker
 
 ## Frontend notes
 
-- `PlayableBoard` = one chess.js v1 `Chess` + one cm-chessboard v8 `Chessboard` (+ Markers/PromotionDialog/Accessibility); shared by inline + modal.
-- Inline boards lazy-mount via `IntersectionObserver` (200px margin); skeleton renders on section change.
+- `PlayableBoard` = one chess.js v1 `Chess` + one cm-chessboard v8 `Chessboard` (+ Markers/Arrows/PromotionDialog/Accessibility); shared by inline + modal.
+- Inline boards lazy-mount via `IntersectionObserver` (400px margin); skeleton renders on section change.
 - `navigation.js` builds the tree from `sections` order, groups ` (continued N/M)` under one chapter.
 - Styling: cm-chessboard squares are SVG `rect.square` colored via `fill` (diagrams.css);
   theme via `light-dark()` vars (base.css); pieces at `public/cm-chessboard/pieces/staunty.svg`.
@@ -78,7 +80,7 @@ cd chess-app && npm test                    # frontend vitest (42 tests)
 python3 -m json.tool chess-app/data/book_structure.json > /dev/null  # + same for diagrams.json, toc.json
 ```
 
-Deps (npm, no CDN): chess.js ^1.4, cm-chessboard ^8.13, vite ^5.4, vitest ^1.6.
+Deps (npm, no CDN): chess.js ^1.4, cm-chessboard ^8.13, vite ^8.2, vitest ^4.1.
 
 Personal use only — book © Jeremy Silman. The public repo contains no book text
 (generated JSONs are gitignored); buy the EPUB to regenerate locally.
