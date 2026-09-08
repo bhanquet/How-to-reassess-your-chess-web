@@ -11,9 +11,49 @@
  */
 import { defineConfig } from 'vite';
 
+/**
+ * Fichiers sensibles ne devant jamais être servis par HTTP,
+ * même si la racine source (index.html + configs) est exposée.
+ * En prod seul `dist/` est servi par Nginx (voir nginx.conf),
+ * mais `vite dev` sert la racine par défaut — ce plugin bouche ce trou.
+ */
+const SENSITIVE_PATHS = [
+    '/package.json',
+    '/package-lock.json',
+    '/vite.config.js',
+    '/Dockerfile',
+    '/nginx.conf',
+    '/.dockerignore',
+];
+
+function denySensitiveFiles() {
+    return {
+        name: 'deny-sensitive-files',
+        configureServer(server) {
+            server.middlewares.use((req, res, next) => {
+                const pathname = (req.url || '/').split('?')[0].split('#')[0];
+                const blocked =
+                    SENSITIVE_PATHS.some(
+                        (p) => pathname === p || pathname.startsWith(p + '/')
+                    ) ||
+                    pathname.startsWith('/.git') ||
+                    pathname.startsWith('/tests/') ||
+                    pathname.includes('.env');
+                if (blocked) {
+                    res.statusCode = 404;
+                    res.end('Not found');
+                    return;
+                }
+                next();
+            });
+        },
+    };
+}
+
 export default defineConfig({
     root: '.',
     base: './',
+    plugins: [denySensitiveFiles()],
     build: {
         outDir: 'dist',
         sourcemap: true,
