@@ -22,6 +22,9 @@ from silman_parser.segmentation import split_long_sections
 
 
 def _write_json(path, data):
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
