@@ -52,3 +52,6 @@ chess-app/screenshots/
 
 # Deepwork session state (git-local)
 .slim/deepwork/
+
+# Local opencode config (never version)
+opencode.json
