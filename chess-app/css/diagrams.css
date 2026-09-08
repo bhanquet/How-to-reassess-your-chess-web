@@ -410,18 +410,21 @@ html[data-theme="dark"] .turn-dot .dot.black {
     outline-offset: 1px;
 }
 
-/* Game Notation */
+/* Game Notation (moves panel) */
 .game-notation {
     background-color: var(--color-bg-muted);
     border: 1px solid var(--color-border);
     border-left: 3px solid var(--color-accent);
     border-radius: var(--radius-md);
-    padding: 15px;
-    margin: 20px 0;
+    padding: 12px 16px;
+    margin: 18px 0;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
-    line-height: 1.8;
+    font-size: 0.88rem;
+    line-height: 2;
+    letter-spacing: 0.01em;
     color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    overflow-x: auto;
 }
 
 /* Reduced motion : supprimer transforms et ombres au hover */
