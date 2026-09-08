@@ -125,7 +125,10 @@ def get_diagram_side(book_data, diagram_num):
     """Return the expected side to move (chess.WHITE / chess.BLACK) or None.
 
     Looks for "White to move" / "Black to move" in the text right after the
-    diagram (first 300 chars).
+    diagram (first 300 chars). Pure side captions are filtered from the
+    section content (the diagram header shows the side), so callers should
+    pass the entry metadata side as `fallback_side` to find_diagram_position
+    when the text no longer carries it.
     """
     context = ''
     for sec in book_data['sections']:
@@ -136,9 +139,11 @@ def get_diagram_side(book_data, diagram_num):
             continue
         context = content[idx + len(pattern):idx + len(pattern) + 300]
         break
-    if re.search(r'\bWhite\s+to\s+move\b', context):
+    # No word boundaries: the EPUB concatenates captions without spaces
+    # ("2005White to move").
+    if re.search(r'White\s+to\s+move', context, re.IGNORECASE):
         return chess.WHITE
-    if re.search(r'\bBlack\s+to\s+move\b', context):
+    if re.search(r'Black\s+to\s+move', context, re.IGNORECASE):
         return chess.BLACK
     return None
 
@@ -260,7 +265,8 @@ def adjust_index_for_side_to_move(game, idx, expected_side):
     return None
 
 
-def find_diagram_position(book_data, diagram_num, game, all_moves):
+def find_diagram_position(book_data, diagram_num, game, all_moves,
+                         fallback_side=None):
     """Find the index of the diagram position in the game.
 
     Strategy:
@@ -273,12 +279,16 @@ def find_diagram_position(book_data, diagram_num, game, all_moves):
     3. Fallback: before the last move of the main line (len-1).
 
     Each candidate is validated against the expected side ("White/Black to
-    move" in the text, see get_diagram_side) and corrected for off-by-one
-    (+1 ply) errors via adjust_index_for_side_to_move. A candidate whose side
-    does not match is rejected, which switches to the moves after the diagram
-    or to a shorter prefix.
+    move" in the text, see get_diagram_side, else `fallback_side` from the
+    EPUB caption metadata since the section HTML no longer keeps the side
+    captions) and corrected for off-by-one (+1 ply) errors via
+    adjust_index_for_side_to_move. A candidate whose side does not match is
+    rejected, which switches to the moves after the diagram or to a shorter
+    prefix.
     """
     expected_side = get_diagram_side(book_data, diagram_num)
+    if expected_side is None:
+        expected_side = fallback_side
 
     # 1. Moves before the diagram
     before_moves = get_moves_before_diagram(book_data, diagram_num)

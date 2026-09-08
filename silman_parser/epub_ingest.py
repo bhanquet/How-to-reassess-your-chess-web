@@ -15,7 +15,9 @@ Native structure used:
 - game moves in <span class="bold"> : they become
   <div class="game-notation"> only if extract_san_moves finds at least one
   move AND the span contains a move number (\\d+\\. or ...).
-  The <span class="bold">White to move</span> of the captions STAYS prose.
+  The <span class="bold">White to move</span> of the captions is REMOVED
+  from the prose (pure side captions are dropped, mixed captions keep the
+  remainder): the playable diagram header already shows the side to move.
 """
 
 import posixpath
@@ -74,6 +76,21 @@ _DIAGRAM_CROSSREF_WORD_RE = re.compile(r'(?i)(?:see|in|of|from|cf\.?)\s+$')
 
 # Move number inside a bold span (1., 1..., 1...) or "..." alone.
 _MOVE_NUMBER_RE = re.compile(r'\d+\.|\.\.\.|\u2026')
+
+# Side to move in the diagram captions (<p class="caption1/caption2">):
+# "White to move" / "Black to move" (case-insensitive, optional trailing
+# dot). No word boundaries: the EPUB concatenates captions without spaces
+# ("2005White to move", "White to moveKnight...", "CatapultWhite to move").
+# Only ever applied to caption records, never to body prose. Pure captions
+# are dropped from the section content (the playable diagram header already
+# shows the side); mixed captions keep the remainder.
+_SIDE_TO_MOVE_RE = re.compile(r'(?:White|Black)\s+to\s+move\.?', re.IGNORECASE)
+_PURE_SIDE_CAPTION_RE = re.compile(r'^\s*(?:White|Black)\s+to\s+move\.?\s*$', re.IGNORECASE)
+
+
+def _strip_side_to_move(text):
+    """Remove the side-to-move mention, tidying leftover whitespace."""
+    return ' '.join(_SIDE_TO_MOVE_RE.sub('', text).split())
 
 
 def _local(tag):
@@ -187,10 +204,14 @@ def _itertext(el):
 
 
 def _caption_side(text):
-    """Side (white/black) read in a <p class="caption1">, else None."""
-    if re.search(r'\bWhite\s+to\s+move\b', text, re.IGNORECASE):
+    """Side (white/black) read in a <p class="caption1">, else None.
+
+    No word boundaries: the EPUB concatenates captions without spaces
+    ("2005White to move", "CatapultWhite to move").
+    """
+    if re.search(r'White\s+to\s+move', text, re.IGNORECASE):
         return 'white'
-    if re.search(r'\bBlack\s+to\s+move\b', text, re.IGNORECASE):
+    if re.search(r'Black\s+to\s+move', text, re.IGNORECASE):
         return 'black'
     return None
 
@@ -518,6 +539,11 @@ def parse_epub(epub_path):
     # for content blocks (node_id set when an h4/h5/h6 heading id must be
     # preserved as a paragraph anchor for the NCX TOC).
     records = []
+    # Indices of raw records derived from diagram captions
+    # (<p class="caption1/caption2">): their side-to-move mention is
+    # redundant with the playable diagram header and is filtered from the
+    # section content (metadata extraction still uses the raw records).
+    caption_records = set()
     with zipfile.ZipFile(epub_path) as zf:
         for href in hrefs:
             if not href.endswith(('.html', '.xhtml')):
@@ -552,7 +578,11 @@ def parse_epub(epub_path):
                     if label_num is not None:
                         records.append(('diagram', label_num, href, None))
                     else:
+                        classes = (el.get('class') or '').split()
+                        is_caption = any(c.startswith('caption') for c in classes)
                         for blk in _paragraph_blocks(el):
+                            if is_caption and blk[0] == 'p':
+                                caption_records.add(len(records))
                             records.append((blk[0], blk[1], href, None))
                 elif tag in ('h4', 'h5', 'h6'):
                     # Paragraph headers (article, para-title...): prose.
@@ -573,7 +603,7 @@ def parse_epub(epub_path):
     sections = []
     current = None
     h2_index = 0
-    for rec in records:
+    for rec_idx, rec in enumerate(records):
         kind, value, href, node_id = rec
         if kind == 'h2':
             level = 1 if (h2_index < front_count or value.startswith('Part ')) else 2
@@ -604,6 +634,13 @@ def parse_epub(epub_path):
                         'anchor': None,
                     })
             elif kind == 'p':
+                if rec_idx in caption_records:
+                    # Redundant with the playable diagram header: pure side
+                    # captions vanish, mixed captions keep the remainder
+                    # (players, title, level, stipulation).
+                    value = _strip_side_to_move(value)
+                    if not value:
+                        continue
                 html = f'<p>{value}</p>'
                 if node_id:
                     # Heading-derived paragraph preserving its NCX anchor.
@@ -638,7 +675,7 @@ def parse_epub(epub_path):
             'side': _nearest_side(records, idx),
             'level': _nearest_level(records, idx),
             'line': idx,
-            'context': _following_prose(records, idx, 200),
+            'context': _following_prose(records, idx, 200, caption_records),
         }
         diagrams.setdefault(value, []).append(entry)
 
@@ -654,9 +691,9 @@ def _nearest_side(records, idx, window=60):
 
     First looks for the first caption1 AFTER the diagram (up to the next
     diagram); otherwise the last caption1 BEFORE the diagram (up to the
-    previous diagram). The side is only used for entry metadata: the side
-    used by the FEN matching (get_diagram_side) is re-read from the HTML
-    content, which keeps the caption text.
+    previous diagram). The side feeds the entry metadata AND the FEN
+    matching fallback (the section HTML no longer keeps the caption text,
+    so get_diagram_side alone cannot see it anymore).
     """
     side = None
     # First: captions after the diagram, up to the next diagram.
@@ -693,8 +730,14 @@ def _nearest_level(records, idx, window=30):
     return None
 
 
-def _following_prose(records, idx, limit):
-    """First 200 characters of the prose following the diagram."""
+def _following_prose(records, idx, limit, caption_idx=None):
+    """First 200 characters of the prose following the diagram.
+
+    Pure side-to-move captions are skipped and mixed captions are stripped,
+    mirroring the section content (the diagram header shows the side). Only
+    caption records are stripped (`caption_idx`, when given); body prose is
+    never touched.
+    """
     out = []
     length = 0
     for j in range(idx + 1, len(records)):
@@ -702,7 +745,13 @@ def _following_prose(records, idx, limit):
         if kind == 'diagram':
             break
         if kind == 'p':
+            if _PURE_SIDE_CAPTION_RE.match(value):
+                continue
             text = re.sub(r'\s+', ' ', value)
+            if caption_idx is None or j in caption_idx:
+                text = _strip_side_to_move(text)
+                if not text:
+                    continue
             take = limit - length
             if take <= 0:
                 break

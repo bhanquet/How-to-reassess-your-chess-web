@@ -279,7 +279,7 @@ class TestEpubIngest(unittest.TestCase):
                 break
         self.assertTrue(found, 'diagram 3 not found in the sections')
 
-    def test_caption_side_stays_prose(self):
+    def test_side_captions_removed_but_metadata_kept(self):
         # "White to move" / "Black to move" are never absorbed into a
         # game-notation (counter-example <span class="bold">White to move</span>).
         for s in self.sections:
@@ -288,7 +288,17 @@ class TestEpubIngest(unittest.TestCase):
                 self.assertNotIn('White to move', m.group(1),
                                  f'section {s["title"]}')
                 self.assertNotIn('Black to move', m.group(1))
-        self.assertTrue(any('<p>White to move</p>' in s['content']
+        # Pure side captions are redundant with the playable diagram header
+        # ("Diagram N — White/Black to move" + turn dot): dropped.
+        for s in self.sections:
+            self.assertNotRegex(s['content'],
+                                r'<p>\s*(White|Black)\s+to\s+move\.?\s*</p>')
+        # ... but the side metadata still comes from the EPUB captions.
+        sides = {e['side'] for entries in self.diagrams.values() for e in entries}
+        self.assertIn('white', sides)
+        self.assertIn('black', sides)
+        # Genuine prose keeps its meaning ("Since it's White to move, ...").
+        self.assertTrue(any('White to move' in s['content']
                             for s in self.sections))
 
     def test_diagram_block_no_residual_label(self):

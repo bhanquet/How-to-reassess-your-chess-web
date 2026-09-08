@@ -72,6 +72,21 @@ def extract_study_chapters():
     return chapters
 
 
+def _entries_side(entries):
+    """Side from the native EPUB caption metadata (entries[0].side).
+
+    Fallback for the FEN matching: the section HTML no longer keeps the
+    side captions (the playable diagram header shows them instead).
+    """
+    for e in entries or []:
+        s = str(e.get('side') or '').lower()
+        if s == 'white':
+            return chess.WHITE
+        if s == 'black':
+            return chess.BLACK
+    return None
+
+
 def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
     """Try to extract missing FENs from the complete Study games."""
     # --- Pass 1: match by moves (existing) ---
@@ -123,7 +138,9 @@ def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
             if key not in diagrams_flat or diagrams_flat[key].get('fen'):
                 continue
             # Find the diagram position in the game
-            diagram_index = find_diagram_position(book_data, num, game, ch['moves'])
+            fb_side = _entries_side(diagrams_flat[key].get('entries'))
+            diagram_index = find_diagram_position(
+                book_data, num, game, ch['moves'], fallback_side=fb_side)
             if diagram_index is None:
                 continue
             # For "Player - Player" chapters (no real players), only apply if
@@ -134,7 +151,7 @@ def extract_fens_from_study_games(book_data, diagrams_flat, chapters):
             board = position_at(game, diagram_index)
             # Validate the side: if the book says "White/Black to move" and the
             # position does not match, step back until the right side is found.
-            side = get_diagram_side(book_data, num)
+            side = get_diagram_side(book_data, num) or fb_side
             if side is not None and board.turn != side:
                 new_index = find_position_with_side(game, diagram_index, side)
                 if new_index is None:
