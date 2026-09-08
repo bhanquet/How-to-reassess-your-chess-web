@@ -1,7 +1,8 @@
 """Data paths and constants.
 
 The text source is the native EPUB (structure: H2 sections in the spine
-order, see epub_ingest).
+order, see epub_ingest). Buy it legally and place it at the repo root
+under INPUT_FILE. Generated JSONs are gitignored (see README).
 """
 
 

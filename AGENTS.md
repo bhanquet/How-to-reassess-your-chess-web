@@ -19,7 +19,8 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
     ├── css/ (base, diagrams, modal, components, responsive)
     ├── js/ (app=orchestrator ChessApp; playable-board=shared core PlayableBoard;
     │        inline-boards / modal-board managers; chess-utils; templates; navigation; search)
-    ├── data/ (book_structure.json, diagrams.json, diagrams_manual_overrides.json, toc.json)
+    ├── data/ (diagrams_manual_overrides.json = versioned; book_structure.json,
+    │        diagrams.json, toc.json = generated locally, gitignored, see below)
     ├── public/ + dist/                     # generated (gitignored)
     └── tests/                              # vitest (chess-utils, search)
 ```
@@ -34,21 +35,28 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
   Overrides in `diagrams_manual_overrides.json`, applied last by `apply_manual_overrides()`
   (strict: FEN parseable, moves replayable, `fen == replay(initial_fen, moves[:index])`, fail-fast).
   To add one: add key with `fen`/`initial_fen`/`moves`/`source`/`comment`, regenerate.
-- `book_structure.json`: `{section_num, title, level (1 = front-matter/"Part ", else 2), original_page: 0, content}`,
+- `book_structure.json`, `diagrams.json`, `toc.json`: generated locally, gitignored
+  (copyrighted text, never committed). `book_structure.json`: `{section_num, title, level (1 = front-matter/"Part ", else 2), original_page: 0, content}`,
   long sections split via `split_long_sections()` → ` (continued N/M)` suffix.
 - `diagrams.json[N]`: `{fen, initial_fen, moves, diagram_move_index, variations (recursive RAV tree,
   lvl-1 branch_ply relative to moves, nested relative to parent; max 12 lvl-1), entries[]}`.
   Frontend flattens via `flattenVariationLines()` (chess-utils.js).
 - `toc.json`: native EPUB TOC lvl 1–2, starts at `Preface`.
-- Regenerate: `python3 -m silman_parser.build` → writes the 3 JSON files. **Never edit `book_structure.json` by hand.**
+- Regenerate: buy the EPUB legally, place it at repo root as
+  `How to Reassess Your Chess 4th ed - Silman.epub` (see `silman_parser/config.py:INPUT_FILE`),
+  then `python3 -m silman_parser.build` → writes the 3 JSON files. **Never edit `book_structure.json` by hand.**
+  The 3 JSON files are gitignored so the public repo contains no book text.
 
 ## Run
 
 ```bash
+python3 -m silman_parser.build   # required first: needs the purchased EPUB at root
 cd chess-app && npm install && npm run dev      # http://localhost:5173
 npm run build && npm run preview                 # build → dist/ (prebuild fills public/), preview :4173
-docker compose up -d --build                    # optional, from root → :5174
+docker compose up -d --build                    # optional, from root → :5174 (generate data first)
 ```
+Docker note: the Dockerfile intentionally does NOT generate data (it would require
+copying the private EPUB into the public image). Generate locally before `docker build`.
 
 ## Frontend notes
 
@@ -69,4 +77,5 @@ python3 -m json.tool chess-app/data/book_structure.json > /dev/null  # + same fo
 
 Deps (npm, no CDN): chess.js ^1.4, cm-chessboard ^8.13, vite ^5.4, vitest ^1.6.
 
-Personal use only — book © Jeremy Silman.
+Personal use only — book © Jeremy Silman. The public repo contains no book text
+(generated JSONs are gitignored); buy the EPUB to regenerate locally.

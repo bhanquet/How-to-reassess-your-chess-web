@@ -3,11 +3,16 @@
 Interactive web app for personal study of *How to Reassess Your Chess* (4th Edition) by Jeremy Silman.
 The book text is organized into logical sections (one per EPUB H2, subdivided when long) with 432 interactive diagrams.
 
+> **Copyright:** the public repo contains **no book text**. Buy the EPUB legally,
+> place it at the repo root, then generate the data locally (see below).
+
 ## Layout
 
 ```
 .
 ├── How to Reassess Your Chess 4th ed - Silman.epub  # Native EPUB — sole source of the text
+│                        # NOT in git: buy it legally and place it here (exact filename,
+│                        # see silman_parser/config.py:INPUT_FILE)
 ├── pgn_studies/                      # PGN studies (PGNs) — source of FENs and full games
 ├── silman_parser/                     # Parser package (one module per concern)
 │   ├── config.py                      # Paths
@@ -19,11 +24,21 @@ The book text is organized into logical sections (one per EPUB H2, subdivided wh
 ├── chess-app/                         # Web app (see chess-app/README.md for details)
 │   ├── index.html / vite.config.js / package.json
 │   ├── css/ / js/                      # ES modules (ChessApp, PlayableBoard, Inline/Modal managers)
-│   ├── data/                          # book_structure.json, diagrams.json, toc.json (+ manual overrides)
+│   ├── data/                          # generated book_structure/diagrams/toc.json (gitignored,
+│   │                                     # regenerate locally) + diagrams_manual_overrides.json (versioned)
 │   └── tests/                         # vitest (chess-utils, search)
 ```
 
 ## Quickstart
+
+### 0. Buy the book, place the EPUB
+
+1. Buy *How to Reassess Your Chess* (4th ed., Jeremy Silman) as EPUB from a legal store.
+2. Copy the file to the **repo root** with this exact name:
+   ```
+   How to Reassess Your Chess 4th ed - Silman.epub
+   ```
+   (see `silman_parser/config.py:INPUT_FILE`). It stays local — never committed.
 
 ### 1. Regenerate data (from repo root)
 
@@ -34,9 +49,10 @@ python3 -m silman_parser.build
 Reads the EPUB following the `content.opf` spine order, splits into logical
 sections (one per H2), matches diagrams against `pgn_studies/`, applies
 `diagrams_manual_overrides.json` last, and writes
-`chess-app/data/{book_structure,diagrams,toc}.json`.
+`chess-app/data/{book_structure,diagrams,toc}.json` (gitignored).
+Without these files the app shows a "book not generated" error — normal on a fresh clone.
 
-### 2. Run the app
+### 2. Run the app (after step 1)
 
 ```bash
 cd chess-app
@@ -79,4 +95,6 @@ See `chess-app/README.md` for app usage (navigation, inline diagrams, search, ke
 
 ## License
 
-Personal use only. The book is © Jeremy Silman.
+The app code is yours to share. The book is © Jeremy Silman — no book text is
+included in this repo (EPUB + generated JSONs are gitignored). Each user buys
+the EPUB and generates the data locally for personal study.
