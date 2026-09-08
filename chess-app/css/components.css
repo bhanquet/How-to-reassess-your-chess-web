@@ -409,6 +409,29 @@ mark {
     padding: 40px 20px;
 }
 
+/* --- Test <-> answer cross-navigation links (under inline diagrams) --- */
+.diag-nav-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+.diag-nav-link:hover { color: var(--color-accent-hover); }
+
+.diag-nav-link:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 1px;
+    border-radius: 4px;
+}
+
+.answer-back-link { margin-top: 10px; }
+
+
 .error-message h2 { margin-bottom: 12px; }
 .error-message p { color: var(--color-text); margin-bottom: 16px; }
 

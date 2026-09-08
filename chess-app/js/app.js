@@ -276,6 +276,7 @@ class ChessApp {
                     (section, anchor) => this.loadSection(section, anchor),
                 );
                 this.sectionDiagramMap = buildSectionDiagramMap(this.bookData);
+                this._buildAnswerMap();
                 const restored = this._restoreSectionFromHashOrStorage();
                 this.loadSection(restored.section, restored.anchor, { diagram: restored.diagram });
             })
@@ -349,6 +350,7 @@ class ChessApp {
 
         document.getElementById('main-content').scrollTop = 0;
         this.inline.renderIn(contentArea, this.diagrams);
+        this._decorateAnswerLinks(contentArea, sectionNum);
         // P1.5 + P1.7: search-term highlight + clickable "Diagram N" links.
         processContentText(
             contentArea.querySelector('.content-text'),
@@ -376,6 +378,60 @@ class ChessApp {
         if (diagram) {
             requestAnimationFrame(() => this.scrollToDiagram(diagram, 'auto'));
         }
+    }
+
+    /**
+     * Builds test <-> answer cross-links keyed by shared diagram number.
+     *
+     * Test sections have titles ending in "— Tests"; their diagrams are joined
+     * to the answer sections (89..120, "Answers to Tests") by the same
+     * `data-diagram="N"`. Two maps let us go either way:
+     *   diagram -> answer section (from a test), and diagram -> test section
+     *   (from an answer). When a diagram appears in several answer sections
+     *   (section-boundary overlap) the lowest-numbered one wins.
+     */
+    _buildAnswerMap() {
+        this.answerSectionForDiagram = new Map();
+        this.testSectionForDiagram = new Map();
+        if (!this.bookData || !this.bookData.sections) return;
+        const TEST_RE = /— Tests/;
+        this.bookData.sections.forEach((section, index) => {
+            const isTest = TEST_RE.test(section.title || '');
+            const isAnswer = index >= 89 && index <= 120;
+            if (!isTest && !isAnswer) return;
+            const re = /data-diagram="(\d+)"/g;
+            let m;
+            while ((m = re.exec(section.content)) !== null) {
+                const map = isTest ? this.testSectionForDiagram : this.answerSectionForDiagram;
+                if (!map.has(m[1])) map.set(m[1], index);
+            }
+        });
+    }
+
+    /**
+     * Adds "View answer →" / "← Back to test" links under each inline
+     * diagram of a test/answer section, when a counterpart exists. Sections
+     * without a match get no link (and never error).
+     */
+    _decorateAnswerLinks(contentArea, sectionNum) {
+        const section = this.bookData?.sections?.[sectionNum];
+        if (!section || !contentArea || !this.testSectionForDiagram) return;
+        const isTest = /— Tests/.test(section.title || '');
+        const isAnswer = sectionNum >= 89 && sectionNum <= 120;
+        if (!isTest && !isAnswer) return;
+        const map = isTest ? this.answerSectionForDiagram : this.testSectionForDiagram;
+        contentArea.querySelectorAll('.diagram-playable-wrapper').forEach((wrapper) => {
+            const num = wrapper.dataset.diagram;
+            const target = map?.get(num);
+            if (target == null) return; // no counterpart: no link
+            const a = document.createElement('a');
+            a.href = `#s${target}-d${num}`;
+            a.className = `diag-nav-link ${isTest ? 'test-answer-link' : 'answer-back-link'}`;
+            a.dataset.targetSection = target;
+            a.dataset.targetDiagram = num;
+            a.textContent = isTest ? 'View answer →' : '← Back to test';
+            wrapper.after(a);
+        });
     }
 
     /** Scrolls to a diagram wrapper with a flash highlight (P1.7 / P1.10). */
@@ -563,6 +619,15 @@ class ChessApp {
         const contentArea = document.getElementById('content-area');
 
         contentArea.addEventListener('click', (e) => {
+            // Test <-> answer navigation links (cross-section).
+            const navLink = e.target.closest('.diag-nav-link');
+            if (navLink) {
+                e.preventDefault();
+                const target = parseInt(navLink.dataset.targetSection, 10);
+                const diag = navLink.dataset.targetDiagram;
+                this.loadSection(target, null, { diagram: diag != null ? parseInt(diag, 10) : null });
+                return;
+            }
             // In-text "Diagram N" jump links (P1.7).
             const link = e.target.closest('.diag-link');
             if (link) {
