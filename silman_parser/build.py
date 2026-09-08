@@ -5,7 +5,10 @@ PGN studies (pgn_studies/) and manual overrides.
 """
 
 import json
+import os
 import re
+import sys
+import zipfile
 
 from silman_parser.config import DIAGRAMS_FILE, INPUT_FILE, OUTPUT_FILE, TOC_FILE
 from silman_parser.epub_ingest import parse_epub, parse_ncx_toc
@@ -67,9 +70,25 @@ def _resolve_ncx_nodes(nodes, anchor_map, file_map):
 
 
 def main():
+    if not os.path.isfile(INPUT_FILE):
+        print(f"Error: EPUB not found: {INPUT_FILE!r}", file=sys.stderr)
+        print(file=sys.stderr)
+        print("The book text is not included in this repository (copyright).", file=sys.stderr)
+        print("To generate the data:", file=sys.stderr)
+        print("  1. Buy the EPUB legally.", file=sys.stderr)
+        print(f"  2. Place it at the repository root as {INPUT_FILE!r}.", file=sys.stderr)
+        print("  3. Run this command again from the repository root:", file=sys.stderr)
+        print("       python3 -m silman_parser.build", file=sys.stderr)
+        raise SystemExit(1)
+
     print(f"Analyzing {INPUT_FILE}...")
 
-    parsed = parse_epub(INPUT_FILE)
+    try:
+        parsed = parse_epub(INPUT_FILE)
+    except zipfile.BadZipFile:
+        print(f"Error: {INPUT_FILE!r} is not a valid EPUB file.", file=sys.stderr)
+        print("Make sure it is the original, unmodified EPUB (4th edition).", file=sys.stderr)
+        raise SystemExit(1)
     sections = split_long_sections(parsed['sections'], max_chars=15000)
     print(f"Logical sections: {len(sections)}")
 

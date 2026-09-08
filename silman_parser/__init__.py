@@ -15,7 +15,6 @@ Re-exports the public API used by the pipeline (silman_parser.build) and the
 tests.
 """
 
-from silman_parser.build import main
 from silman_parser.config import (
     DIAGRAMS_FILE,
     INPUT_FILE,
@@ -54,6 +53,16 @@ from silman_parser.san import (
     normalize_unicode_artifacts,
 )
 from silman_parser.segmentation import split_long_sections
+
+# `main` is imported lazily: importing silman_parser.build at package
+# import time makes `python3 -m silman_parser.build` emit
+# "RuntimeWarning: 'silman_parser.build' found in sys.modules ...".
+def __getattr__(name):
+    if name == 'main':
+        from silman_parser.build import main
+        return main
+    raise AttributeError(f'module {__name__!r} has no attribute {name!r}')
+
 
 __all__ = [
     'DIAGRAMS_FILE',
