@@ -55,6 +55,10 @@ Book text = logical sections (one per EPUB H2, split if >15k chars) + 432 intera
 ## Run
 
 ```bash
+# once per machine: python-chess (parser + tests need it) —
+# venv (recommended): python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+# or system-wide: pip install --user -r requirements.txt
+pip install -r requirements.txt
 python3 -m silman_parser.build   # required first: needs the purchased EPUB at root
 cd chess-app && npm install && npm run dev      # http://localhost:5173
 npm run build && npm run preview                 # build → dist/ (prebuild fills public/), preview :4173
@@ -75,7 +79,7 @@ copying the private EPUB into the public image). Generate locally before `docker
 ## Tests & deps
 
 ```bash
-python3 -m unittest discover -s tests -v   # backend (stdlib only; test_data checks FENs via python-chess, fen/index consistency, xrefs; KNOWN_STALE must stay empty)
+python3 -m unittest discover -s tests -v   # backend (needs python-chess; test_data checks FENs via python-chess, fen/index consistency, xrefs; KNOWN_STALE must stay empty)
 cd chess-app && npm test                    # frontend vitest (42 tests)
 python3 -m json.tool chess-app/data/book_structure.json > /dev/null  # + same for diagrams.json, toc.json
 ```

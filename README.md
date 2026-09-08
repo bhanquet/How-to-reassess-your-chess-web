@@ -53,6 +53,23 @@ PGN studies     →  positions + moves +       →    playable boards with
 
 ### 1. Generate the reading data (from the repo root)
 
+Install the Python dependency (`python-chess`, needed by the parser) —
+pick one:
+
+```bash
+# Option A — virtualenv (recommended)
+python3 -m venv .venv
+source .venv/bin/activate   # repeat in each new shell
+pip install -r requirements.txt
+
+# Option B — system-wide
+pip install --user -r requirements.txt
+# If pip refuses with "externally managed environment" (Debian/Ubuntu),
+# either use Option A or: pip install --break-system-packages -r requirements.txt
+```
+
+Then:
+
 ```bash
 python3 -m silman_parser.build
 ```
@@ -152,7 +169,7 @@ must never be edited by hand:
 ## Tests
 
 ```bash
-python3 -m unittest discover -s tests -v   # backend: parser + JSON invariants (stdlib only)
+python3 -m unittest discover -s tests -v   # backend: parser + JSON invariants (needs python-chess)
 cd chess-app && npm test                    # frontend vitest (chess-utils + search)
 ```
 
@@ -168,7 +185,7 @@ python3 -m json.tool chess-app/data/toc.json > /dev/null
 
 - **Frontend**: vanilla JS (ES modules), [chess.js](https://github.com/jhlywa/chess.js) v1 (rules) + [cm-chessboard](https://github.com/shaack/cm-chessboard) v8 (SVG boards, `staunty` pieces) — all via npm, no CDN
 - **Dev/build/test**: Vite 5, Vitest
-- **Parser**: Python 3, standard library only (plus `python-chess` for the data-integrity tests)
+- **Parser**: Python 3 + `python-chess` (see `requirements.txt`)
 - **Deploy (optional)**: multi-stage Docker build → Nginx
 - Boards lazy-mount via `IntersectionObserver`; one shared `PlayableBoard` core drives both inline and modal boards
 

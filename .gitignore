@@ -15,6 +15,7 @@ How to Reassess Your Chess 4th ed - Silman.epub
 *.pdf
 silman_text.txt
 *.txt
+!requirements.txt
 
 # Editor backups — never version, use git instead
 *.bak
